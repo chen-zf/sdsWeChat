@@ -1,13 +1,194 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view class='top'>
+    <view class='menu'>
+      <icon type='search' size='15' color='#FFFFFF'></icon>
+      <view class='nav'>
+        <block wx:for="{{checkList}}" wx:for-index="idx" wx:for-item="itemName">
+          <view data-num="{{idx}}" class="{{idx == checkindex?'active':''}}" bindtap='navClick'>{{itemName}}</view>
+        </block>    
+      </view>  
+    </view>
+    <view class='news'>
+      <view class='news-box'>
+          <view class='swiper-container'>
+            <view>陈老板188****9527联系了厨匠赵六</view>
+            <view>陈老板188****9527联系了厨匠赵六</view>
+            <view>陈老板188****9527联系了厨匠赵六</view>
+          </view>
+      </view>
+    </view>
+</view>
+
+<view class='room'>
+  <view class='room-box'>
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+
+
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+    
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+
+
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
+
+
+    <view class='rooms-items'>
+          <view class='rooms-show'>
+            <view class='rooms_img_box'>
+                <image src='../../image/pic/img.png'></image>
+                <view class='mask_layer'></view>
+            </view>
+            <view class='rooms-tag .rooms-tag-1'>厨神</view>
+            <view class='rooms_bottom_box'>
+                <view class='rooms-title'>工作棒</view>
+                <view class='rooms-like'>
+                    <image src='../../image/icon/like@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+                <view class="rooms-share">
+                    <image src='../../image/icon/share@2x.png'></image>
+                    <text>108.1万</text>
+                </view>
+            </view>
+          </view>
+    </view>
   </view>
 </view>

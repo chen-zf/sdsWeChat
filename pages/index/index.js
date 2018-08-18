@@ -4,15 +4,13 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    checkList:['推荐','吃货天堂','厨艺','品牌','设备','名人堂'],
+    checkindex:0
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  navClick: function(e) {
+    this.setData({
+      checkindex: e.target.dataset.num 
     })
   },
   onLoad: function () {
