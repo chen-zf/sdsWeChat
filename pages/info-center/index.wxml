@@ -1,0 +1,50 @@
+<import src="../../template/template"/>
+<view class="container">
+  <view class='info-top'>
+    <navigator url='/pages/my/index'>
+      <image src='../../image/info-center/fans@2x.png'></image>
+      <text>粉丝</text>
+    </navigator>
+    <navigator>
+      <image src='../../image/info-center/like@2x.png'></image>
+      <text>给我点赞</text>
+    </navigator>
+    <navigator>
+      <image src='../../image/info-center/comment@2x.png'></image>
+      <text>评论</text>
+    </navigator>
+    <navigator>
+      <image src='../../image/info-center/Exceptional@2x.png'></image>
+      <text>打赏感谢</text>
+    </navigator>
+  </view>
+  <view class='info-bottom'>
+    <navigator>
+      <image src='../../image/info-center/bulletin@2x.png'></image>
+      <view class='info-nav-center'>
+        <text class='info-nav-title'>餐匠公告</text>
+        <text>餐匠于2018年五月更新</text>
+      </view>
+      <text>刚刚</text>
+    </navigator>
+
+      <navigator>
+      <image src='../../image/info-center/recommend@2x.png'></image>
+      <view class='info-nav-center'>
+        <text class='info-nav-title'>精彩推荐</text>
+        <text>餐匠于2018年五月更新</text>
+      </view>
+      <text>14:56</text>
+    </navigator>
+
+      <navigator>
+      <image src='../../image/info-center/assistant@2x.png'></image>
+      <view class='info-nav-center'>
+        <text class='info-nav-title'>餐匠助手</text>
+        <text>餐匠于2018年五月更新</text>
+      </view>
+      <text>07-13</text>
+    </navigator>
+  </view>
+</view>
+<template is="tabbarTemp" data="{{...tabbarData}}"></template>

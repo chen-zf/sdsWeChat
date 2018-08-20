@@ -1,0 +1,118 @@
+<import src="../../template/template.wxml" />
+<view class="container">
+  <!-- 头部 -->
+  <view class='my-top-box'>
+    <image class='my-buddha' src='../../image/my/header.png'></image>
+    <view class='my-top-content'>
+      <view class='main-top'>
+        <view class='main-top-l'>
+          <text class='my-name'>尹善英</text>
+          <view class='my-vip'>普通会员</view>
+        </view>
+        <view class='main-top-r'>
+          <image class='setting-icon' src='../../image/my/my_set@2x.png'></image>
+        </view>
+
+      </view>
+      <view class='my-id'>ID:
+        <text>323456</text>
+      </view>
+      <view class='my-tags-box'>
+        <view class='tags-items'>美女</view>
+        <view class='tags-items'>模特</view>
+        <view class='tags-items'>主播</view>
+        <view class='tags-items'>......</view>
+      </view>
+      <view class='my-signature'>
+        <image class='signature-icon' src='../../image/my/my_compile@2x.png'></image>几片云的晴空 除了感动还有微风</view>
+    </view>
+  </view>
+  <!-- 导航栏 -->
+  <view class='my-topnav-box'>
+    <view class='my-topnav'>
+      <view class='my-topnav-top'>
+        <navigator>
+          <image src="../../image/my/my_attention@2x.png"></image>
+          <text>关注我的</text>
+        </navigator>
+        <navigator>
+          <image src="../../image/my/my_vip@2x.png"></image>
+          <text>会员中心</text>
+        </navigator>
+        <navigator>
+          <image src="../../image/my/my_video@2x.png"></image>
+          <text>我的视频</text>
+        </navigator>
+      </view>
+      <view class='my-topnav-bottom'>
+        <navigator>
+          <image src="../../image/my/my_issue@2x.png"></image>
+          <text>发布需求</text>
+        </navigator>
+        <navigator>
+          <image src="../../image/my/my_application@2x.png"></image>
+          <text>申请直播</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 菜单导航 -->
+  <view class='my-nav'>
+    <navigator url="/pages/my/my">
+      <view class='my-nav-l'>
+        <image src='../../image/my/my_wallet@2x.png'></image>
+        <text>我的钱包</text>
+      </view>
+      <view class='my-nav-r'>
+        <text class='my-money-color'>2.5元</text>
+        <image src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </navigator>
+    <navigator>
+      <view class='my-nav-l'>
+        <image src='../../image/my/my_cooperation@2x.png'></image>
+        <text>申请合作</text>
+      </view>
+      <view class='my-nav-r'>
+        <image src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </navigator>
+    <navigator url="/pages/points-mall/index">
+      <view class='my-nav-l'>
+        <image src='../../image/my/integral@2x.png'></image>
+        <text>积分商城</text>
+      </view>
+      <view class='my-nav-r'>
+        <image src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </navigator>
+    <navigator>
+      <view class='my-nav-l'>
+        <image src='../../image/my/my_watch@2x.png'></image>
+        <text>看过我的</text>
+      </view>
+      <view class='my-nav-r'>
+        <image src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </navigator>
+    <navigator>
+      <view class='my-nav-l'>
+        <image src='../../image/my/my_tickling@2x.png' on></image>
+        <text>我的反馈</text>
+      </view>
+      <view class='my-nav-r'>
+        <image src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </navigator>
+    <navigator>
+      <view class='my-nav-l'>
+        <image src='../../image/my/my_about@2x.png'></image>
+        <text>关于餐匠</text>
+      </view>
+      <view class='my-nav-r'>
+        <image src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>
+<template is="tabbarTemp" data="{{...tabbarData}}"></template>
