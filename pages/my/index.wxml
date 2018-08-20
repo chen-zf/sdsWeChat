@@ -115,4 +115,5 @@
     </navigator>
   </view>
 </view>
+
 <template is="tabbarTemp" data="{{...tabbarData}}"></template>

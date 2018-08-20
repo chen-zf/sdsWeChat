@@ -16,7 +16,9 @@
 .tabbar-box>.active{
   color:rgba(233,96,52,1);
 }
-.tabbar-box navigator{
+.tabbar-box>view{
+  flex: 1;
+  text-align: center;
    display: flex;
    flex-flow: column nowrap;
 }

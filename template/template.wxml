@@ -1,24 +1,24 @@
 <template name="tabbarTemp">
   <view class='tabbar-box'>
-    <navigator class="{{navActive[0]==1?'active':''}}" url='/pages/index/index'>
+    <view class="{{navActive[0]==1?'active':''}}" data-pagesNo="0" bindtap='tabbarReLaunchFunc'>
         <image  src="{{navActive[0]==1?'../../image/tabbar/index-hl@2x.png':'../../image/tabbar/index@2x.png'}}"></image>
         <text>首页</text>
-    </navigator>  
-     <navigator class="{{navActive[1]==1?'active':''}}">
+    </view>  
+     <view class="{{navActive[1]==1?'active':''}}" data-pagesNo="1" bindtap='tabbarReLaunchFunc'>
         <image src="{{navActive[1]==1?'../../image/tabbar/attention-hl@2x.png':'../../image/tabbar/attention@2x.png'}}"></image>
         <text>关注</text>
-    </navigator>  
-     <navigator class="{{navActive[2]==1?'active':''}}" class='issue-box'>
+    </view>  
+     <view class="issue-box {{navActive[2]==1?'active':''}}" data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
         <image  class='issue-img'  src="{{navActive[2]==1?'../../image/tabbar/issue-hl@2x.png':'../../image/tabbar/issue@2x.png'}}"></image>
         <text>发布</text>
-    </navigator>  
-     <navigator class="{{navActive[3]==1?'active':''}}" url='/pages/info-center/index'>
+    </view>  
+     <view class="{{navActive[3]==1?'active':''}}" data-pagesNo="3" bindtap='tabbarReLaunchFunc'>
         <image src="{{navActive[3]==1?'../../image/tabbar/news-hl@2x.png':'../../image/tabbar/news@2x.png'}}"></image>
         <text>消息</text>
-    </navigator>  
-     <navigator class="{{navActive[4]==1?'active':''}}" url='/pages/my/index'>
+    </view>  
+     <view class="{{navActive[4]==1?'active':''}}" data-pagesNo="4" bindtap='tabbarReLaunchFunc'>
         <image src="{{navActive[4]==1?'../../image/tabbar/my-hl@2x.png':'../../image/tabbar/my@2x.png'}}"></image>
         <text>我的</text>
-    </navigator>  
+    </view>  
   </view>
 </template>
