@@ -1,6 +1,6 @@
 <template name="tabbarTemp">
   <view class='tabbar-box'>
-    <navigator class="{{navActive[0]==1?'active':''}}" url='/pages/my/index'>
+    <navigator class="{{navActive[0]==1?'active':''}}" url='/pages/index/index'>
         <image  src="{{navActive[0]==1?'../../image/tabbar/index-hl@2x.png':'../../image/tabbar/index@2x.png'}}"></image>
         <text>首页</text>
     </navigator>  
