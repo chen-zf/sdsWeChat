@@ -3,11 +3,10 @@
   background-color: #fff;
 }
 .list{
-  height: 90rpx;
   border-bottom: 1px solid #E7E7EA;
   display: flex;
   align-items: center;
-  padding: 0 30rpx;
+  padding: 32rpx 30rpx;
   justify-content: space-between;
 }
 .list text{
@@ -25,6 +24,13 @@
   align-items: center;
   justify-content: space-between;
 }
+.list .right-img{
+  width: 520rpx;
+}
+.right-img image{
+  width: 48rpx;
+  height: 48rpx;
+}
 .list .right .up{
   font-size: 28rpx;
   color: #333333;
@@ -34,6 +40,21 @@
   width: 32rpx;
   height: 32rpx;
   vertical-align: middle;
+}
+
+.list .upload{
+  width: 200rpx;
+  height: 200rpx;
+  border: 1px solid #E6E6E6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60rpx;
+}
+
+.list .upload image{
+  width: 95rpx;
+  height: 95rpx;
 }
 
 .btn-view{
@@ -56,4 +77,15 @@
 
 .green{
   background: rgba(9,187,7,1);
+}
+
+.label{
+  color: #999999;
+  font-size: 28rpx;
+}
+.label radio{
+  transform:scale(0.7);
+}
+.hidden{
+  display: none;
 }

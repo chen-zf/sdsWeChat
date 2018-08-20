@@ -13,33 +13,137 @@
         </view>
     </view>
     <view class='list'>
-        <text>内容说明：</text>
-        <view class='right'>
-           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
-        </view>
-    </view>
-    <view class='list'>
         <text>发布类型：</text>
         <view class='right'>
-           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
+           <radio-group class="radio-group" bindchange="radioChange">
+              <label class='label' wx:for="{{radioTypeItem}}">
+                 <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
+              </label>
+           </radio-group>
         </view>
     </view>
-    <view class='list'>
-        <text>发布目的：</text>
-        <view class='right'>
-           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
-        </view>
+    <!-- 厨艺层 -->
+    <view class="{{TypeStr=='cooking'?'':'hidden'}}">
+          <view class='list'>
+              <text>发布目的：</text>
+              <view class='right'>
+                <radio-group class="radio-group">
+                    <label class='label' wx:for="{{radioIntentItem}}">
+                        <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
+                    </label>
+                </radio-group>
+              </view>
+          </view>
+          <view class='list'>
+              <text>您的炫级：</text>
+              <view class='right'>
+                <text>厨神</text>
+                <view class='up'>
+                <text>升级我的炫值</text>    
+                <image src='../../image/icon/question_icon.png'></image>
+                </view>       
+              </view>
+          </view>
+          <view class='list'>
+              <text>自定义封面：</text>
+              <view class='right'>
+                <view class='upload'>
+                    <image src='../../image/icon/icon_add.png'></image>
+                </view>
+              </view>
+          </view>
+          <view class='list'>
+              <text>我的视频：</text>
+              <view class='right'>
+                <view class='upload'>
+                    <image src='../../image/icon/icon_add.png'></image>
+                </view>
+              </view>
+          </view>
     </view>
-    <view class='list'>
-        <text>您的炫级：</text>
-        <view class='right'>
-           <text>厨神</text>
-           <view class='up'>
-           <text>升级我的炫值</text>    
-           <image src='../../image/icon/question_icon.png'></image>
-           </view>
-           
+    <!-- 秀美食 -->
+    <view class="{{TypeStr=='food'?'':'hidden'}}">
+          <view class='list'>
+              <text>美食评分：</text>
+              <view class='right-img'>
+                <block wx:for="{{starItem}}">
+                    <block wx:if="{{item==1}}">
+                        <image src='../../image/icon/star@2x.png' bindtap='starClickFunc' data-index="{{index}}"></image>
+                    </block>
+                    <block wx:else>
+                        <image src='../../image/icon/star_gray@2x.png' bindtap='starClickFunc' data-index="{{index}}"></image>
+                    </block>
+                </block>
+              </view>
+          </view>
+          <view class='list'>
+              <text>美食名称：</text>
+              <view class='right'>
+                <input type='text' placeholder='输入您吃的美食名称'></input>
+              </view>
+          </view>
+          <view class='list'>
+              <text>美食店名：</text>
+              <view class='right'>
+                <input type='text' placeholder='输入您吃的美食店名'></input>
+              </view>
+          </view>
+          <view class='list'>
+              <text>您的炫级：</text>
+              <view class='right'>
+                <text>厨神</text>
+                <view class='up'>
+                <text>升级我的炫值</text>    
+                <image src='../../image/icon/question_icon.png'></image>
+                </view>       
+              </view>
+          </view>
+    </view>
+    <!-- 设备 -->
+    <view class="{{TypeStr=='equipment'?'':'hidden'}}">
+        <view class='list'>
+            <text>发布目的：</text>
+              <view class='right'>
+                <radio-group class="radio-group">
+                    <label class='label' wx:for="{{radioEquipmentItem}}">
+                        <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
+                    </label>
+                </radio-group>
+              </view>
         </view>
+        <view class='list'>
+            <text>您的炫级：</text>
+            <view class='right'>
+                <text>厨神</text>
+                <view class='up'>
+                <text>升级我的炫值</text>    
+                <image src='../../image/icon/question_icon.png'></image>
+                </view>       
+            </view>
+        </view>  
+    </view>
+    <!-- 品牌 -->
+    <view class="{{TypeStr=='brand'?'':'hidden'}}">
+        <view class='list'>
+            <text>发布目的：</text>
+              <view class='right'>
+                <radio-group class="radio-group">
+                    <label class='label' wx:for="{{radiobrandItem}}">
+                        <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
+                    </label>
+                </radio-group>
+              </view>
+        </view>
+        <view class='list'>
+            <text>您的炫级：</text>
+            <view class='right'>
+                <text>厨神</text>
+                <view class='up'>
+                <text>升级我的炫值</text>    
+                <image src='../../image/icon/question_icon.png'></image>
+                </view>       
+            </view>
+        </view>  
     </view>
 </view>
 <view class='btn-view'>
