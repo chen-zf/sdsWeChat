@@ -1,2 +1,48 @@
 <!--pages/publish_video/publish_video.wxml-->
-<text>pages/publish_video/publish_video.wxml</text>
+<view class="contrain">
+    <view class='list'>
+        <text>标题：</text>
+        <view class='right'>
+           <input type='text' placeholder='好的标题,能够吸引更多观众'></input>
+        </view>
+    </view>
+    <view class='list'>
+        <text>内容说明：</text>
+        <view class='right'>
+           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
+        </view>
+    </view>
+    <view class='list'>
+        <text>内容说明：</text>
+        <view class='right'>
+           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
+        </view>
+    </view>
+    <view class='list'>
+        <text>发布类型：</text>
+        <view class='right'>
+           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
+        </view>
+    </view>
+    <view class='list'>
+        <text>发布目的：</text>
+        <view class='right'>
+           <input type='text' placeholder='内容说明内容说明内容说明内容说明'></input>
+        </view>
+    </view>
+    <view class='list'>
+        <text>您的炫级：</text>
+        <view class='right'>
+           <text>厨神</text>
+           <view class='up'>
+           <text>升级我的炫值</text>    
+           <image src='../../image/icon/question_icon.png'></image>
+           </view>
+           
+        </view>
+    </view>
+</view>
+<view class='btn-view'>
+  <button class='btn orange'>自主拍摄视频</button>
+  <button class='btn green'>一键预约拍摄</button>
+</view>

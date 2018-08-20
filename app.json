@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/info-center/index",
     "pages/my/index",
-    "pages/index/index",
     "pages/points-mall/index",
     "pages/publish_video/publish_video",
     "pages/logs/logs"

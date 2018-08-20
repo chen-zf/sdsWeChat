@@ -1,3 +1,4 @@
+@import "../../template/template.wxss";
 .top{
   position: fixed;
   top: 0;
@@ -59,7 +60,7 @@
 .nav view{ 
   margin-right: 22rpx;
 }
-.active{
+.nav .active{
   color: #ffffff;
   font-size: 40rpx;
   transition: font-size 0.2s linear;
