@@ -11,8 +11,43 @@
   box-sizing: border-box;
   padding: 0 28rpx;
 }
+.search-box{
+  position: relative;
+}
+.input-view{
+  width: 586rpx;
+  height: 60rpx;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10rpx;
+  padding: 0 50rpx;
+
+}
+.input-view .search{
+  width: 586rpx;
+  height: 60rpx;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 10rpx;
+  border: 0;
+  box-sizing: border-box;
+}
+.placeholder{
+  color: #fff;
+}
+.searchicon{
+  position: absolute;
+  top: 5rpx;
+  left: 10rpx;
+  line-height: 60rpx;
+}
+.closeicon{
+  position: absolute;
+  top: 5rpx;
+  right: 24rpx;
+  line-height: 60rpx;
+}
 .menu icon{
-  margin-top: 20rpx;
+  margin-top: 12rpx;
 }
 .nav{
   display: flex;
@@ -157,4 +192,7 @@
 }
 .rooms-tag-4 {
   background: rgba(244, 66, 66, 1);
+}
+.hidden{
+  display: none
 }
