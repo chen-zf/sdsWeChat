@@ -1,21 +1,198 @@
-/**index.wxss**/
-.userinfo {
+.top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+.menu{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 70rpx;
+  background:#FF6833;
+  box-sizing: border-box;
+  padding: 0 28rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.search-box{
+  position: relative;
 }
+.input-view{
+  width: 586rpx;
+  height: 60rpx;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10rpx;
+  padding: 0 50rpx;
 
-.userinfo-nickname {
-  color: #aaa;
 }
-
-.usermotto {
-  margin-top: 200px;
+.input-view .search{
+  width: 586rpx;
+  height: 60rpx;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 10rpx;
+  border: 0;
+  box-sizing: border-box;
+}
+.placeholder{
+  color: #fff;
+}
+.searchicon{
+  position: absolute;
+  top: 5rpx;
+  left: 10rpx;
+  line-height: 60rpx;
+}
+.closeicon{
+  position: absolute;
+  top: 5rpx;
+  right: 24rpx;
+  line-height: 60rpx;
+}
+.menu icon{
+  margin-top: 12rpx;
+}
+.nav{
+  display: flex;
+  margin-left: 53rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  line-height: 70rpx;
+}
+.nav view{ 
+  margin-right: 22rpx;
+}
+.active{
+  color: #ffffff;
+  font-size: 40rpx;
+  transition: font-size 0.2s linear;
+}
+.news{
+  overflow: hidden;
+  background: linear-gradient(to left, #FF6D33, #FF5533);
+}
+.news-box{
+  box-sizing: border-box;
+  padding: 20rpx 16rpx;
+  margin: 0 32rpx;
+  width: 686rpx;
+  height: 126rpx;
+  font-size: 20rpx;
+  text-indent: 20rpx;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 10rpx;
+  letter-spacing: 2rpx;
+}
+.swiper-container{
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+.room{
+  padding-bottom: 2rpx;
+  margin-top: 206rpx;
+  overflow-y: auto;
+}
+.room-box{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 10rpx 32rpx 98rpx;
+}
+.rooms-items{
+  width: calc(50% - 5rpx);
+  margin-bottom: 10rpx;
+}
+.rooms-show{
+  position: relative;
+  width: 338rpx;
+  height: 254rpx;
+}
+.rooms_img_box{
+  position: relative;
+}
+.rooms_img_box image{
+  width: 338rpx;
+  height: 254rpx;
+}
+.rooms_img_box .mask_layer{
+  position: absolute;
+  top: 0;
+  width: 338rpx;
+  height: 254rpx;
+  border-radius: 10rpx;
+  background: rgba(0, 0, 0, 0.2);
+}
+.rooms-tag{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #fff;
+}
+.rooms_bottom_box{
+  position: absolute;
+  width: 100%;
+  height: 88rpx;
+  bottom: 0;
+  background: linear-gradient(to top, #2f2f2f, transparent);
+}
+.rooms-title{
+  position: absolute;
+  bottom: 45rpx;
+  left: 11rpx;
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.rooms-like{
+  position: absolute;
+  bottom: 10rpx;
+  left: 10rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.rooms-like image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: text-bottom;
+}
+.rooms-like span{
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.rooms-share{
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.rooms-share image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: text-bottom;
+}
+.rooms-share span{
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.rooms-tag-1 {
+  background: rgba(164, 43, 241, 1);
+}
+.rooms-tag-2 {
+  background: rgba(71, 41, 254, 1);
+}
+.rooms-tag-3 {
+  background: rgba(241, 155, 43, 1);
+}
+.rooms-tag-4 {
+  background: rgba(244, 66, 66, 1);
+}
+.hidden{
+  display: none
 }

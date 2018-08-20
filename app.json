@@ -12,5 +12,42 @@
     "navigationBarBackgroundColor": "#FF6833",
     "navigationBarTitleText": "餐匠",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color": "#000000",
+    "selectedColor": "#FF6833",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"image/icon/index@2x.png",
+        "selectedIconPath":"image/icon/index-hl@2x.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "关注",
+        "iconPath": "image/icon/attention@2x.png",
+        "selectedIconPath": "image/icon/attention-hl@2x.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "发布",
+        "iconPath": "image/icon/issue@2x.png",
+        "selectedIconPath": "image/icon/issue-hl@2x.png"
+         
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "消息",
+        "iconPath": "image/icon/new@2x.png",
+        "selectedIconPath": "image/icon/new-hl@2x.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "image/icon/my@2x.png",
+        "selectedIconPath": "image/icon/my-hl@2x.png"
+      }
+    ]
   }
 }
