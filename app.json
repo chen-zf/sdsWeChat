@@ -1,23 +1,24 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/publish_video/publish_video"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FF6833",
     "navigationBarTitleText": "餐匠",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
-  "tabBar":{
+  "tabBar": {
     "color": "#000000",
     "selectedColor": "#FF6833",
-    "list":[
+    "list": [
       {
-        "pagePath":"pages/index/index",
-        "text":"首页",
-        "iconPath":"image/icon/index@2x.png",
-        "selectedIconPath":"image/icon/index-hl@2x.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/index@2x.png",
+        "selectedIconPath": "image/icon/index-hl@2x.png"
       },
       {
         "pagePath": "pages/index/index",
@@ -30,7 +31,6 @@
         "text": "发布",
         "iconPath": "image/icon/issue@2x.png",
         "selectedIconPath": "image/icon/issue-hl@2x.png"
-         
       },
       {
         "pagePath": "pages/index/index",
