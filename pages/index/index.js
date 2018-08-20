@@ -15,6 +15,14 @@ Page({
       url: '../logs/logs'
     })
   },
+  onShow() {
+    wx.showLoading()
+  },
+  onReady() {
+    setTimeout(()=>{
+      wx.hideLoading()
+    },3000)
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

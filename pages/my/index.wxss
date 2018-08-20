@@ -1,0 +1,200 @@
+@import "../../template/template.wxss";
+.container{
+  margin-bottom: 98rpx;
+}
+.my-top-box {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 300rpx;
+  padding: 0 32rpx 0 32rpx;
+  background: #ff6833;
+}
+
+.my-buddha {
+  flex-basis: 150rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border: 2rpx solid rgba(255, 255, 255, 1);
+  border-radius: 100%;
+}
+
+.my-top-content {
+  flex: 1;
+  margin-left: 20rpx;
+  font-family: PingFang-SC-Regular;
+  color: rgba(255, 255, 255, 1);
+}
+
+.main-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-top-l {
+  flex: 1;
+  display: flex;
+}
+
+.my-name {
+  font-size: 44rpx;
+}
+
+.my-vip {
+  align-self: center;
+  margin-left: 6rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+  background: rgba(254, 176, 78, 1);
+  border-radius: 10rpx;
+}
+
+.setting-icon {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.my-id {
+  font-size: 20rpx;
+}
+
+.my-tags-box {
+  display: flex;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+}
+
+.tags-items {
+  box-sizing: border-box;
+  padding: 0 18rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin-right: 10rpx;
+  background: transparent;
+  border-radius: 18rpx;
+  border: 1rpx solid #fff;
+}
+
+.signature-icon {
+  align-self: center;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.my-signature {
+  display: flex;
+  font-size: 22rpx;
+}
+
+.my-topnav-box {
+  position: relative;
+  width: 750rpx;
+  height: 188rpx;
+  background: #fafafa;
+}
+
+.my-topnav {
+  position: absolute;
+  top: -132rpx;
+  left: 0;
+  right: 0;
+  width: 686rpx;
+  height: 300rpx;
+  margin: 0 32rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 8px 6px #e1e1e1;
+  border-radius: 20rpx;
+}
+
+.my-topnav-top {
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  height: 132rpx;
+  border-bottom: 2rpx dashed #f0f0f0;
+  border-width: medium;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.my-topnav-top navigator {
+  align-self: center;
+  display: flex;
+}
+
+.my-topnav-top image {
+  align-self: center;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.my-topnav-top {
+  align-self: center;
+}
+
+.my-topnav-bottom {
+  display: flex;
+  justify-content: space-around;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.my-topnav-bottom navigator {
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+.my-topnav-bottom image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.my-nav {
+  width: 750rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(51, 51, 51, 1);
+}
+
+.my-nav navigator {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.my-nav-l, .my-nav-r {
+  display: flex;
+}
+
+.my-nav-l image {
+  align-self: center;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.my-nav-l text {
+  margin-left: 16rpx;
+}
+
+.my-money-color {
+  color: rgba(236, 97, 42, 1);
+}
+
+.my-nav-r image {
+  align-self: center;
+  width: 20rpx;
+  height: 36rpx;
+  margin-left: 20rpx;
+}

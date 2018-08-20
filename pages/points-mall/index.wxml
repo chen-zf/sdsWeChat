@@ -1,0 +1,82 @@
+<view class="container">
+  <!-- 头部轮播图 -->
+  <swiper class="mall-top-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 中间菜单按钮 -->
+  <view class="mall-nav">
+    <navigator>
+      <image src="../../image/points-mall/points@2x.png"></image>
+      <view>积分
+        <text>26580</text>
+      </view>
+    </navigator>
+    <navigator>
+      <image src="../../image/points-mall/record@2x.png"></image>
+      <view>兑换记录</view>
+    </navigator>
+    <navigator>
+      <image src="../../image/points-mall/gain@2x.png"></image>
+      <view>如何赚取积分</view>
+    </navigator>
+  </view>
+
+  <!-- 好运播报 -->
+  <view class="mall-news">
+    <image src="../../image/points-mall/bell@2x.png"></image>
+    <text>好运播报：</text>
+    <swiper autoplay="true" interval="3000" duration="1500" circular="true" vertical="true">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item class="news-swiper-item">
+          <view>恭喜用户
+            <text class="news-tel-color">186**** ****</text>兑换小米移动电源</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 商品轮播图 -->
+  <view class="proout-title-box">
+    500积分起兑换
+  </view>
+  <view class="mall-proout-good">
+    <scroll-view scroll-x style='width:750rpx;'>
+      <view class='floor-swiper'>
+        <block wx:for='{{proout}}'>
+          <navigator class='floor-swiper-item'>
+            <image src='http://jsanntq.cn/assets/mobile.png'></image>
+            <view>小米移动电源</view>
+            <view>
+              <text class="points-one">￥500积分</text>
+              <text class="points-two">￥666</text>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 兑换商品 -->
+  <view class="proout-title-box">
+    大家都在抢
+  </view>
+  <view class="mall-proout-hot">
+    <block wx:for='{{proout}}'>
+      <view>
+        <navigator class='floor-swiper-item'>
+          <image class='floor-proout-img' src='http://jsanntq.cn/assets/mobile.png'></image>
+          <view>小米移动电源</view>
+          <view>
+            <text class="points-one">￥500积分</text>
+            <text class="points-two">￥666</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+</view>
