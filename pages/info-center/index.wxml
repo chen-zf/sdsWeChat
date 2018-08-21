@@ -1,11 +1,11 @@
 <import src="../../template/template"/>
 <view class="container">
   <view class='info-top'>
-    <navigator url='/pages/my/index'>
+    <navigator url='/pages/fans/index'>
       <image src='../../image/info-center/fans@2x.png'></image>
       <text>粉丝</text>
     </navigator>
-    <navigator>
+    <navigator url='/pages/like/index'>
       <image src='../../image/info-center/like@2x.png'></image>
       <text>给我点赞</text>
     </navigator>
@@ -19,7 +19,7 @@
     </navigator>
   </view>
   <view class='info-bottom'>
-    <navigator>
+    <navigator url='/pages/announcement/index'>
       <image src='../../image/info-center/bulletin@2x.png'></image>
       <view class='info-nav-center'>
         <text class='info-nav-title'>餐匠公告</text>

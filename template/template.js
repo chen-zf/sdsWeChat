@@ -1,5 +1,5 @@
 var temp = {
-  redirectToURLs: ['/pages/index/index', '/pages/attention/index', '/pages/publish_video/publish_video','/pages/info-center/index','/pages/my/index'],
+  redirectToURLs: ['/pages/video/index', '/pages/attention/index', '/pages/publish_video/publish_video','/pages/info-center/index','/pages/my/index'],
   tabbarReLaunchFunc: function (event) {
     let pagesno = event.currentTarget.dataset.pagesno
     if (pagesno==2){

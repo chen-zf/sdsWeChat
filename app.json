@@ -1,6 +1,8 @@
 {
   "pages": [
-    
+    "pages/announcement/index",
+    "pages/like/index",
+    "pages/fans/index",
     "pages/index/index",
     "pages/info-center/index",
     "pages/attention/index",

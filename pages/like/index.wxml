@@ -1,0 +1,14 @@
+<!--pages/like/index.wxml-->
+<view class="container">
+  <view class='like-list' wx:for="{{likeData}}">
+    <view class='like-date'>{{item.title}}</view>
+    <view class="like-item" wx:for="{{item.data}}">
+      <image class='u-head-icon' src='../../image/my/header.png'></image>
+      <view class='like-item-r'>
+        <text class='u-name'>厚闪没</text>
+        <text class='like-time'><text>20:55</text>给您点赞</text>
+      </view>
+    </view>
+  </view>
+</view>
+

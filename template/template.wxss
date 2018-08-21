@@ -7,7 +7,7 @@
   margin:0px auto;
   width: 108rpx;
   height: 108rpx;
-  z-index: 99999;
+  /* z-index: 999999; */
 }
 .tabbar-box {
   display: flex;
@@ -24,21 +24,20 @@
   font-size: 20rpx;
   color: rgba(51, 51, 51, 1);
   font-family: PingFang-SC-Medium;
-  z-index: 99990;
-  overflow: visible !important;
+  /* z-index: 999990; */
 }
 .tabbar-box .active {
   color: rgba(233, 96, 52, 1);
 }
 
-.tabbar-box cover-view {
+.tabbar-box view {
   flex: 1;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
 }
 
-.tabbar-box cover-image {
+.tabbar-box image {
   align-self: center;
   width: 42rpx;
   height: 42rpx;
@@ -49,7 +48,6 @@
   top:-32rpx;
   font-size: 20rpx;
   text-align: center;
-  overflow: visible;
 }
 
 .issue-box .issue-img {
@@ -104,12 +102,31 @@
 
 .listbox-video {
   position: relative;
+  top: 0;
   width: 686rpx;
   height: 356rpx;
   border-radius: 10rpx;
-  z-index: 10001;
+  /* z-index: 10001 !important; */
 }
-
+.model-btn{
+	  position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+    background-color: rgba(0,0,0,.3);
+    /* z-index: 10004; */
+}
+.play-icon{
+    margin:28rpx 40rpx;
+    border-top:26rpx solid transparent;
+    border-left:36rpx solid #fff;
+    border-bottom:22rpx solid transparent;
+}
 .listbox-masklayer {
   position: absolute;
   top: 0;
@@ -120,7 +137,7 @@
   background: rgba(0, 0, 0, 1);
   opacity: 0.2;
   border-radius: 10rpx;
-   z-index: 10002;
+   /* z-index: 10002; */
 }
 .video-status{
   display: flex;

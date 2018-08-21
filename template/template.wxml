@@ -1,70 +1,81 @@
 <!-- 底部菜单栏 -->
 <template name="tabbarTemp">
-  <cover-view class='tabbar-box'>
-    <cover-view class="{{navActive[0]==1?'active':''}}" data-pagesNo="0" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[0]==1?'../../image/tabbar/index-hl@2x.png':'../../image/tabbar/index@2x.png'}}"></cover-image>
-      <cover-view>首页</cover-view>
-    </cover-view>
-    <cover-view class="{{navActive[1]==1?'active':''}}" data-pagesNo="1" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[1]==1?'../../image/tabbar/attention-hl@2x.png':'../../image/tabbar/attention@2x.png'}}"></cover-image>
-      <cover-view>关注</cover-view>
-    </cover-view>
-    <cover-view class="issue-box {{navActive[2]==1?'active':''}}" data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
-      <cover-image class='issue-img' src="{{navActive[2]==1?'../../image/tabbar/issue-hl@2x.png':'../../image/tabbar/issue@2x.png'}}"></cover-image>
-       <cover-view>发布</cover-view>
-    </cover-view>
-    <cover-view class="{{navActive[3]==1?'active':''}}" data-pagesNo="3" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[3]==1?'../../image/tabbar/news-hl@2x.png':'../../image/tabbar/news@2x.png'}}"></cover-image>
-      <cover-view>消息</cover-view>
-    </cover-view>
-    <cover-view class="{{navActive[4]==1?'active':''}}" data-pagesNo="4" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[4]==1?'../../image/tabbar/my-hl@2x.png':'../../image/tabbar/my@2x.png'}}"></cover-image>
-      <cover-view>我的</cover-view>
-    </cover-view>
-  </cover-view>
-  <cover-view class='position-issueimg' data-pagesNo="2" bindtap='tabbarReLaunchFunc'><cover-image  src="../../image/tabbar/issue@2x.png"></cover-image></cover-view>
+  <view class='tabbar-box'>
+    <view class="{{navActive[0]==1?'active':''}}" data-pagesNo="0" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[0]==1?'../../image/tabbar/index-hl@2x.png':'../../image/tabbar/index@2x.png'}}"></image>
+      <view>首页</view>
+    </view>
+    <view class="{{navActive[1]==1?'active':''}}" data-pagesNo="1" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[1]==1?'../../image/tabbar/attention-hl@2x.png':'../../image/tabbar/attention@2x.png'}}"></image>
+      <view>关注</view>
+    </view>
+    <view class="issue-box {{navActive[2]==1?'active':''}}" data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
+      <image class='issue-img' src="{{navActive[2]==1?'../../image/tabbar/issue-hl@2x.png':'../../image/tabbar/issue@2x.png'}}"></image>
+      <view>发布</view>
+    </view>
+    <view class="{{navActive[3]==1?'active':''}}" data-pagesNo="3" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[3]==1?'../../image/tabbar/news-hl@2x.png':'../../image/tabbar/news@2x.png'}}"></image>
+      <view>消息</view>
+    </view>
+    <view class="{{navActive[4]==1?'active':''}}" data-pagesNo="4" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[4]==1?'../../image/tabbar/my-hl@2x.png':'../../image/tabbar/my@2x.png'}}"></image>
+      <view>我的</view>
+    </view>
+  </view>
+  <!-- <view class='position-issueimg' data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
+    <image src="../../image/tabbar/issue@2x.png"></image>
+  </view> -->
 </template>
 
 <!-- 关注页面列表 -->
 <template name="attentionTemp">
-  <block wx:for="{{navActive}}" wx:key="key">
-  <view class='attention-listbox'>
-    <view class='listbox-top'>
-      <image class='my-buddha' src='../../image/my/header.png'></image>
-      <view class='listbox-top-r'>
-        <text class='listbox-topname'>赵无家的赵武</text>
-        <text class='listbox-toptime'>2018-07-25</text>
-      </view>
-    </view>
-    <view class='listbox-middle'>
-      <video class='listbox-video' src="" poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" controls="true">
-      </video>
-      <view class='listbox-masklayer'>dasdasdasdasdas</view>
-      <view class='video-status'>
-        <view>
-          <image src="../../image/attention/message@2x.png"></image>
-          <text>5555.5万</text>
-        </view>
-        <view>
-          <image src="../../image/attention/like-hl@2x.png"></image>
-          <text>5555.5万</text>
-        </view>
-        <view>
-          <image src="../../image/attention/share@2x.png"></image>
-          <text>分享</text>
+  <!-- <block wx:for="{{attentionData}}" wx:key="key">
+    <view class='attention-listbox'>
+      <view class='listbox-top'>
+        <image class='my-buddha' src='../../image/my/header.png'></image>
+        <view class='listbox-top-r'>
+          <text class='listbox-topname'>赵无家的赵武</text>
+          <text class='listbox-toptime'>2018-07-25</text>
         </view>
       </view>
-    </view>
-    <view class='listbox-bottom'>
+      <view class='listbox-middle'>
+        <video wx:if="{{curr_id == item.id}}" id="myVideo" src="{{item.src}}" poster="{{item.poster}}" objectFit="cover" controls></video>
+        <view wx:else>
+          <image class='listbox-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+          </image>
+          <view class="model-btn">
+            <view class="play-icon"></view>
+          </view>
+        </view>
+
+        <view class='listbox-masklayer'></view>
+        <view class='video-status'>
+          <view>
+            <image src="../../image/attention/message@2x.png"></image>
+            <text>5555.5万</text>
+          </view>
+          <view>
+            <image src="../../image/attention/like-hl@2x.png"></image>
+            <text>5555.5万</text>
+          </view>
+          <view>
+            <image src="../../image/attention/share@2x.png"></image>
+            <text>分享</text>
+          </view>
+        </view>
+      </view>
+      <view class='listbox-bottom'>
         <view>
-          <text class='listbox-color'>赵四</text>:<text>小猴紫演技棒棒</text>
+          <text class='listbox-color'>赵四</text>:
+          <text>小猴紫演技棒棒</text>
         </view>
         <view>
-          <text class='listbox-color'>赵无家的赵武</text>回复<text class='listbox-color'>赵四</text>:
+          <text class='listbox-color'>赵无家的赵武</text>回复
+          <text class='listbox-color'>赵四</text>:
           <text>对呀对呀，继续追剧</text>
         </view>
         <view class='listbox-color'>共10条评论》</view>
+      </view>
     </view>
-  </view>
-  </block>
+  </block> -->
 </template>
