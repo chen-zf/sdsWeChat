@@ -1,7 +1,9 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/info-center/index",
+    "pages/attention/index",
     "pages/my/index",
     "pages/points-mall/index",
     "pages/publish_video/publish_video",

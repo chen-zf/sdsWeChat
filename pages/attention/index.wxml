@@ -1,0 +1,10 @@
+<import src="../../template/template.wxml" />
+<view class="container">
+  <view class='attention-topnav'>
+    <navigator class='attention-topnav-active'>厨艺</navigator>
+    <navigator>品牌</navigator>
+    <navigator>设备</navigator>
+  </view>
+  <template is="attentionTemp" data="{{...tabbarData}}"></template>
+</view>
+<template is="tabbarTemp" data="{{...tabbarData}}"></template>

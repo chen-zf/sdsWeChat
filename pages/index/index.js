@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+import tempObj from '../../template/template'
 
 Page({
   data: {
@@ -9,12 +10,13 @@ Page({
     isShowSearch:false,
     tabbarData: {
       navActive: [1, 0, 0, 0, 0]
-    },
+    }
   },
   onLoad: function () {
 
   },
   //事件处理函数
+  tabbarReLaunchFunc: tempObj.tabbarReLaunchFunc,
   navClick: function (e) {
     this.setData({
       checkindex: e.target.dataset.num
