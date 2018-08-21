@@ -25,11 +25,19 @@ Page({
       { name: 'add', value: '招商加盟' },
     ],
     TypeStr:'food',
-    starItem:[1,1,1,1,0]
+    starItem:[1,1,1,1,0],
+    publishFlag:false,
+    windowOpen:false
   },
   radioChange:function(e){
+    var val = e.detail.value
+    var flag = true;
+    if (val=="cooking"){
+      flag=false
+    }
     this.setData({
-      TypeStr: e.detail.value
+      TypeStr: val,
+      publishFlag: flag
     })
   },
   starClickFunc:function(e){
@@ -42,6 +50,21 @@ Page({
     }
     this.setData({
       starItem: starArray
+    })
+  },
+  minePublishFunc:function(){
+    this.setData({
+      publishFlag: false
+    })
+  },
+  openWindowFunc:function(){
+    this.setData({
+      windowOpen: true
+    })
+  },
+  closeWindowFunc: function () {
+    this.setData({
+      windowOpen: false
     })
   },
   /**
