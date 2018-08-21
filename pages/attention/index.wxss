@@ -1,0 +1,29 @@
+@import "../../template/template.wxss";
+page{
+ background: #fafafa;
+}
+.container{
+  margin-bottom: 98rpx;
+}
+.attention-topnav{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 60rpx;
+  width:750rpx;
+  height:110rpx;
+  font-size:36rpx;
+  font-weight: bold;
+  font-family:PingFang-SC-Bold;
+  color:rgba(51,51,51,1);
+  background:rgba(255,255,255,1);
+}
+.attention-topnav>navigator{
+  height: 110rpx;
+  line-height: 110rpx;
+  margin-right: 50rpx;
+}
+.attention-topnav-active{
+  font-family:PingFang-SC-Heavy;
+  color:rgba(255,101,51,1);
+}

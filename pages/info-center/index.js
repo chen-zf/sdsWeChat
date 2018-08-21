@@ -6,5 +6,10 @@ Page({
       navActive: [0, 0, 0, 1, 0]
     },
   },
+  onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: '消息中心'
+    })
+  },
   tabbarReLaunchFunc: tempObj.tabbarReLaunchFunc   // 调用模板方法
 })

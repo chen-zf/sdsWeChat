@@ -37,8 +37,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "发布视频",
-					"pathName": "pages/publish_video/publish_video"
+					"name": "关注",
+					"pathName": "pages/attention/index"
 				}
 			]
 		}
