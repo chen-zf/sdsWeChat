@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/myvideo/index",
+    "pages/comment/index",
     "pages/audience/index",
     "pages/tickling/index",
     "pages/thanks/index",

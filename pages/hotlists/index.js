@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    data:{type:1,listData:[1,2,3,4,5,6]}
+    hotlistsData:{type:1,listData:[1,2,3,4,5,6]}
   },
 
   /**

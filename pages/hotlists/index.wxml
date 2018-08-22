@@ -1,5 +1,5 @@
 <!--pages/hotlists/index.wxml-->
 <import src="../../template/template.wxml" />
 <view class='container'>
- <template is="hotlistsTemp" data="{{data}}"></template>
+ <template is="hotlistsTemp" data="{{hotlistsData}}"></template>
 </view>

@@ -9,7 +9,7 @@
       <image src='../../image/info-center/like@2x.png'></image>
       <text>给我点赞</text>
     </navigator>
-    <navigator url='/pages/blankpage/index'>
+    <navigator url='/pages/comment/index'>
       <image src='../../image/info-center/comment@2x.png'></image>
       <text>评论</text>
     </navigator>

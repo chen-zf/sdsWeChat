@@ -1,11 +1,11 @@
-// pages/tickling/index.js
+// pages/comment/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    commentData: { type: 0, listData: [1, 2, 3, 4, 5, 6] }
   },
 
   /**
@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '我要反馈',
+      title: '评论',
     })
   },
 

@@ -45,7 +45,7 @@
         </navigator>
       </view>
       <view class='my-topnav-bottom'>
-        <navigator  url='/pages/blankpage/index'>
+        <navigator  url='/pages/myvideo/index'>
           <image src="../../image/my/my_issue@2x.png"></image>
           <text>发布需求</text>
         </navigator>
@@ -95,7 +95,7 @@
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>
-    <navigator url='/pages/blankpage/index'>
+    <navigator url='/pages/tickling/index'>
       <view class='my-nav-l'>
         <image src='../../image/my/my_tickling@2x.png' on></image>
         <text>我的反馈</text>

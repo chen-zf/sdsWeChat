@@ -1,0 +1,6 @@
+<!--pages/comment/index.wxml-->
+<import src="../../template/template"/>
+<view class='container'>
+<template is="commentTemp" data="{{commentData}}"></template>
+</view>
+<template is="fixedInputTemp"></template>

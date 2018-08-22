@@ -1,1 +1,43 @@
 /* pages/tickling/index.wxss */
+page{
+  background: #fafafa;
+}
+.tickling-textarea{
+    box-sizing: border-box;
+    width: 750rpx;
+    min-width: 750rpx;
+    max-width: 750rpx;
+    height: 300rpx;
+    min-height: 3rpx;
+    text-indent: 50rpx;
+    padding:36rpx 32rpx;
+    border: none;
+    resize: none;
+    background: #ffffff;
+    -webkit-box-shadow: 2rpx 0 0 #e7e7ea;
+    box-shadow: 2rpx 0 0 #e7e7ea;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    color: #333;
+    text-align: justify;
+}
+.tickling-btn{
+    width: 686rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: center;
+    background-color: #FF7732;
+    border: 0;
+    border-radius: 10rpx;
+    font-size: 40rpx;
+    font-family: PingFang-SC-Medium;
+    color: #ffffff;
+    margin: 40rpx 32rpx 0;
+}
+.tickling-explain{
+    width: 686rpx;
+    margin: 60rpx 32rpx 0;
+    font-size: 22rpx;
+    font-family: PingFang-SC-Medium;
+    color: #999999;
+}
