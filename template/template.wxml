@@ -79,3 +79,11 @@
     </view>
   </block> -->
 </template>
+
+  <!-- 说明页面 -->
+<template name="explainsTemp">
+  <view wx:for="{{explainsData}}" wx:key="key">
+      <text>{{explainsData.title}}</text>
+      <text>{{explainsData.content}}</text>
+  </view>
+</template>

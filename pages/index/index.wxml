@@ -10,7 +10,7 @@
         </view>      
       </view>
       <view class="nav {{isShowSearch?'hidden':''}}">
-        <block wx:for="{{checkList}}" wx:for-index="idx" wx:for-item="itemName">
+        <block wx:for="{{checkList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="key">
           <view data-num="{{idx}}" class="{{idx == checkindex?'active':''}}" bindtap='navClick'>{{itemName}}</view>
         </block>    
       </view>  

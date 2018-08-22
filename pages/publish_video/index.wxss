@@ -71,6 +71,67 @@
   margin-bottom: 20rpx;
 }
 
+.shadow{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.window-block{
+  width: 660rpx;
+  position: fixed;
+  top: 190rpx;
+  left: 46rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  z-index: 99999;
+}
+.window-top{
+    height: 174rpx;
+    line-height: 174rpx;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to left, #FF6833, #FF8432);
+}
+.window-top image{
+  vertical-align: middle;
+  width: 200rpx;
+}
+.window-top icon{
+  position: absolute;
+  top: -34rpx;
+  right: 10rpx;
+}
+.window-main{
+  box-sizing: border-box;
+  padding: 80rpx 70rpx;
+}
+.font-main{
+    font-size: 46rpx;
+    color: #666666;
+    padding-bottom: 40rpx;
+}
+.font-tip{
+    font-size: 37rpx;
+    color: #999999;
+    padding-top: 40rpx;
+}
+.window-main button{
+    width: 520rpx;
+    height: 73rpx;
+    line-height: 73rpx;
+    font-size: 36rpx;
+    color: #FF8132;
+    background-color: #ffffff;
+    border: 1px solid #FF8132;
+    border-radius: 10rp;
+    margin-top: 20rpx;
+    outline: none;
+}
 .orange{
   background: rgba(255,150,80,1);
 }
@@ -78,7 +139,9 @@
 .green{
   background: rgba(9,187,7,1);
 }
-
+.red{
+  background:rgba(255,116,51,1);
+}
 .label{
   color: #999999;
   font-size: 28rpx;

@@ -16,7 +16,7 @@
         <text>发布类型：</text>
         <view class='right'>
            <radio-group class="radio-group" bindchange="radioChange">
-              <label class='label' wx:for="{{radioTypeItem}}">
+              <label class='label' wx:for="{{radioTypeItem}}" wx:key="key">
                  <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
               </label>
            </radio-group>
@@ -28,7 +28,7 @@
               <text>发布目的：</text>
               <view class='right'>
                 <radio-group class="radio-group">
-                    <label class='label' wx:for="{{radioIntentItem}}">
+                    <label class='label' wx:for="{{radioIntentItem}}" wx:key="key">
                         <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
                     </label>
                 </radio-group>
@@ -66,7 +66,7 @@
           <view class='list'>
               <text>美食评分：</text>
               <view class='right-img'>
-                <block wx:for="{{starItem}}">
+                <block wx:for="{{starItem}}" wx:key="key">
                     <block wx:if="{{item==1}}">
                         <image src='../../image/icon/star@2x.png' bindtap='starClickFunc' data-index="{{index}}"></image>
                     </block>
@@ -98,6 +98,24 @@
                 </view>       
               </view>
           </view>
+          <block wx:if="{{!publishFlag}}">
+              <view class='list'>
+                  <text>自定义封面：</text>
+                  <view class='right'>
+                    <view class='upload'>
+                        <image src='../../image/icon/icon_add.png'></image>
+                    </view>
+                  </view>
+              </view>
+              <view class='list'>
+                  <text>我的视频：</text>
+                  <view class='right'>
+                    <view class='upload'>
+                        <image src='../../image/icon/icon_add.png'></image>
+                    </view>
+                  </view>
+              </view>
+          </block>
     </view>
     <!-- 设备 -->
     <view class="{{TypeStr=='equipment'?'':'hidden'}}">
@@ -105,7 +123,7 @@
             <text>发布目的：</text>
               <view class='right'>
                 <radio-group class="radio-group">
-                    <label class='label' wx:for="{{radioEquipmentItem}}">
+                    <label class='label' wx:for="{{radioEquipmentItem}}" wx:key="key">
                         <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
                     </label>
                 </radio-group>
@@ -120,7 +138,25 @@
                 <image src='../../image/icon/question_icon.png'></image>
                 </view>       
             </view>
-        </view>  
+        </view>
+        <block wx:if="{{!publishFlag}}">
+              <view class='list'>
+                  <text>自定义封面：</text>
+                  <view class='right'>
+                    <view class='upload'>
+                        <image src='../../image/icon/icon_add.png'></image>
+                    </view>
+                  </view>
+              </view>
+              <view class='list'>
+                  <text>我的视频：</text>
+                  <view class='right'>
+                    <view class='upload'>
+                        <image src='../../image/icon/icon_add.png'></image>
+                    </view>
+                  </view>
+              </view>
+        </block>  
     </view>
     <!-- 品牌 -->
     <view class="{{TypeStr=='brand'?'':'hidden'}}">
@@ -128,7 +164,7 @@
             <text>发布目的：</text>
               <view class='right'>
                 <radio-group class="radio-group">
-                    <label class='label' wx:for="{{radiobrandItem}}">
+                    <label class='label' wx:for="{{radiobrandItem}}" wx:key="key">
                         <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
                     </label>
                 </radio-group>
@@ -143,10 +179,51 @@
                 <image src='../../image/icon/question_icon.png'></image>
                 </view>       
             </view>
-        </view>  
+        </view>
+        <block wx:if="{{!publishFlag}}">
+              <view class='list'>
+                  <text>自定义封面：</text>
+                  <view class='right'>
+                    <view class='upload'>
+                        <image src='../../image/icon/icon_add.png'></image>
+                    </view>
+                  </view>
+              </view>
+              <view class='list'>
+                  <text>我的视频：</text>
+                  <view class='right'>
+                    <view class='upload'>
+                        <image src='../../image/icon/icon_add.png'></image>
+                    </view>
+                  </view>
+              </view>
+        </block>  
     </view>
 </view>
-<view class='btn-view'>
-  <button class='btn orange'>自主拍摄视频</button>
-  <button class='btn green'>一键预约拍摄</button>
+<view class='btn-view'> 
+    <block wx:if="{{publishFlag}}">
+      <button class='btn orange' bindtap='minePublishFunc'>自主拍摄视频</button>
+      <button class='btn green' bindtap='openWindowFunc'>一键预约拍摄</button>
+    </block>
+    <block wx:else>
+      <button class='btn red'>发布</button>
+    </block>
 </view>
+
+<block wx:if="{{windowOpen}}">
+    <view class='shadow'></view>
+    <view class='window-block'>
+        <view class='window-top'>
+            <icon type='cancel' size='20' color='white' bindtap='closeWindowFunc'></icon>
+            <image src='../../image/icon/window_top_icon.png' mode='widthFix'></image>
+        </view>
+        <view class='window-main'>
+            <view class='font-main'>姓名：梁朝伟</view>
+            <view class='font-main'>电话：15826255587</view>
+            <view class='font-tip'>请核实您的姓名和电话是否正确</view>
+            <button>确认信息</button>
+            <button>修改信息</button>
+        </view>
+    </view>
+</block>
+

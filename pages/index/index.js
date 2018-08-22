@@ -10,7 +10,7 @@ Page({
     isShowSearch:false,
     tabbarData: {
       navActive: [1, 0, 0, 0, 0]
-    }
+    },
   },
   onLoad: function () {
 
@@ -32,4 +32,5 @@ Page({
       isShowSearch: false
     })
   }
+  
 })
