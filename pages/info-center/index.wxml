@@ -9,11 +9,11 @@
       <image src='../../image/info-center/like@2x.png'></image>
       <text>给我点赞</text>
     </navigator>
-    <navigator>
+    <navigator url='/pages/blankpage/index'>
       <image src='../../image/info-center/comment@2x.png'></image>
       <text>评论</text>
     </navigator>
-    <navigator>
+    <navigator url='/pages/thanks/index'>
       <image src='../../image/info-center/Exceptional@2x.png'></image>
       <text>打赏感谢</text>
     </navigator>
@@ -28,7 +28,7 @@
       <text>刚刚</text>
     </navigator>
 
-      <navigator>
+      <navigator url='/pages/hotlists/index'>
       <image src='../../image/info-center/recommend@2x.png'></image>
       <view class='info-nav-center'>
         <text class='info-nav-title'>精彩推荐</text>
@@ -37,7 +37,7 @@
       <text>14:56</text>
     </navigator>
 
-      <navigator>
+      <navigator url="/pages/assistant/index">
       <image src='../../image/info-center/assistant@2x.png'></image>
       <view class='info-nav-center'>
         <text class='info-nav-title'>餐匠助手</text>

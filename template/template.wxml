@@ -80,10 +80,32 @@
   </block> -->
 </template>
 
-  <!-- 说明页面 -->
+<!-- 说明页面 -->
 <template name="explainsTemp">
-  <view wx:for="{{explainsData}}" wx:key="key">
-      <text>{{explainsData.title}}</text>
-      <text>{{explainsData.content}}</text>
+  <view class='explains-box' wx:for="{{explainsData}}" wx:key="key">
+    <view class='explains-title'>{{item.title}}</view>
+    <view>{{item.content}}</view>
+  </view>
+</template>
+
+<!-- 精彩推荐 -->
+<template name="hotlistsTemp">
+  <view class='hotlists-box' wx:for="{{data.listData}}" wx:key="index">
+    <view class='top'>
+      <image class='top-head' src='../../image/my/header.png'></image>
+      <view class='top-right'>
+        <text class='top-uname'>旭凤</text>
+        <text class='top-time'>16/09/09 18:08</text>
+      </view>
+      <view wx:if="{{data.type==0}}" class='top-btn'>打赏了10000元</view>
+    </view>
+    <view class='center'>被“陨丹”断情绝爱的花神之女锦觅，在遇到了真爱——天帝之子旭凤的时候，却浑然不知爱情为何物，因此笑料百出。同时，夜神润玉为了替母报仇，谋划争夺天帝之位，却不知不觉中也已爱... </view>
+    <navigator class='bottom' url='/pages/blankpage/index'>
+      <image class='hotlists-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+      </image>
+      <view class="model-btn">
+        <view class="play-icon"></view>
+      </view>
+    </navigator>
   </view>
 </template>

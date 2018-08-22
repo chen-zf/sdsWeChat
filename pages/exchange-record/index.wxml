@@ -1,0 +1,16 @@
+<!--pages/exchange/index.wxml-->
+<view class="container">
+  <block wx:for="{{exchangeData}}" wx:key="key">
+    <view class='exchange-box'>
+      <image src='../../image/my/header.png'></image>
+      <view class='exchange-box-r'>
+        <view class='title'>乾越( qianyu)情人节礼物生日礼物女生白色
+        </view>
+        <view class='right-bottom-box'>
+          <text class='time'>2018-11-10 18:30</text>
+          <text class='points'>-2000积分</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

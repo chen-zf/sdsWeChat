@@ -73,6 +73,7 @@
 }
 
 .my-buddha {
+  flex-basis: 60rpx;
   width: 60rpx;
   height: 60rpx;
   border-radius: 100%;
@@ -80,11 +81,16 @@
 }
 
 .listbox-top-r {
+  flex: 1;
   display: flex;
   flex-flow: column nowrap;
 }
 
 .listbox-topname {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
   font-family: PingFang-SC-Bold;
   font-weight: bold;
 }
@@ -174,4 +180,90 @@
 }
 .listbox-bottom>view{
   margin-bottom: 10rpx; 
+}
+
+/* 说明页面 */
+.explains-box{
+  width: 750rpx;
+  padding: 40rpx 32rpx 0;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+  box-sizing: border-box;
+}
+.explains-title{
+  font-size:30rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight: bold;
+}
+
+
+/* 精彩推荐 */
+.hotlists-box {
+  margin-top: 30rpx;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+  width: 750rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -1px 0px 0px rgba(235, 235, 235, 1), 0px 1px 0px 0px rgba(235, 235, 235, 1);
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(51, 51, 51, 1);
+}
+
+.hotlists-box .top {
+  display: flex;
+}
+
+.hotlists-box .top-head {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+}
+
+.hotlists-box .top-right {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.hotlists-box .top-uname {
+  font-size: 28rpx;
+  font-weight: bold;
+  font-family: PingFang-SC-Bold;
+  color: rgba(51, 51, 51, 1);
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.hotlists-box .top-time{
+  font-size:22rpx;
+  color:rgba(102,102,102,1);
+}
+.hotlists-box .center{
+  margin-top: 20rpx;
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.hotlists-box .bottom{
+   position: relative;
+  margin-top: 10rpx;
+}
+.hotlists-box .hotlists-video{
+  width:686rpx;
+  height:384rpx;
+  background:rgba(0,0,0,1);
+}
+.hotlists-box .top-btn{
+    font-size: 22rpx;
+    height:48rpx;
+    padding: 0 20rpx;
+    line-height: 48rpx;
+    color:rgba(255,255,255,1);
+    background:rgba(42,53,73,1);
+    border-radius:10rpx;
 }

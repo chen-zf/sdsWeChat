@@ -9,9 +9,9 @@
           <text class='my-name'>尹善英</text>
           <view class='my-vip'>普通会员</view>
         </view>
-        <view class='main-top-r'>
+        <navigator class='main-top-r' url='/pages/blankpage/index'>
           <image class='setting-icon' src='../../image/my/my_set@2x.png'></image>
-        </view>
+        </navigator>
 
       </view>
       <view class='my-id'>ID:
@@ -31,25 +31,25 @@
   <view class='my-topnav-box'>
     <view class='my-topnav'>
       <view class='my-topnav-top'>
-        <navigator>
+        <navigator url='/pages/fans/index'>
           <image src="../../image/my/my_attention@2x.png"></image>
           <text>关注我的</text>
         </navigator>
-        <navigator>
+        <navigator url='/pages/blankpage/index'>
           <image src="../../image/my/my_vip@2x.png"></image>
           <text>会员中心</text>
         </navigator>
-        <navigator>
+        <navigator  url='/pages/blankpage/index'>
           <image src="../../image/my/my_video@2x.png"></image>
           <text>我的视频</text>
         </navigator>
       </view>
       <view class='my-topnav-bottom'>
-        <navigator>
+        <navigator  url='/pages/blankpage/index'>
           <image src="../../image/my/my_issue@2x.png"></image>
           <text>发布需求</text>
         </navigator>
-        <navigator>
+        <navigator  url='/pages/blankpage/index'>
           <image src="../../image/my/my_application@2x.png"></image>
           <text>申请直播</text>
         </navigator>
@@ -58,7 +58,7 @@
   </view>
   <!-- 菜单导航 -->
   <view class='my-nav'>
-    <navigator url="/pages/my/my">
+    <navigator  url='/pages/blankpage/index'>
       <view class='my-nav-l'>
         <image src='../../image/my/my_wallet@2x.png'></image>
         <text>我的钱包</text>
@@ -68,7 +68,7 @@
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>
-    <navigator>
+    <navigator  url='/pages/blankpage/index'>
       <view class='my-nav-l'>
         <image src='../../image/my/my_cooperation@2x.png'></image>
         <text>申请合作</text>
@@ -86,7 +86,7 @@
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>
-    <navigator>
+    <navigator  url='/pages/blankpage/index'>
       <view class='my-nav-l'>
         <image src='../../image/my/my_watch@2x.png'></image>
         <text>看过我的</text>
@@ -95,7 +95,7 @@
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>
-    <navigator>
+    <navigator url='/pages/blankpage/index'>
       <view class='my-nav-l'>
         <image src='../../image/my/my_tickling@2x.png' on></image>
         <text>我的反馈</text>
@@ -104,7 +104,7 @@
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>
-    <navigator>
+    <navigator url="/pages/about-me/index">
       <view class='my-nav-l'>
         <image src='../../image/my/my_about@2x.png'></image>
         <text>关于餐匠</text>

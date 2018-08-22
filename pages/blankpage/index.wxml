@@ -1,0 +1,6 @@
+<!--pages/blankpage/index.wxml-->
+<view class='blankpage-box'>
+  <image src='../../image/other/forwardbox@2x.png'></image>
+  <view>更多功能正在开发中</view>
+  <text>敬请期待...</text>
+</view>
