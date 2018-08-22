@@ -33,12 +33,30 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "关注",
-					"pathName": "pages/person_information/index"
+					"pathName": "pages/attention/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "粉丝",
+					"pathName": "pages/fans/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "给我点赞",
+					"pathName": "pages/like/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "餐匠公告",
+					"pathName": "pages/announcement/index"
 				}
 			]
 		}

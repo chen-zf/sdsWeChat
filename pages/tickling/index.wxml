@@ -1,0 +1,10 @@
+<!--pages/tickling/index.wxml-->
+<view class='container'>
+
+  <textarea class='tickling-textarea' placeholder="简述您的反馈内容..." />
+  <button class='tickling-btn'>提交</button>
+  <view class='tickling-explain'>
+    <text>说明： 13215.1.1231.2123</text>
+  </view>
+  
+</view>

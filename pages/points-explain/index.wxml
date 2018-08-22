@@ -1,0 +1,3 @@
+<!--pages/points-explain/index.wxml-->
+<import src="../../template/template.wxml" />
+<template is="explainsTemp" data="{{explainsData}}"></template>

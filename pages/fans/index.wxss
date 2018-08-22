@@ -1,0 +1,44 @@
+/* pages/fans/index.wxss */
+
+.fans-list {
+  width: 750rpx;
+}
+
+.fans-item {
+  display: flex;
+  justify-content: space-around;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  color: #333;
+  border-bottom: 2rpx solid #e7e7ea;
+}
+
+.u-head-icon {
+  align-self: center;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+}
+
+.u-name {
+  flex: 1;
+  margin-left: 20rpx;
+  font-weight: bolder;
+  color: rgba(0, 0, 0, 0.7);
+}
+.u-btn{
+    align-self: center;
+    width: 136rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    color: #999999;
+    border: 2rpx solid #CCC;
+    text-align: center;
+    border-radius: 24rpx;
+}

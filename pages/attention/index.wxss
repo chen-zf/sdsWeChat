@@ -6,6 +6,10 @@ page{
   margin-bottom: 98rpx;
 }
 .attention-topnav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -17,8 +21,9 @@ page{
   font-family:PingFang-SC-Bold;
   color:rgba(51,51,51,1);
   background:rgba(255,255,255,1);
+  z-index: 99999;
 }
-.attention-topnav>navigator{
+.attention-topnav .topnav-item{
   height: 110rpx;
   line-height: 110rpx;
   margin-right: 50rpx;
@@ -26,4 +31,7 @@ page{
 .attention-topnav-active{
   font-family:PingFang-SC-Heavy;
   color:rgba(255,101,51,1);
+}
+.attention-temp{
+  margin-top: 110rpx;
 }

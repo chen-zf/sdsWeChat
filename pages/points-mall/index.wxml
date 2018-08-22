@@ -10,17 +10,17 @@
 
   <!-- 中间菜单按钮 -->
   <view class="mall-nav">
-    <navigator>
+    <view class='nav-class'>
       <image src="../../image/points-mall/points@2x.png"></image>
       <view>积分
-        <text>26580</text>
+        <text class='news-tel-color'>26580</text>
       </view>
-    </navigator>
-    <navigator>
+   </view>
+    <navigator class='nav-class' url='/pages/exchange-record/index'>
       <image src="../../image/points-mall/record@2x.png"></image>
       <view>兑换记录</view>
     </navigator>
-    <navigator>
+    <navigator class='nav-class' url='/pages/points-explain/index'>
       <image src="../../image/points-mall/gain@2x.png"></image>
       <view>如何赚取积分</view>
     </navigator>

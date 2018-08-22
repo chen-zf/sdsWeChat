@@ -1,0 +1,5 @@
+/* pages/comment/index.wxss */
+@import "../../template/template.wxss";
+.container{
+  margin-bottom: 98rpx;
+}

@@ -1,0 +1,5 @@
+/* pages/hotlists/index.wxss */
+@import "../../template/template.wxss";
+page {
+  background: #fafafa;
+}

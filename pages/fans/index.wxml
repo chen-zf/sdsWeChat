@@ -1,0 +1,9 @@
+<view class="container">
+  <view class='fans-list' wx:for="{{fansData}}">
+    <view class="fans-item">
+      <image class='u-head-icon' src='../../image/my/header.png'></image>
+      <view class='u-name'>餐匠推荐</view>
+      <view class='u-btn'>关注</view>
+    </view>
+  </view>
+</view>

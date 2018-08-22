@@ -7,7 +7,7 @@
   margin:0px auto;
   width: 108rpx;
   height: 108rpx;
-  z-index: 99999;
+  /* z-index: 999999; */
 }
 .tabbar-box {
   display: flex;
@@ -24,21 +24,20 @@
   font-size: 20rpx;
   color: rgba(51, 51, 51, 1);
   font-family: PingFang-SC-Medium;
-  z-index: 99990;
-  overflow: visible !important;
+  /* z-index: 999990; */
 }
 .tabbar-box .active {
   color: rgba(233, 96, 52, 1);
 }
 
-.tabbar-box cover-view {
+.tabbar-box view {
   flex: 1;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
 }
 
-.tabbar-box cover-image {
+.tabbar-box image {
   align-self: center;
   width: 42rpx;
   height: 42rpx;
@@ -49,7 +48,6 @@
   top:-32rpx;
   font-size: 20rpx;
   text-align: center;
-  overflow: visible;
 }
 
 .issue-box .issue-img {
@@ -75,6 +73,7 @@
 }
 
 .my-buddha {
+  flex-basis: 60rpx;
   width: 60rpx;
   height: 60rpx;
   border-radius: 100%;
@@ -82,11 +81,16 @@
 }
 
 .listbox-top-r {
+  flex: 1;
   display: flex;
   flex-flow: column nowrap;
 }
 
 .listbox-topname {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
   font-family: PingFang-SC-Bold;
   font-weight: bold;
 }
@@ -104,12 +108,12 @@
 
 .listbox-video {
   position: relative;
+  top: 0;
   width: 686rpx;
   height: 356rpx;
   border-radius: 10rpx;
-  z-index: 10001;
+  /* z-index: 10001 !important; */
 }
-
 .listbox-masklayer {
   position: absolute;
   top: 0;
@@ -120,7 +124,7 @@
   background: rgba(0, 0, 0, 1);
   opacity: 0.2;
   border-radius: 10rpx;
-   z-index: 10002;
+   /* z-index: 10002; */
 }
 .video-status{
   display: flex;
@@ -157,4 +161,252 @@
 }
 .listbox-bottom>view{
   margin-bottom: 10rpx; 
+}
+
+/* 说明页面 */
+.explains-box{
+  width: 750rpx;
+  padding: 40rpx 32rpx 0;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+  box-sizing: border-box;
+}
+.explains-title{
+  font-size:30rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight: bold;
+}
+
+
+/* 精彩推荐 */
+.hotlists-box {
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  width: 750rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 2rpx 0 0 rgba(235, 235, 235, 1);
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(51, 51, 51, 1);
+}
+
+.hotlists-box .top {
+  display: flex;
+  padding: 0 32rpx;
+}
+
+.hotlists-box .top-head {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+}
+
+.hotlists-box .top-right {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.hotlists-box .top-uname {
+  font-size: 28rpx;
+  font-weight: bold;
+  font-family: PingFang-SC-Bold;
+  color: rgba(51, 51, 51, 1);
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.hotlists-box .top-time{
+  font-size:22rpx;
+  color:rgba(102,102,102,1);
+}
+.hotlists-box .center{
+  margin-top: 20rpx;
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.hotlists-box .bottom{
+   position: relative;
+  margin-top: 10rpx;
+  padding: 0 32rpx;
+}
+.hotlists-box .hotlists-video{
+  width:686rpx;
+  height:384rpx;
+  background:rgba(0,0,0,1);
+}
+.hotlists-box .top-btn{
+    font-size: 22rpx;
+    height:48rpx;
+    padding: 0 20rpx;
+    line-height: 48rpx;
+    color:rgba(255,255,255,1);
+    background:rgba(42,53,73,1);
+    border-radius:10rpx;
+}
+
+/* 给我点赞 */
+/* pages/like/index.wxss */
+
+/* pages/fans/index.wxss */
+
+.like-list {
+  width: 750rpx;
+}
+
+.like-date {
+  height: 98rpx;
+  line-height: 98rpx;
+  padding: 0 32rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  font-family: PingFang-SC-Bold;
+  color: rgba(51, 51, 51, 1);
+  border-bottom: 2rpx solid #e7e7ea;
+}
+
+.like-item {
+  display: flex;
+  height: 120rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Medium;
+   color:rgba(51,51,51,1);
+  border-bottom: 2rpx solid #e7e7ea;
+}
+
+.like-list .u-head-icon {
+  align-self: center;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+}
+
+.like-item-r {
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 20rpx;
+}
+.like-time{
+   font-size: 24rpx;
+  color:rgba(102,102,102,1);
+}
+
+
+/* 评论 */
+.commentTemp-box{
+  margin-bottom: 0;
+}
+.commentTemp-top-btn{
+  padding: 0 30rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  
+  border-radius:10rpx;
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+}
+.btn0{
+  background:rgba(255,132,50,1);
+}
+.btn1{
+    background: #ccc;
+}
+.pl-newtag{
+  position: absolute;
+  top: -2rpx;
+  left: -2rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.comment-box{
+    position: relative;
+    border-bottom: 2rpx solid #cccccc;
+    padding: 20rpx 0;
+    background: #f2f2f2;
+}
+.comment-top-like{
+  display: flex;
+}
+.like-img{
+  align-self: flex-start;
+  width: 32rpx;
+  height: 32rpx;
+}
+.like-number{
+  align-self: flex-start;
+}
+.comment-content{
+  margin:20rpx 32rpx 20rpx 120rpx;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(51,51,51,1);
+}
+.comment-content-pl{
+  font-size:30rpx;
+font-family:PingFang-SC-Medium;
+color:rgba(51,51,51,1);
+}
+.comment-reply-box{
+  padding: 20rpx 0;
+}
+.comment-reply-box>view{
+  margin-top: 20rpx;
+}
+.pl-color{
+  color:#4B8DE2;
+}
+
+/* 底部输入框 */
+.fixed-input-box{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14rpx 32rpx;
+  width: 750rpx;
+  height: 98rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f2f2f2;
+}
+.fixed-input{
+    flex: 1;
+    margin-right: 10rpx;
+    font-size: 28rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    padding-left: 22rpx;
+    background: #ffffff;
+    border: 0;
+    color: #333;
+    border-radius: 0;
+    border-bottom: 2rpx solid #fe794d;
+}
+.face-icon{
+  align-self: center;
+  width: 80rpx;
+  height: 80rpx;
+}
+.send-btn{
+  align-self: center;
+  height: 68rpx;
+  line-height: 68rpx;
+    border: 0;
+    background: #ff7832;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #fff;
+    padding: 0 40rpx;
+    margin-left: 10rpx;
 }

@@ -1,70 +1,202 @@
 <!-- 底部菜单栏 -->
 <template name="tabbarTemp">
-  <cover-view class='tabbar-box'>
-    <cover-view class="{{navActive[0]==1?'active':''}}" data-pagesNo="0" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[0]==1?'../../image/tabbar/index-hl@2x.png':'../../image/tabbar/index@2x.png'}}"></cover-image>
-      <cover-view>首页</cover-view>
-    </cover-view>
-    <cover-view class="{{navActive[1]==1?'active':''}}" data-pagesNo="1" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[1]==1?'../../image/tabbar/attention-hl@2x.png':'../../image/tabbar/attention@2x.png'}}"></cover-image>
-      <cover-view>关注</cover-view>
-    </cover-view>
-    <cover-view class="issue-box {{navActive[2]==1?'active':''}}" data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
-      <cover-image class='issue-img' src="{{navActive[2]==1?'../../image/tabbar/issue-hl@2x.png':'../../image/tabbar/issue@2x.png'}}"></cover-image>
-       <cover-view>发布</cover-view>
-    </cover-view>
-    <cover-view class="{{navActive[3]==1?'active':''}}" data-pagesNo="3" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[3]==1?'../../image/tabbar/news-hl@2x.png':'../../image/tabbar/news@2x.png'}}"></cover-image>
-      <cover-view>消息</cover-view>
-    </cover-view>
-    <cover-view class="{{navActive[4]==1?'active':''}}" data-pagesNo="4" bindtap='tabbarReLaunchFunc'>
-      <cover-image src="{{navActive[4]==1?'../../image/tabbar/my-hl@2x.png':'../../image/tabbar/my@2x.png'}}"></cover-image>
-      <cover-view>我的</cover-view>
-    </cover-view>
-  </cover-view>
-  <cover-view class='position-issueimg' data-pagesNo="2" bindtap='tabbarReLaunchFunc'><cover-image  src="../../image/tabbar/issue@2x.png"></cover-image></cover-view>
+  <view class='tabbar-box'>
+    <view class="{{navActive[0]==1?'active':''}}" data-pagesNo="0" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[0]==1?'../../image/tabbar/index-hl@2x.png':'../../image/tabbar/index@2x.png'}}"></image>
+      <view>首页</view>
+    </view>
+    <view class="{{navActive[1]==1?'active':''}}" data-pagesNo="1" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[1]==1?'../../image/tabbar/attention-hl@2x.png':'../../image/tabbar/attention@2x.png'}}"></image>
+      <view>关注</view>
+    </view>
+    <view class="issue-box {{navActive[2]==1?'active':''}}" data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
+      <image class='issue-img' src="{{navActive[2]==1?'../../image/tabbar/issue-hl@2x.png':'../../image/tabbar/issue@2x.png'}}"></image>
+      <view>发布</view>
+    </view>
+    <view class="{{navActive[3]==1?'active':''}}" data-pagesNo="3" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[3]==1?'../../image/tabbar/news-hl@2x.png':'../../image/tabbar/news@2x.png'}}"></image>
+      <view>消息</view>
+    </view>
+    <view class="{{navActive[4]==1?'active':''}}" data-pagesNo="4" bindtap='tabbarReLaunchFunc'>
+      <image src="{{navActive[4]==1?'../../image/tabbar/my-hl@2x.png':'../../image/tabbar/my@2x.png'}}"></image>
+      <view>我的</view>
+    </view>
+  </view>
+  <!-- <view class='position-issueimg' data-pagesNo="2" bindtap='tabbarReLaunchFunc'>
+    <image src="../../image/tabbar/issue@2x.png"></image>
+  </view> -->
 </template>
 
 <!-- 关注页面列表 -->
 <template name="attentionTemp">
-  <block wx:for="{{navActive}}" wx:key="key">
-  <view class='attention-listbox'>
-    <view class='listbox-top'>
-      <image class='my-buddha' src='../../image/my/header.png'></image>
-      <view class='listbox-top-r'>
-        <text class='listbox-topname'>赵无家的赵武</text>
-        <text class='listbox-toptime'>2018-07-25</text>
-      </view>
-    </view>
-    <view class='listbox-middle'>
-      <video class='listbox-video' src="" poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" controls="true">
-      </video>
-      <view class='listbox-masklayer'>dasdasdasdasdas</view>
-      <view class='video-status'>
-        <view>
-          <image src="../../image/attention/message@2x.png"></image>
-          <text>5555.5万</text>
-        </view>
-        <view>
-          <image src="../../image/attention/like-hl@2x.png"></image>
-          <text>5555.5万</text>
-        </view>
-        <view>
-          <image src="../../image/attention/share@2x.png"></image>
-          <text>分享</text>
+  <!-- <block wx:for="{{attentionData}}" wx:key="key">
+    <view class='attention-listbox'>
+      <view class='listbox-top'>
+        <image class='my-buddha' src='../../image/my/header.png'></image>
+        <view class='listbox-top-r'>
+          <text class='listbox-topname'>赵无家的赵武</text>
+          <text class='listbox-toptime'>2018-07-25</text>
         </view>
       </view>
-    </view>
-    <view class='listbox-bottom'>
+      <view class='listbox-middle'>
+        <video wx:if="{{curr_id == item.id}}" id="myVideo" src="{{item.src}}" poster="{{item.poster}}" objectFit="cover" controls></video>
+        <view wx:else>
+          <image class='listbox-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+          </image>
+          <view class="model-btn">
+            <view class="play-icon"></view>
+          </view>
+        </view>
+
+        <view class='listbox-masklayer'></view>
+        <view class='video-status'>
+          <view>
+            <image src="../../image/attention/message@2x.png"></image>
+            <text>5555.5万</text>
+          </view>
+          <view>
+            <image src="../../image/attention/like-hl@2x.png"></image>
+            <text>5555.5万</text>
+          </view>
+          <view>
+            <image src="../../image/attention/share@2x.png"></image>
+            <text>分享</text>
+          </view>
+        </view>
+      </view>
+      <view class='listbox-bottom'>
         <view>
-          <text class='listbox-color'>赵四</text>:<text>小猴紫演技棒棒</text>
+          <text class='listbox-color'>赵四</text>:
+          <text>小猴紫演技棒棒</text>
         </view>
         <view>
-          <text class='listbox-color'>赵无家的赵武</text>回复<text class='listbox-color'>赵四</text>:
+          <text class='listbox-color'>赵无家的赵武</text>回复
+          <text class='listbox-color'>赵四</text>:
           <text>对呀对呀，继续追剧</text>
         </view>
         <view class='listbox-color'>共10条评论》</view>
+      </view>
+    </view>
+  </block> -->
+</template>
+
+<!-- 说明页面 -->
+<template name="explainsTemp">
+  <view class='explains-box' wx:for="{{explainsData}}" wx:key="key">
+    <view class='explains-title'>{{item.title}}</view>
+    <view>{{item.content}}</view>
+  </view>
+</template>
+
+<!-- 精彩推荐 -->
+<template name="hotlistsTemp">
+  <view class='hotlists-box' wx:for="{{hotlistsData.listData}}" wx:key="index">
+    <view class='top'>
+      <image class='top-head' src='../../image/my/header.png'></image>
+      <view class='top-right'>
+        <text class='top-uname'>旭凤</text>
+        <text class='top-time'>16/09/09 18:08</text>
+      </view>
+      <view wx:if="{{hotlistsData.type==0}}" class='top-btn'>打赏了10000元</view>
+    </view>
+    <view class='center'>被“陨丹”断情绝爱的花神之女锦觅，在遇到了真爱——天帝之子旭凤的时候，却浑然不知爱情为何物，因此笑料百出。同时，夜神润玉为了替母报仇，谋划争夺天帝之位，却不知不觉中也已爱... </view>
+    <navigator class='bottom' url='/pages/blankpage/index'>
+      <image class='hotlists-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+      </image>
+      <view class="model-btn">
+        <view class="play-icon"></view>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+<!-- 给我点赞 -->
+<template name="likeTemp">
+  <view class='like-list' wx:for="{{likeData.data}}">
+    <view class='like-date'>{{item.title}}</view>
+    <view class="like-item" wx:for="{{item.data}}">
+      <image class='u-head-icon' src='../../image/my/header.png'></image>
+      <view class='like-item-r'>
+        <text class='u-name'>厚闪没</text>
+        <text class='like-time'>20:55  <text wx:if="{{likeData.type==0}}">给您点赞</text>
+        <text wx:else>看过我的</text></text>
+      </view>
     </view>
   </view>
-  </block>
+</template>
+
+<template name="commentTemp">
+  <view class='hotlists-box commentTemp-box' wx:for="{{commentData.listData}}" wx:key="index">
+    <view class='top'>
+      <image class='top-head' src='../../image/my/header.png'></image>
+      <view class='top-right'>
+        <text class='top-uname'>旭凤</text>
+        <text class='top-time'>16/09/09 18:08</text>
+      </view>
+      <view wx:if="{{commentData.type==0}}"  class='commentTemp-top-btn btn0'>关注</view>
+      <view wx:else  class='commentTemp-top-btn btn1'>删除</view>
+    </view>
+    <navigator class='bottom' url='/pages/blankpage/index'>
+      <image class='hotlists-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+      </image>
+      <view class="model-btn">
+        <view class="play-icon"></view>
+      </view>
+    </navigator>
+    <view class='comment-box'>
+    <image class='pl-newtag' src='../../image/comment/new@2x.png'></image>
+      <view class='top'>
+        <image class='top-head' src='../../image/my/header.png'></image>
+        <view class='top-right'>
+          <text class='top-uname'>旭凤</text>
+          <text class='top-time'>16/09/09 18:08</text>
+        </view>
+        <view class='comment-top-like'>
+          <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
+          <text class='like-number'>200</text>
+        </view>
+      </view>
+      <view class='comment-content'>
+        <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
+        <view class='comment-reply-box'>
+            <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
+           <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
+           <view class='pl-color'>共10条评论》</view>
+        </view>
+      </view>
+    </view>
+    <view class='comment-box'>
+      <image class='pl-newtag' src='../../image/comment/hot@2x.png'></image>
+      <view class='top'>
+        <image class='top-head' src='../../image/my/header.png'></image>
+        <view class='top-right'>
+          <text class='top-uname'>旭凤</text>
+          <text class='top-time'>16/09/09 18:08</text>
+        </view>
+        <view class='comment-top-like'>
+          <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
+          <text class='like-number'>200</text>
+        </view>
+      </view>
+      <view class='comment-content'>
+        <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
+        <view class='comment-reply-box'>
+            <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
+           <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
+           <view class='pl-color'>共10条评论》</view>
+        </view>
+      </view>
+    </view>
+  </view>
+   
+</template>
+
+
+<!-- 底部输入框 -->
+<template name="fixedInputTemp">
+  <view class='fixed-input-box'>
+      <input class='fixed-input' placeholder="输入您想说的..."></input>
+      <image class='face-icon' src='../../image/comment/smile@2x.png'></image>
+      <button class='send-btn'>发送</button>
+  </view>
 </template>
