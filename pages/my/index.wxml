@@ -86,7 +86,7 @@
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>
-    <navigator  url='/pages/blankpage/index'>
+    <navigator  url='/pages/audience/index'>
       <view class='my-nav-l'>
         <image src='../../image/my/my_watch@2x.png'></image>
         <text>看过我的</text>

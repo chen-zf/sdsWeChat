@@ -1,11 +1,11 @@
-// pages/like/index.js
+// pages/audience/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeData: { type: 0, data: [{ title: "8月1日", data: [1, 2] }, { title: "8月6日", data: [1, 2, 3] }, { title: "8月10日", data: [1, 2, 3, 4] }]}
+    likeData: { type: 1, data: [{ title: "8月1日", data: [1, 2] }, { title: "8月6日", data: [1, 2, 3] }, { title: "8月10日", data: [1, 2, 3, 4] }] }
   },
 
   /**
@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function () {
     wx.setNavigationBarTitle({
-      title: '给我点赞'
+      title: '看过我的'
     })
   },
 

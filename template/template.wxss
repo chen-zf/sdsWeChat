@@ -267,3 +267,52 @@
     background:rgba(42,53,73,1);
     border-radius:10rpx;
 }
+
+/* 给我点赞 */
+/* pages/like/index.wxss */
+
+/* pages/fans/index.wxss */
+
+.like-list {
+  width: 750rpx;
+}
+
+.like-date {
+  height: 98rpx;
+  line-height: 98rpx;
+  padding: 0 32rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  font-family: PingFang-SC-Bold;
+  color: rgba(51, 51, 51, 1);
+  border-bottom: 2rpx solid #e7e7ea;
+}
+
+.like-item {
+  display: flex;
+  height: 120rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Medium;
+   color:rgba(51,51,51,1);
+  border-bottom: 2rpx solid #e7e7ea;
+}
+
+.like-list .u-head-icon {
+  align-self: center;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+}
+
+.like-item-r {
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 20rpx;
+}
+.like-time{
+   font-size: 24rpx;
+  color:rgba(102,102,102,1);
+}

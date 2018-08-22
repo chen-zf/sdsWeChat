@@ -109,3 +109,17 @@
     </navigator>
   </view>
 </template>
+
+<!-- 给我点赞 -->
+<template name="likeTemp">
+<view class='like-list' wx:for="{{likeData.data}}">
+    <view class='like-date'>{{item.title}}</view>
+    <view class="like-item" wx:for="{{item.data}}">
+      <image class='u-head-icon' src='../../image/my/header.png'></image>
+      <view class='like-item-r'>
+        <text class='u-name'>厚闪没</text>
+        <text class='like-time'>20:55  <text wx:if="{{likeData.type==0}}">给您点赞</text><text wx:else>看过我的</text></text>
+      </view>
+    </view>
+  </view>
+  </template>

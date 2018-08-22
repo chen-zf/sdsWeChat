@@ -1,20 +1,18 @@
-// pages/like/index.js
+// pages/tickling/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeData: { type: 0, data: [{ title: "8月1日", data: [1, 2] }, { title: "8月6日", data: [1, 2, 3] }, { title: "8月10日", data: [1, 2, 3, 4] }]}
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-    wx.setNavigationBarTitle({
-      title: '给我点赞'
-    })
+  onLoad: function (options) {
+
   },
 
   /**

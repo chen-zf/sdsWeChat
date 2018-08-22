@@ -1,6 +1,7 @@
-<!--pages/like/index.wxml-->
+<!--pages/audience/index.wxml-->
 <import src="../../template/template"/>
 <view class="container">
     <template is="likeTemp" data="{{likeData}}"></template>
 </view>
+
 

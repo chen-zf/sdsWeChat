@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/audience/index",
+    "pages/tickling/index",
     "pages/thanks/index",
     "pages/hotlists/index",
     "pages/blankpage/index",
