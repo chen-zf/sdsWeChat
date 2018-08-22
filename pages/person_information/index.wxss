@@ -1,0 +1,105 @@
+/* pages/person_information/index.wxss */
+page{
+  background-color: #EEEEEE;
+}
+.top{
+  height: 150rpx;
+  display: flex;
+  padding: 20rpx 32rpx;
+  background-color: #ffffff;
+}
+.top-img{
+  width: 150rpx;
+  height: 150rpx;
+  overflow: hidden;
+  border-radius: 75rpx;
+}
+.top-img image{
+  width: 150rpx;
+}
+.top-title{
+  display: flex;
+  padding-left: 20rpx;
+  flex-direction: column;
+}
+.user-name{
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 10rpx;
+}
+.user-tip{
+  display: flex;
+  flex-direction: row;
+  margin-top: 24rpx;
+}
+.tip-item{
+  width: 75rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 20rpx;
+  color: #B3B3B3;
+  border: 1px solid #B3B3B3;
+  border-radius: 75rpx;
+  text-align: center;
+  margin-right: 10rpx;
+}
+.modlue-group{
+  display: flex;
+  background-color: #ffffff;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.modlue-item{
+  display: flex;
+  flex-flow: column;
+}
+.modlue-item image{
+  width: 48rpx;
+  margin: 0 auto;
+}
+.modlue-item text{
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  padding-bottom: 30rpx;
+}
+.modlue-group .active{
+  border-bottom: 3px solid #FF8132
+}
+
+.modlue-group .active-font{
+  color: #FF8132
+}
+
+.person-contrain{
+  margin-top: 20rpx;
+  background-color: #ffffff;
+}
+.basicItem{
+  display: flex;
+  border-bottom: 1px solid #E7E7EA;
+  font-size: 30rpx;
+  color: #333333;
+  padding: 36rpx 30rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basicItem .long{
+  width: 500rpx;
+}
+.pic-title{
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 20rpx 0 0 32rpx;
+}
+.pic-main{
+  padding: 20rpx 0 20rpx 32rpx;
+  border-bottom: 1px solid #E7E7EA;
+}
+.pic-main image{
+  width: 164rpx;
+  height: 164rpx;
+  margin: 10rpx 10rpx 0 0;
+}

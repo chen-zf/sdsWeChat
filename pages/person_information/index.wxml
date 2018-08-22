@@ -1,0 +1,71 @@
+<view class="top">
+  <view class='top-img'>
+      <image src='../../image/pic/head-img.png' mode='widthFix'></image>
+  </view>
+  <view class='top-title'>
+      <view class='user-name'>尹善英</view>
+      <view class='user-tip'>
+          <view class='tip-item'>美女</view>
+          <view class='tip-item'>模特</view>
+      </view> 
+  </view>
+</view>
+<view class='modlue-group'>
+    <block wx:for="{{modlueArray}}" wx:key="key" wx:for-index="idx">
+        <view data-num="{{idx}}" class='modlue-item {{item.active?"active":""}}' bindtap='TurnClickFunc'>
+            <image src='{{item.imgSrc}}' mode='widthFix'></image>
+            <text class='{{item.active?"active-font":""}}'>{{item.text}}</text>
+        </view>
+    </block>
+</view>
+<block wx:if="{{personType=='basic'}}">
+   <view class='person-contrain'>
+      <view class='basicItem'>
+          <view>姓名</view>
+          <view class='long'>尹善英</view>
+      </view>
+      <view class='basicItem'>
+          <view>年龄</view>
+          <view class='long'>28</view>
+      </view>
+      <view class='basicItem'>
+          <view>所在城市</view>
+          <view class='long'>韩国</view>
+      </view>
+      <view class='basicItem'>
+          <view>我的家乡</view>
+          <view class='long'>韩国</view>
+      </view>
+      <view class='basicItem'>
+          <view>视频公告</view>
+          <view class='long'>今晚八点，不见不散</view>
+      </view>
+      <view class='basicItem'>
+          <view>个人签名</view>
+          <view class='long'>几片云的晴空</view>
+      </view>
+      <view class='basicItem'>
+          <view>个人说明</view>
+          <view class='long'>几片云的晴空 除了感动还有微风</view>
+      </view>
+   </view>
+</block>
+<block wx:elif="{{personType=='more'}}">
+   <view class='person-contrain'>
+      <view class='pic-title'>证书图片</view>
+      <view class='pic-main'>
+          <image src='../../image/pic/head-img.png'></image>
+          <image src='../../image/pic/head-img.png'></image>
+          <image src='../../image/pic/head-img.png'></image>
+          <image src='../../image/pic/head-img.png'></image>
+          <image src='../../image/pic/head-img.png'></image>
+      </view>
+   </view>
+</block>
+<block wx:elif="{{personType=='videos'}}">
+   <view>3</view>
+</block>
+<block wx:else>
+   <view>查询不到该模块</view>
+</block>
+

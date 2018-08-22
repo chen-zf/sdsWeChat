@@ -38,7 +38,7 @@
 				{
 					"id": -1,
 					"name": "关注",
-					"pathName": "pages/attention/index"
+					"pathName": "pages/person_information/index"
 				}
 			]
 		}

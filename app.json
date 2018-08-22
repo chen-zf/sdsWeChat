@@ -1,13 +1,13 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/info-center/index",
     "pages/attention/index",
     "pages/my/index",
     "pages/points-mall/index",
     "pages/publish_video/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/person_information/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
