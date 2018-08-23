@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/withdraw/index",
+    "pages/wallet/index",
     "pages/redact/index",
     "pages/myvideo/index",
     "pages/comment/index",
@@ -15,7 +18,6 @@
     "pages/announcement/index",
     "pages/like/index",
     "pages/fans/index",
-    "pages/index/index",
     "pages/info-center/index",
     "pages/attention/index",
     "pages/my/index",

@@ -1,0 +1,42 @@
+<!--pages/withdraw/index.wxml-->
+<view class='container'>
+  <view class='withdraw-ul'>
+    <view class='withdraw-li'>
+        <text>提现方式</text>
+        <text>微信</text>
+    </view>
+  </view>
+
+  <view class='withdraw-ul'>
+    <view class='withdraw-li'>
+        <text>提现金额</text>
+        <view class='tx-flex-box'><input class='tx-input' type='number' placeholder='输入提现金额'/>元</view>
+    </view>
+    
+  </view>
+
+  <view class='withdraw-ul'>
+     <view class='withdraw-li'>
+        <text>礼物总额</text>
+        <text class='money-color'>100元</text>
+    </view>
+     <view class='withdraw-li'>
+        <text>可用金额</text>
+        <text class='money-color'>100元</text>
+    </view>
+     <view class='withdraw-li'>
+        <text>手续费</text>
+        <text>0.06%</text>
+    </view>
+    <view class='withdraw-li'>
+        <text>实际到账金额</text>
+        <text>99.94元</text>
+    </view>
+  </view>
+
+  <view class='withdraw-btn'>提现</view>
+  <view class='withdraw-explain'>
+    <text>说明:</text>
+    <text >13215.1.1231.2123</text>
+  </view>
+</view>

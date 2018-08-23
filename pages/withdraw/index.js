@@ -1,11 +1,11 @@
-// pages/comment/index.js
+// pages/withdraw/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    commentData: { type: 1, listData: [1, 2, 3, 4, 5, 6] }
+
   },
 
   /**
@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '我的视频',
+      title: '提现',
     })
   },
 
