@@ -57,7 +57,12 @@
 					"id": -1,
 					"name": "餐匠公告",
 					"pathName": "pages/announcement/index"
-				}
+				},
+        {
+          "id": -1,
+          "name": "查询个人信息",
+          "pathName": "pages/person_information/index"
+        }
 			]
 		}
 	}

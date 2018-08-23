@@ -73,7 +73,6 @@ page{
 
 .person-contrain{
   margin-top: 20rpx;
-  background-color: #ffffff;
 }
 .basicItem{
   display: flex;
@@ -83,12 +82,14 @@ page{
   padding: 36rpx 30rpx;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffffff;
 }
 
 .basicItem .long{
   width: 500rpx;
 }
 .pic-title{
+  background-color: #ffffff;
   color: #333333;
   font-size: 28rpx;
   font-weight: bold;
@@ -97,9 +98,100 @@ page{
 .pic-main{
   padding: 20rpx 0 20rpx 32rpx;
   border-bottom: 1px solid #E7E7EA;
+  background-color: #ffffff;
 }
 .pic-main image{
   width: 164rpx;
   height: 164rpx;
   margin: 10rpx 10rpx 0 0;
+}
+.person-contrain .block{
+  margin-bottom: 20rpx;
+  background-color: #ffffff;
+  padding: 20rpx 32rpx;
+}
+.person-contrain .block .block-top{
+  display: flex;
+}
+.block-top .img-view{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.block-top .img-view image{
+  width: 60rpx;
+}
+.block-top .title-view{
+  display: flex;
+  flex-flow: column;
+  margin-left: 20rpx;
+  align-content: center;
+}
+
+.block-top .title-view .title{
+  font-size:28rpx;
+  color: #333333;
+  font-weight: bold
+}
+
+.block-top .title-view .time{
+  font-size: 22rpx;
+  color: #666666;
+}
+.img-title{
+  font-size: 26rpx;
+  color: #333333;
+  margin: 20rpx 0 10rpx 0
+}
+.block-main{
+  position: relative;
+  height: 384rpx;
+  overflow: hidden;
+  background-color: #B3B3B3
+}
+.block-main image{
+  width: 686rpx;
+}
+
+.block-main .tag{
+  width:82rpx;
+  height:38rpx;
+  background-color: #30C3DE;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  color: #ffffff;
+  font-size: 22rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 38rpx;
+}
+
+.block-main .share{
+  position: absolute;
+  bottom: 10rpx;
+  right: 20rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+}
+
+.block-main .share image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.block-main .like{
+  position: absolute;
+  bottom: 10rpx;
+  right: 138rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+}
+
+.block-main .like image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
 }

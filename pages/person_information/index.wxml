@@ -63,7 +63,32 @@
    </view>
 </block>
 <block wx:elif="{{personType=='videos'}}">
-   <view>3</view>
+   <view class='person-contrain'>
+      <view class='block' wx:for="{{blockList}}" wx:key="key">
+        <view class='block-top'>
+            <view class='img-view'>
+            <image src='../../image/pic/head-img.png' mode='widthFix'></image>
+            </view>
+            <view class='title-view'>
+                <view class='title'>虎头帮亲</view>
+                <view class='time'>16/09/09 09:56</view>
+            </view>
+        </view>
+        <view class='img-title'>我的厨艺帮</view>
+        <view class='block-main'>
+            <image src='../../image/pic/img.png' mode='widthFix'></image>
+            <view class='tag'>秀设备</view>
+            <view class='like'>
+                <image src='../../image/icon/like@2x.png'></image>
+                <text>1.6w</text>
+            </view>
+            <view class='share'>
+                <image src='../../image/icon/share@2x.png'></image>
+                <text>3200</text>
+            </view>
+        </view>
+      </view>  
+   </view>
 </block>
 <block wx:else>
    <view>查询不到该模块</view>
