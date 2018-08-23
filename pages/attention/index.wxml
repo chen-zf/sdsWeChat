@@ -6,7 +6,7 @@
         <view class='listbox-top'>
           <image class='my-buddha' src='../../image/my/header.png'></image>
           <view class='listbox-top-r'>
-            <text class='listbox-topname'>{{attentionData}}赵无家的赵武</text>
+            <text class='listbox-topname'>锦觅&旭凤</text>
             <text class='listbox-toptime'>2018-07-25</text>
           </view>
         </view>

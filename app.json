@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/redact/index",
     "pages/myvideo/index",
     "pages/comment/index",
     "pages/audience/index",

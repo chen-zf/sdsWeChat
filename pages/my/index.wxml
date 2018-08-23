@@ -9,7 +9,7 @@
           <text class='my-name'>尹善英</text>
           <view class='my-vip'>普通会员</view>
         </view>
-        <navigator class='main-top-r' url='/pages/blankpage/index'>
+        <navigator class='main-top-r' url='/pages/redact/index'>
           <image class='setting-icon' src='../../image/my/my_set@2x.png'></image>
         </navigator>
 
@@ -39,7 +39,7 @@
           <image src="../../image/my/my_vip@2x.png"></image>
           <text>会员中心</text>
         </navigator>
-        <navigator  url='/pages/blankpage/index'>
+        <navigator  url='/pages/myvideo/index'>
           <image src="../../image/my/my_video@2x.png"></image>
           <text>我的视频</text>
         </navigator>
