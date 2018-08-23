@@ -25,7 +25,8 @@ Page({
         type: "videos"
       }
     ],
-    personType:"basic"
+    personType:"basic",
+    blockList:[0,0,0]
   },
   TurnClickFunc:function(e){
     var index = e.currentTarget.dataset.num;

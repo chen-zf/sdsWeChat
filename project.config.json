@@ -171,7 +171,12 @@
 					"id": -1,
 					"name": "提现",
 					"pathName": "pages/withdraw/index"
-				}
+				},
+        {
+          "id": -1,
+          "name": "查询个人信息",
+          "pathName": "pages/person_information/index"
+        }
 			]
 		}
 	}
