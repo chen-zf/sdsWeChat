@@ -26,7 +26,9 @@
     "pages/logs/logs",
     "pages/person_information/index",
     "pages/release-requirements/index",
-    "pages/apply-direct-seeding/index"
+    "pages/apply-direct-seeding/index",
+    "pages/apply_cooperate/index",
+    "pages/one_contact/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

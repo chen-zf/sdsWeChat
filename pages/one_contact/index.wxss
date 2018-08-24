@@ -1,0 +1,44 @@
+.contrain{
+  background-color: #ffffff;
+}
+.item{
+  display: flex;
+  border-bottom: 1px solid #E7E7EA;
+  padding: 32rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.item .key{
+  font-size: 28rpx;
+  color: #333333;
+}
+.item .value{
+  font-size: 28rpx;
+  color: #333333;
+  width: 410rpx;
+}
+.contrain .btn{
+  width: 686rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  background-color: #FF7732;
+  border: 0;
+  border-radius: 10rpx;
+  font-size: 40rpx;
+  color: #ffffff;
+  margin-top:  32rpx;
+}
+.label{
+  color: #999999;
+  font-size: 28rpx;
+}
+.label radio{
+  transform:scale(0.7);
+}
+.remark{
+  color: #999999;
+  font-size: 20rpx;
+  margin-top: 40rpx;
+  padding: 0 40rpx;
+}

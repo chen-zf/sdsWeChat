@@ -1,0 +1,21 @@
+<view class='contrain'>
+    <view class='item'>
+      <view class='key'>输入您的名字：</view>
+      <view class='value'>
+          <input></input>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>输入您的电话：</view>
+      <view class='value'>
+          <input></input>
+      </view>
+    </view>
+    <view class='item'>
+      <textarea placeholder='简述您的需求...' placeholder-style='font-size:28rpx;' style='font-size:28rpx;'>
+      </textarea>
+    </view>
+    <button class='btn'>提交</button>
+    <view class='remark'>注:餐匠平台为了保护用户权益,避兔为了用户的隐私泄露迸行用户信息平台统一管理。您输入您的需求和联系方式我们将第一时间会联系您以确保您的权益
+</view>
+</view>
