@@ -1,0 +1,9 @@
+<!--pages/reward-money/index.wxml-->
+<view class='container'>
+  <view class='reward-box'>
+      <view class="reward-item {{index==activeIndex?'reward-active':''}}" wx:for="{{rewardData}}" wx:key="index" data-index="{{index}}" bindtap='selectReward'>
+        <text class='reward-text'>{{item}}元</text>
+      </view>
+  </view>
+  <button class='reward-btn'>确认打赏</button>
+</view>
