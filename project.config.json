@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 27,
 			"list": [
 				{
 					"id": -1,
@@ -170,13 +170,38 @@
 				{
 					"id": -1,
 					"name": "提现",
-					"pathName": "pages/withdraw/index"
+					"pathName": "pages/withdraw/index",
+					"query": ""
 				},
-        {
-          "id": -1,
-          "name": "查询个人信息",
-          "pathName": "pages/person_information/index"
-        }
+				{
+					"id": -1,
+					"name": "查询个人信息",
+					"pathName": "pages/person_information/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "礼物",
+					"pathName": "pages/reward-gift/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打赏",
+					"pathName": "pages/reward-money/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打赏",
+					"pathName": "pages/reward-gifr/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打赏",
+					"pathName": "pages/reward-gift/index"
+				}
 			]
 		}
 	}
