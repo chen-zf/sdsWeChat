@@ -1,0 +1,24 @@
+<!--pages/wallet/index.wxml--> 
+<view class='container'>
+  <view class='wallet-box'>
+    <view class='wallet-top'>
+        <navigator class='walletbox wallet-top-l' url='/pages/withdraw/index'>
+          <image src='../../image/wallet/gift@2x.png'></image>
+          <text>收到的礼物</text>
+        </navigator>
+        <navigator class='walletbox wallet-top-r' url='/pages/withdraw/index'>
+          <image src='../../image/wallet/reward@2x.png'></image>
+          <text>收到的打赏</text>
+        </navigator>
+    </view>
+    <view class='wallet-main'>
+          <view class='wallet-main-top'>
+            打赏记录
+          </view>
+          <view class='wallet-main-item'wx:for="{{rewardData}}" wx:key="index">
+            <text>{{item}}</text>
+            <text class='reply-btn'>回复感谢</text>
+          </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+/* pages/withdraw/index.wxss */
+
+page {
+  background: #fafafa;
+}
+
+.withdraw-ul {
+  width: 750rpx;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(119, 119, 119, 1);
+  border-top: 2rpx solid rgba(235, 235, 235, 1);
+}
+
+.withdraw-li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid rgba(235, 235, 235, 1);
+  background: #fff;
+}
+
+.withdraw-btn {
+  width: 686rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  background-color: #ff7732;
+  border: 0;
+  border-radius: 10rpx;
+  font-size: 40rpx;
+  font-family: PingFang-SC-Medium;
+  color: #fff;
+  margin: 34rpx 32rpx;
+}
+.withdraw-explain{
+  width: 750rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  display: flex;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(153,153,153,1);
+}
+.tx-flex-box{
+  display: flex;
+}
+.money-color{
+  color:rgba(222,83,76,1);
+}
+.tx-input{
+  height: 90rpx;
+  align-self: center;
+  text-align: right;
+  text-indent: 10rpx;
+}

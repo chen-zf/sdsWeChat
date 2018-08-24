@@ -1,0 +1,64 @@
+/* pages/wallet/index.wxss */
+.wallet-box{
+ width:750rpx;
+ font-size:24rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}
+.wallet-top{
+  display: flex;
+  padding: 0 32rpx;
+  justify-content: space-around;
+  height:220rpx;
+  background:rgba(248,242,242,1);
+  font-size:32rpx;
+font-family:PingFang-SC-Bold;
+color:rgba(255,255,255,1);
+}
+.wallet-top .walletbox{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width:330rpx;
+  height:140rpx;
+  border-radius:6rpx;
+}
+.walletbox>image{
+  align-self: center;
+  width: 88rpx;
+  height: 88rpx;
+  margin-right: 14rpx;
+}
+.walletbox>text{
+  align-self: center;
+}
+.wallet-top-l{
+  background:rgba(255,175,78,1);
+  box-shadow: 0 20rpx 80rpx 0 rgba(233, 188, 136, 0.5);
+}
+
+.wallet-top-r{
+  background:rgba(255,146,89,1);
+  box-shadow: 0 20rpx 80rpx 0 rgba(226, 162, 112, 0.5);
+}
+.wallet-main-top{
+    padding: 20rpx 32rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    font-family: PingFang-SC-Bold;
+    color: #333333;
+    background: #fafafa;
+    border-bottom: 2rpx solid #E7E7EA;
+}
+.wallet-main-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #fffeff;
+    border-bottom: 2rpx solid #E7E7EA;
+}
+.reply-btn{
+  color: #3a78ff;
+}

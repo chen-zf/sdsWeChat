@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -56,7 +56,121 @@
 				{
 					"id": -1,
 					"name": "餐匠公告",
-					"pathName": "pages/announcement/index"
+					"pathName": "pages/announcement/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于餐匠",
+					"pathName": "pages/about-me/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "餐匠助手",
+					"pathName": "pages/assistant/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "兑换记录",
+					"pathName": "pages/exchange-record/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "积分商城",
+					"pathName": "pages/points-mall/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "空白页面",
+					"pathName": "pages/blankpage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "精彩推荐",
+					"pathName": "pages/hotlists/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "精彩推荐",
+					"pathName": "pages/attention/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "精彩推荐",
+					"pathName": "pages/hotlists/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打赏感谢",
+					"pathName": "pages/thanks/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "看过我的",
+					"pathName": "pages/audience/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "反馈",
+					"pathName": "pages/tickling/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评论",
+					"pathName": "pages/comment/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的视频",
+					"pathName": "pages/myvideo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑",
+					"pathName": "pages/redact/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的钱包",
+					"pathName": "pages/wallet/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/withdraw/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/attention/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/withdraw/index"
 				},
         {
           "id": -1,

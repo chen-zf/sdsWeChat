@@ -112,7 +112,7 @@
 
 <!-- 给我点赞 -->
 <template name="likeTemp">
-  <view class='like-list' wx:for="{{likeData.data}}">
+  <view class='like-list' wx:for="{{likeData.data}}" wx:key="index">
     <view class='like-date'>{{item.title}}</view>
     <view class="like-item" wx:for="{{item.data}}">
       <image class='u-head-icon' src='../../image/my/header.png'></image>
