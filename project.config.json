@@ -62,6 +62,11 @@
           "id": -1,
           "name": "查询个人信息",
           "pathName": "pages/person_information/index"
+        },
+        {
+          "id": -1,
+          "name": "发布需求",
+          "pathName": "pages/apply-direct-seeding/index"
         }
 			]
 		}

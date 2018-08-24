@@ -1,0 +1,45 @@
+<view class='contrain'>
+    <view class='item'>
+      <view class='key'>输入您的名字：</view>
+      <view class='value'>
+          <input></input>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>输入您的电话：</view>
+      <view class='value'>
+          <input></input>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>输入您的直播类型:</view>
+      <view class='value'>
+          <radio-group class="radio-group">
+              <label class='label' wx:for="{{radioTypeItem}}" wx:key="key">
+                  <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
+              </label>
+          </radio-group>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>选择预计直播时间:</view>
+      <view class='value'>
+          
+      </view>
+    </view>
+    <view class='item'>
+      <view class='key'>是否需要直播推广:</view>
+      <view class='value'>
+          <radio-group class="radio-group">
+              <label class='label' wx:for="{{radioIfItem}}" wx:key="key">
+                  <radio value='{{item.name}}' checked='{{item.checked}}' color='#E8554D' />{{item.value}}
+              </label>
+          </radio-group>
+      </view>
+    </view>
+    <view class='item'>
+      <textarea placeholder='简述您的直播目的' placeholder-style='font-size:28rpx;' style='font-size:28rpx;'>
+      </textarea>
+    </view>
+    <button class='btn'>提交</button>
+</view>
