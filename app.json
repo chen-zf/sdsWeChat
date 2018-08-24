@@ -25,6 +25,8 @@
     "pages/publish_video/index",
     "pages/logs/logs",
     "pages/person_information/index",
+    "pages/reward-gift/index",
+    "pages/reward-money/index",
     "pages/release-requirements/index",
     "pages/apply-direct-seeding/index",
     "pages/apply_cooperate/index",

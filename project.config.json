@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 27,
 			"list": [
 				{
 					"id": -1,
@@ -170,8 +170,40 @@
 				{
 					"id": -1,
 					"name": "提现",
-					"pathName": "pages/withdraw/index"
+					"pathName": "pages/withdraw/index",
+					"query": ""
 				},
+				{
+					"id": -1,
+					"name": "查询个人信息",
+					"pathName": "pages/person_information/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "礼物",
+					"pathName": "pages/reward-gift/index",
+					"query": ""
+				},
+<<<<<<< HEAD
+				{
+					"id": -1,
+					"name": "打赏",
+					"pathName": "pages/reward-money/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打赏",
+					"pathName": "pages/reward-gifr/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打赏",
+					"pathName": "pages/reward-gift/index"
+				}
+=======
         {
           "id": -1,
           "name": "查询个人信息",
@@ -182,6 +214,7 @@
           "name": "视频详情页",
           "pathName": "pages/play-video/index"
         }
+>>>>>>> 19f13291c2ef67d1913d5d05b93239fa003031fd
 			]
 		}
 	}
