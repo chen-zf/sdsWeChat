@@ -179,8 +179,8 @@
         },
         {
           "id": -1,
-          "name": "发布需求",
-          "pathName": "pages/one_contact/index"
+          "name": "视频详情页",
+          "pathName": "pages/play-video/index"
         }
 			]
 		}
