@@ -31,7 +31,8 @@
     "pages/apply-direct-seeding/index",
     "pages/apply_cooperate/index",
     "pages/one_contact/index",
-    "pages/play-video/index"
+    "pages/play-video/index",
+    "pages/goods_detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

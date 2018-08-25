@@ -185,7 +185,6 @@
 					"pathName": "pages/reward-gift/index",
 					"query": ""
 				},
-<<<<<<< HEAD
 				{
 					"id": -1,
 					"name": "打赏",
@@ -202,8 +201,7 @@
 					"id": -1,
 					"name": "打赏",
 					"pathName": "pages/reward-gift/index"
-				}
-=======
+				},
         {
           "id": -1,
           "name": "查询个人信息",
@@ -211,10 +209,9 @@
         },
         {
           "id": -1,
-          "name": "视频详情页",
-          "pathName": "pages/play-video/index"
+          "name": "商品详情页",
+          "pathName": "pages/goods_detail/index"
         }
->>>>>>> 19f13291c2ef67d1913d5d05b93239fa003031fd
 			]
 		}
 	}
