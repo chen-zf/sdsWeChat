@@ -177,6 +177,10 @@
   font-family:PingFang-SC-Bold;
   font-weight: bold;
 }
+.explains-content{
+  margin-top: 18rpx;
+  text-indent: 40rpx;
+}
 
 
 /* 精彩推荐 */

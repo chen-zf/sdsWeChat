@@ -41,9 +41,12 @@ Page({
   },
 
   onReachBottom(){
-    this.setData({
-      attentionData: this.data.attentionData.concat(this.data.data[1])
-    })
+    let that = this;
+    setTimeout(function(){
+      that.setData({
+        attentionData: that.data.attentionData.concat(that.data.data[1])
+      })
+    },2000)
   },
   tabbarReLaunchFunc: tempObj.tabbarReLaunchFunc,
   navSwitchFunc(event){
@@ -58,7 +61,6 @@ Page({
       scrollTop: 0,
       duration: 0
     })
-
 
   }
 })

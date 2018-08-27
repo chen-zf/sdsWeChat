@@ -84,7 +84,7 @@
 <template name="explainsTemp">
   <view class='explains-box' wx:for="{{explainsData}}" wx:key="key">
     <view class='explains-title'>{{item.title}}</view>
-    <view>{{item.content}}</view>
+    <view class='explains-content'>{{item.content}}</view>
   </view>
 </template>
 

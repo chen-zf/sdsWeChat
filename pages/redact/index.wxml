@@ -4,7 +4,7 @@
     <view class='redact-li redact-head'>
       <text class='li-text'>头像</text>
       <view></view>
-      <image src='../../image/my/header.png'></image>
+      <image src='{{imageSrc}}' bindtap='setMyheadFunc'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>昵称</text>
@@ -120,4 +120,5 @@
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
+  <button class='gift-btn'>保存</button>
 </view>

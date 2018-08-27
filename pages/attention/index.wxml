@@ -12,9 +12,9 @@
         </view>
         <view class='listbox-middle'>
           <view data-id="{{item.id}}" bindtap="videoPlay">
-            <video class='listbox-video' wx:if="{{curr_id == item.id}}" id="myVideo" src="{{item.src}}" poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" objectFit="cover" controls></video>
+            <video class='listbox-video' wx:if="{{curr_id == item.id}}" id="myVideo" src="{{item.src}}" poster="http://jsanntq.cn/assets/timg.jpg" objectFit="cover" controls></video>
             <view wx:else>
-              <image class='listbox-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+              <image class='listbox-video' src="http://jsanntq.cn/assets/timg.jpg" mode="aspectFill">
               </image>
               <view class="model-btn">
                 <view class="play-icon"></view>
@@ -58,4 +58,5 @@
     <view class="topnav-item {{topnavActive[2]==1?'attention-topnav-active':''}}" data-typeNo="2" bindtap='navSwitchFunc'>设备</view>
   </view>
 </view>
+
 <template is="tabbarTemp" data="{{...tabbarData}}"></template>

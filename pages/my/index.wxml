@@ -31,25 +31,25 @@
   <view class='my-topnav-box'>
     <view class='my-topnav'>
       <view class='my-topnav-top'>
-        <navigator url='/pages/fans/index'>
+        <navigator url='/pages/fans/index' hover-class="none">
           <image src="../../image/my/my_attention@2x.png"></image>
           <text>关注我的</text>
         </navigator>
-        <navigator url='/pages/blankpage/index'>
+        <navigator url='/pages/blankpage/index' hover-class="none">
           <image src="../../image/my/my_vip@2x.png"></image>
           <text>会员中心</text>
         </navigator>
-        <navigator  url='/pages/myvideo/index'>
+        <navigator  url='/pages/myvideo/index' hover-class="none">
           <image src="../../image/my/my_video@2x.png"></image>
           <text>我的视频</text>
         </navigator>
       </view>
       <view class='my-topnav-bottom'>
-        <navigator  url='/pages/myvideo/index'>
+        <navigator  url='/pages/myvideo/index' hover-class="none">
           <image src="../../image/my/my_issue@2x.png"></image>
           <text>发布需求</text>
         </navigator>
-        <navigator  url='/pages/blankpage/index'>
+        <navigator  url='/pages/blankpage/index' hover-class="none">
           <image src="../../image/my/my_application@2x.png"></image>
           <text>申请直播</text>
         </navigator>

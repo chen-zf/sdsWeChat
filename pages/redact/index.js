@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imageSrc:'../../image/my/header.png',
     sexIndex:'',
     feelInex:'',
     redactDate:'2018-09-01',
@@ -12,6 +13,33 @@ Page({
     regionHome: ['广东省', '梅州市', '丰顺县'],
     sexPicker:['男','女'],
     feelPicker:['单身','热恋','已婚','离异']
+  },
+  setMyheadFunc(){
+    wx.chooseImage({
+      success: function(res) {
+        console.log(res)
+        var imageSrc = res.tempFilePaths[0]
+        var uploadTask = wx.uploadFile({
+          url: 'www.jsanntq.com',
+          filePath: imageSrc,
+          name: 'data',
+          success(res){
+            wx.showToast({
+              title: '上传成功',
+              icon:'success',
+              duration: 1000
+            })
+          },
+          fail({errMsg}){
+            wx.showToast({
+              title: '上传失败',
+              icon: 'fail',
+              duration: 1000
+            })
+          }
+        })
+      },
+    })  
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

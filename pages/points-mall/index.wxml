@@ -16,11 +16,11 @@
         <text class='news-tel-color'>26580</text>
       </view>
    </view>
-    <navigator class='nav-class' url='/pages/exchange-record/index'>
+    <navigator class='nav-class' url='/pages/exchange-record/index' hover-class="none">
       <image src="../../image/points-mall/record@2x.png"></image>
       <view>兑换记录</view>
     </navigator>
-    <navigator class='nav-class' url='/pages/points-explain/index'>
+    <navigator class='nav-class' url='/pages/points-explain/index' hover-class="none">
       <image src="../../image/points-mall/gain@2x.png"></image>
       <view>如何赚取积分</view>
     </navigator>

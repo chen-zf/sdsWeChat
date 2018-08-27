@@ -58,3 +58,16 @@ page{
   width: 20rpx;
   height: 34rpx;
 }
+.gift-btn {
+  width: 686rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  background-color: rgba(9,187,7,1);
+  border: 0;
+  border-radius: 10rpx;
+  font-size: 40rpx;
+  font-family: PingFang-SC-Medium;
+  color: #fff;
+  margin: 34rpx 32rpx;
+}
