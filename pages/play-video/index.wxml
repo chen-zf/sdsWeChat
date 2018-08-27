@@ -1,0 +1,118 @@
+<import src="../../template/template"/>
+<view class='top-main'>
+  <image src='../../image/pic/play_video_img.jpg' mode='widthFix' class='top_bg'></image>
+  <view class='follow'>
+      <view class='head'>
+          <image src='../../image/pic/head-img.png' mode='widthFix'></image>
+      </view>
+      <view class='title'>
+          <text>我是厨神</text>
+          <text>200km</text>
+      </view>
+      <button>+关注</button>
+  </view>
+  <view class='sum'>播放量2000万</view>
+  <navigator class='main-top-r' url='/pages/index/index'>
+    <image src='../../image/icon/close_icon.png' class='close'></image>
+  </navigator>
+  <view class='left'>
+      <view class='leftItem'>
+          <image src='../../image/icon/play_video_icon1.png'></image>
+          <text>4438</text>
+      </view>
+      <view class='leftItem'>
+          <image src='../../image/icon/play_video_icon2.png'></image>
+          <text>4438</text>
+      </view>
+      <view class='leftItem'>
+          <image src='../../image/icon/play_video_icon3.png'></image>
+          <text>4438</text>
+      </view>
+  </view>
+  <view class='right'>
+      <view class='rightItem'>
+          <image src='../../image/icon/play_video_icon4.png'></image>
+          <text>4438</text>
+      </view>
+      <view class='rightItem'>
+          <image src='../../image/icon/play_video_icon5.png'></image>
+          <text>4438</text>
+      </view>
+  </view>
+</view>
+<view class='title-main'>
+    <view class='title-top'>
+        <text>我的厨艺</text>
+        <view>详情</view>
+    </view>
+    <view class='content'>副标题副标题副标题副标题副标题副标题副题副标题副题副标题副标题</view>
+</view>
+<view class='hotlists-box'>
+    <view class='comment-box'>
+      <image class='pl-newtag' src='../../image/comment/new@2x.png'></image>
+        <view class='top'>
+          <image class='top-head' src='../../image/my/header.png'></image>
+          <view class='top-right'>
+            <text class='top-uname'>旭凤</text>
+            <text class='top-time'>16/09/09 18:08</text>
+          </view>
+          <view class='comment-top-like'>
+            <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
+            <text class='like-number'>200</text>
+          </view>
+        </view>
+        <view class='comment-content'>
+          <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
+          <view class='comment-reply-box'>
+              <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
+            <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
+            <view class='pl-color'>共10条评论》</view>
+          </view>
+        </view>
+    </view>
+    <view class='comment-box'>
+      <image class='pl-newtag' src='../../image/comment/new@2x.png'></image>
+        <view class='top'>
+          <image class='top-head' src='../../image/my/header.png'></image>
+          <view class='top-right'>
+            <text class='top-uname'>旭凤</text>
+            <text class='top-time'>16/09/09 18:08</text>
+          </view>
+          <view class='comment-top-like'>
+            <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
+            <text class='like-number'>200</text>
+          </view>
+        </view>
+        <view class='comment-content'>
+          <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
+          <view class='comment-reply-box'>
+              <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
+            <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
+            <view class='pl-color'>共10条评论》</view>
+          </view>
+        </view>
+    </view>
+    <view class='comment-box'>
+      <image class='pl-newtag' src='../../image/comment/new@2x.png'></image>
+        <view class='top'>
+          <image class='top-head' src='../../image/my/header.png'></image>
+          <view class='top-right'>
+            <text class='top-uname'>旭凤</text>
+            <text class='top-time'>16/09/09 18:08</text>
+          </view>
+          <view class='comment-top-like'>
+            <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
+            <text class='like-number'>200</text>
+          </view>
+        </view>
+        <view class='comment-content'>
+          <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
+          <view class='comment-reply-box'>
+              <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
+            <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
+            <view class='pl-color'>共10条评论》</view>
+          </view>
+        </view>
+    </view>
+</view>
+<template is="fixedInputTemp"></template>

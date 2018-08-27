@@ -48,7 +48,7 @@
     <scroll-view scroll-x style='width:750rpx;'>
       <view class='floor-swiper'>
         <block wx:for='{{proout}}'>
-          <navigator class='floor-swiper-item'>
+          <navigator class='floor-swiper-item' url='/pages/goods_detail/index'>
             <image src='http://jsanntq.cn/assets/mobile.png'></image>
             <view>小米移动电源</view>
             <view>
@@ -68,7 +68,7 @@
   <view class="mall-proout-hot">
     <block wx:for='{{proout}}'>
       <view>
-        <navigator class='floor-swiper-item'>
+        <navigator class='floor-swiper-item' url='/pages/goods_detail/index'>
           <image class='floor-proout-img' src='http://jsanntq.cn/assets/mobile.png'></image>
           <view>小米移动电源</view>
           <view>

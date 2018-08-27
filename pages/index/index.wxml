@@ -29,6 +29,7 @@
 <view class='room'>
   <view class='room-box'>
     <view class='rooms-items'>
+        <navigator class='main-top-r' url='/pages/play-video/index'>
           <view class='rooms-show'>
             <view class='rooms_img_box'>
                 <image src='../../image/pic/img.png'></image>
@@ -47,6 +48,7 @@
                 </view>
             </view>
           </view>
+          </navigator>
     </view>
 
     <view class='rooms-items'>

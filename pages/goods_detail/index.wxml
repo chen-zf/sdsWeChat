@@ -1,0 +1,53 @@
+<view class='img-top'>
+    <image src='../../image/pic/goods_img.jpg'></image>
+</view>
+<view class='title-top'>
+    <view class='title-main'>小米充电宝小米充电宝小米充电宝小米</view>
+    <view class='money'>¥500积分</view>
+    <view class='money-gray'>价格:<text>¥500积分</text></view>
+</view>
+<view class='middle-block'>
+    <text class='black'>余额：800积分</text>
+    <text class='gray'>已兑换3200件</text>
+</view>
+<view class='detail-block'>
+   <view class='detail-title'>图文详情</view>
+   <view class='detail-group'>
+      <view class='detaiItem'>
+          <text class='name'>产品品牌</text>
+          <text>淡蓝件大事</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>产品名称</text>
+          <text>尼克单反12000像素</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>产品材质</text>
+          <text>优质合金</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>产品规格</text>
+          <text>32/54/54</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>产品颜色</text>
+          <text>黑色</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>产品特点</text>
+          <text>贵</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>产品型号</text>
+          <text>5165pm</text>
+      </view>
+      <view class='detaiItem'>
+          <text class='name'>适用场景</text>
+          <text>人像/f风景</text>
+      </view>
+   </view>
+</view>
+<view class='detail-img'>
+    <image src='../../image/pic/detail_img.jpg' mode='widthFix'></image>
+</view>
+<button class='btn'>确认兑换</button>
