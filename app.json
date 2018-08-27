@@ -30,9 +30,7 @@
     "pages/release-requirements/index",
     "pages/apply-direct-seeding/index",
     "pages/apply_cooperate/index",
-    "pages/one_contact/index",
-    "pages/play-video/index",
-    "pages/goods_detail/index"
+    "pages/one_contact/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
