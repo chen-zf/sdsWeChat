@@ -4,14 +4,14 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
-		"postcss": true,
+		"postcss": false,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
+	"libVersion": "2.2.3",
 	"appid": "wx73f68115cb90152c",
 	"projectname": "sdsWeChat",
 	"isGameTourist": false,
@@ -185,7 +185,6 @@
 					"pathName": "pages/reward-gift/index",
 					"query": ""
 				},
-<<<<<<< HEAD
 				{
 					"id": -1,
 					"name": "打赏",
@@ -202,19 +201,17 @@
 					"id": -1,
 					"name": "打赏",
 					"pathName": "pages/reward-gift/index"
+				},
+				{
+					"id": -1,
+					"name": "查询个人信息",
+					"pathName": "pages/person_information/index"
+				},
+				{
+					"id": -1,
+					"name": "发布需求",
+					"pathName": "pages/one_contact/index"
 				}
-=======
-        {
-          "id": -1,
-          "name": "查询个人信息",
-          "pathName": "pages/person_information/index"
-        },
-        {
-          "id": -1,
-          "name": "发布需求",
-          "pathName": "pages/one_contact/index"
-        }
->>>>>>> 19f13291c2ef67d1913d5d05b93239fa003031fd
 			]
 		}
 	}
