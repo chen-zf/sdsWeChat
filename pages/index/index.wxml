@@ -17,11 +17,20 @@
     </view>
     <view class='news'>
       <view class='news-box'>
-          <view class='swiper-container'>
+        <swiper vertical="true" autoplay="true" interval="3000" duration="1500" circular="true" vertical="true"  style='height:80rpx;' display-multiple-items="3">
+          <swiper-item>
             <view>陈老板188****9527联系了厨匠赵六</view>
-            <view>陈老板188****9527联系了厨匠赵六</view>
-            <view>陈老板188****9527联系了厨匠赵六</view>
-          </view>
+          </swiper-item>
+          <swiper-item>
+            <view>黄老板188****9527联系了厨匠赵六</view>
+          </swiper-item>
+           <swiper-item>
+            <view>丁老板188****9527联系了厨匠赵六</view>
+          </swiper-item>
+           <swiper-item>
+            <view>徐老板188****9527联系了厨匠赵六</view>
+          </swiper-item>
+        </swiper>
       </view>
     </view>
 </view>

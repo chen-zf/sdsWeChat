@@ -82,6 +82,9 @@
   border-radius: 10rpx;
   letter-spacing: 2rpx;
 }
+.news-box swiper-item{
+  height: 30%;
+}
 .swiper-container{
   margin: 0 auto;
   position: relative;
