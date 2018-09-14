@@ -52,11 +52,17 @@
   margin-left: 60rpx;
 }
 
-.list .upload image{
+.list .upload .imageA{
   width: 95rpx;
   height: 95rpx;
 }
-
+.list .upload .imageB{
+  width: 200rpx;
+  height: 200rpx;
+}
+.listbox-video{
+  width: 750rpx;
+}
 .btn-view{
   margin-top: 100rpx;
 }

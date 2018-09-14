@@ -8,7 +8,7 @@
     </view>
     <view class='redact-li'>
       <text class='li-text'>昵称</text>
-      <input class="li-main redact-input" placeholder="填写您的昵称" value='伊善英' />
+      <input class="li-main redact-input" placeholder="填写您的昵称" value='伊善英' bindinput='nickNameInput'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>

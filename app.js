@@ -1,4 +1,5 @@
 //app.js
+const api = require('config.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -11,17 +12,31 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res)
+        this.globalData.code = res.code
       }
     })
-    
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log(res.authSetting['scope.userInfo'])
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
               console.log(res)
+              var self = this
+              wx.request({
+                url: 'http://cjxiuxiu.cn/index.php/app/index/index',
+                data: {
+                  'code': this.globalData.code,
+                  'iv': res.iv,
+                  'encryptedData': res.encryptedData
+                },
+                success: function (res) {
+                  self.globalData.userInfo = res.data.data
+                }
+              })
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -32,11 +47,19 @@ App({
               }
             }
           })
+        } else {
+          console.log(11)
+        
+          wx.navigateTo({
+            url: '/pages/login/index'
+          })
+          console.log(12)
         }
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    code: '',
   }
 })

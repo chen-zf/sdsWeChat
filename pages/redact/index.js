@@ -1,4 +1,6 @@
 // pages/redact/index.js
+const URL = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
@@ -15,15 +17,27 @@ Page({
     feelPicker:['单身','热恋','已婚','离异']
   },
   setMyheadFunc(){
+    var that = this
     wx.chooseImage({
       success: function(res) {
         console.log(res)
         var imageSrc = res.tempFilePaths[0]
+        that.setData({
+          imageSrc: imageSrc
+        })
+        console.log("****************"+imageSrc)
         var uploadTask = wx.uploadFile({
-          url: 'www.jsanntq.com',
+          url: "http://upload.qiniup.com/?a=1&b=2",
           filePath: imageSrc,
-          name: 'data',
+          name: 'uploadfile_ant',
+          formData: {
+            'imgIndex': 1
+          },
+          header: {
+            "Content-Type": "multipart/form-data"
+          },  
           success(res){
+            console.log(res)
             wx.showToast({
               title: '上传成功',
               icon:'success',
@@ -31,6 +45,7 @@ Page({
             })
           },
           fail({errMsg}){
+            console.log(errMsg)
             wx.showToast({
               title: '上传失败',
               icon: 'fail',
@@ -71,9 +86,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.initUserInfo()
   },
-
+  // 获取用户数据
+  initUserInfo(){
+    var self = this
+    console.log(app.globalData.userInfo)
+    wx.request({
+      url: URL.getUserInfo,
+      data: {
+        user_id: app.globalData.userInfo.id
+      },
+      success(res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

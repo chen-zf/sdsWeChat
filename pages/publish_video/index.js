@@ -1,4 +1,7 @@
-// pages/publish_video/publish_video.js
+// pages/publish_video/publish_video.js、
+const URL = require('../../config.js')
+const utils = require('../../utils/util.js')
+const app = getApp()
 Page({
 
   /**
@@ -6,50 +9,256 @@ Page({
    */
   data: {
     radioTypeItem:[
-      { name: 'cooking', value: '厨艺', checked: 'true'},
-      {name: 'food',value: '秀美食'},
-      {name: 'equipment',value: '设备' },
-      {name: 'brand',value: '品牌' },
+      { typ: 1,value: '厨艺', checked: 'true'},
+      { typ: 2,value: '秀美食'},
+      { typ: 3,value: '设备' },
+      { typ: 4,value: '品牌' },
     ],
-    radioIntentItem:[
-      { name: 'show', value:'秀一秀'},
-      { name: 'work', value: '找工作' },
+    radioPurposeItems:[
+      [
+        { name: 'show', value: '秀一秀', checked: 'true' },
+        { name: 'work', value: '找工作' },
+      ],
+      [
+
+      ],
+      [
+        { name: 'show', value: '秀设备', checked: 'true' },
+        { name: 'sell', value: '卖设备' },
+        { name: 'benefit', value: '专利让利' },
+      ],
+      [
+        { name: 'show', value: '秀一秀', checked: 'true' },
+        { name: 'add', value: '招商加盟' },
+      ]
     ],
-    radioEquipmentItem:[
-      { name: 'show', value: '秀设备' },
-      { name: 'sell', value: '卖设备' },
-      { name: 'benefit', value: '专利让利' },
-    ],
-    radiobrandItem: [
-      { name: 'show', value: '秀一秀' },
-      { name: 'add', value: '招商加盟' },
-    ],
-    TypeStr:'food',
-    starItem:[1,1,1,1,0],
+    TypeStr:1,
     publishFlag:false,
-    windowOpen:false
+    windowOpen:false,
+    title: '',
+    content: '',
+    purpose: '秀一秀',
+    score:1,
+    name:'',
+    store_name:'',
+    imgUrl: '',
+    videoUrl: '',
+    isdisabled:true,
+    isUploadImg: true,
+    isUploadVideo: true
   },
+  bindTitleInput(e){
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  bindContentInput(e){
+    this.setData({
+      content: e.detail.value
+    })
+  },
+  // 上传图片事件
+  uploadImageFunc(){
+    var self = this
+    if (self.data.isUploadImg){
+      wx.chooseImage({
+        success(res) {
+          const tempFilePaths = res.tempFilePaths
+          console.log(tempFilePaths)
+          self.setData({
+            imgUrl: '',
+            isUploadImg: false
+          })
+          wx.uploadFile({
+            url: URL.postMyImage,
+            filePath: tempFilePaths[0],
+            name: 'file',
+            header: { "Content-Type": "multipart/form-data" },
+            success(res) {
+              const data = res.data
+              if (data.indexOf('上传失败') > -1) {
+                wx.showToast({
+                  title: data,
+                  icon: 'none'
+                })
+              } else {
+                self.setData({
+                  imgUrl: data,
+                  isUploadImg: true
+                })
+                self.isdisabledFunc()
+              }
+             
+            }
+          })
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '正在上传图片，请稍等',
+        icon: 'none'
+      })
+    }
+    
+  },
+  // 上传视频事件
+  uploadVideoFunc(){
+    var self =this
+    if (self.data.isUploadVideo){
+      wx.chooseVideo({
+        sourceType: ['album', 'camera'],
+        maxDuration: 60,
+        camera: 'back',
+        success(res) {
+          self.setData({
+            videoUrl: '',
+            isUploadVideo: false
+          })
+          if (res.duration > 60) {
+            wx.showToast({
+              title: '视频最长时间为60秒',
+              icon: 'none'
+            })
+            return
+          }
+       
+          const tempFilePath = res.tempFilePath
+          console.log(tempFilePath)
+          wx.uploadFile({
+            url: URL.postMyVideo,
+            filePath: tempFilePath,
+            name: 'file',
+            header: { "Content-Type": "multipart/form-data" },
+            success(res) {
+              const data = res.data
+              if(data.indexOf('上传失败')>-1){
+                wx.showToast({
+                  title: data,
+                  icon: 'none'
+                })
+              }else{
+                self.setData({
+                  videoUrl: data,
+                  isUploadVideo: true
+                })
+                self.isdisabledFunc()
+              }
+              
+            }
+          })
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '正在上传视频，请稍等',
+        icon: 'none'
+      })
+    }
+    
+  },
+
+  // 发布按钮禁用判断事件
+  isdisabledFunc() {
+    var isdisabled = true
+    if (this.data.imgUrl.length > 0 && this.data.videoUrl.length > 0) {
+      isdisabled = false
+    }
+    this.setData({
+      isdisabled: isdisabled
+    })
+  },
+  // 发布视频事件
+  publishVideoFunc(){
+    this.setData({
+      isdisabled: true
+    })
+    var sendData = {
+      uid: app.globalData.userInfo.id,
+      title: this.data.title,
+      content: this.data.content,
+      types: this.data.TypeStr,
+      image: this.data.imgUrl,
+      video: this.data.videoUrl
+    }
+    if(this.data.TypeStr==2){
+      sendData.score = this.data.score
+      sendData.name = this.data.name
+      sendData.store_name = this.data.store_name
+    }else{
+      sendData.purpose = this.data.purpose 
+    }
+    var self = this
+    wx.request({
+      url: URL.postPublishVideo,
+      data: sendData,
+      method: 'POST',
+      header: {'content-type': 'application/x-www-form-urlencoded'},
+      success(res){
+        console.log(res)
+        if(res.data.info.indexOf('发布成功')>-1){
+          self.setData({
+            TypeStr: 1,
+            publishFlag: false,
+            windowOpen: false,
+            title: '',
+            content: '',
+            purpose: '秀一秀',
+            score: 1,
+            name: '',
+            store_name: '',
+            imgUrl: '',
+            videoUrl: '',
+            isdisabled: true,
+            isUploadImg: true,
+            isUploadVideo: true
+          })
+          wx.navigateTo({
+            url: '/pages/myvideo/index'
+          })
+        }else{
+          wx.showToast({
+            title: res.data.info,
+            icon: 'none'
+          })
+        
+        }
+      }
+    })
+  },
+  // 发布目的事件
+  radioChangeGoal(e){
+    console.log(e.detail.value)
+    this.setData({
+      purpose: e.detail.value
+    })
+  },
+  // 发布类型事件
   radioChange:function(e){
     var val = e.detail.value
     var flag = true;
-    if (val=="cooking"){
+    var purpose = ''
+    if (val==1){
       flag=false
+    }
+    if(val!=2){
+      purpose = this.data.radioPurposeItems[val-1][0].value
+      console.log(purpose)
     }
     this.setData({
       TypeStr: val,
-      publishFlag: flag
+      publishFlag: flag,
+      purpose: purpose,
+      imgUrl: '',
+      videoUrl: ''
     })
+    this.isdisabledFunc()
+
   },
+  // 美食评分事件
   starClickFunc:function(e){
     var index = e.currentTarget.dataset.index;
-    var starArray = [0, 0, 0, 0, 0];
-    for (var z = 0; z < starArray.length; z++) {
-      if (z <= index) {
-        starArray[z] = 1;
-      }
-    }
     this.setData({
-      starItem: starArray
+      score: index
     })
   },
   minePublishFunc:function(){
@@ -71,7 +280,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
   },
 
   /**
@@ -87,39 +295,4 @@ Page({
   onShow: function () {
   
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

@@ -1,31 +1,41 @@
 const app = getApp()
 import tempObj from '../../template/template'
+const URL = require('../../config.js')
 Page({
   data: {
     tabbarData: {
       navActive: [0, 1, 0, 0, 0]
     },
     topnavActive: [1, 0, 0],
-    data: [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],[1,2,1,1],[1,1,1,1,1,1,1,1,1,1,1,1]],
     curr_id: '',
-    attentionData:  [
-      {
-        id: 1, src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg'
-      }, {
-        id: 2, src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg'
-      },
-      {
-        id: 3, src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400', poster: 'http://ow74m25lk.bkt.clouddn.com/shilan.jpg'
-      },
-      {
-        id: 4, src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
-      },
-      
-    ]
+    attentionData:  [],
+    page: 1,
+    types: 1,
+    totalPage:1
   },
   onLoad: function () {
     wx.setNavigationBarTitle({
       title: '关注'
+    })
+    this.getAttentionData(1,1)
+  },
+  getAttentionData(type, page) {
+    var self = this
+    // if(self.data.types != type)
+    wx.request({
+      url: URL.getFollowList,
+      data: {
+        page: page,
+        types: type,
+        user_id: app.globalData.userInfo.id
+      },
+      success(res) {
+        console.log(res.data.data.info['types' + type])
+        self.setData({
+          attentionData: self.data.attentionData.concat(res.data.data.info['types'+type]),
+          totalPage: res.data.data.totalPage
+        })
+      }
     })
   },
   onReady: function () {
@@ -40,13 +50,16 @@ Page({
     this.videoContext.play()
   },
 
-  onReachBottom(){
-    let that = this;
-    setTimeout(function(){
-      that.setData({
-        attentionData: that.data.attentionData.concat(that.data.data[1])
+  onReachBottom(){ 
+    if (page<this.data.totalPage){
+      var page = ++this.data.page
+      this.getAttentionData(this.data.types, page)
+    }else{
+      wx.showToast({
+        title: '暂时更多数据',
+        icon: 'none'
       })
-    },2000)
+    }
   },
   tabbarReLaunchFunc: tempObj.tabbarReLaunchFunc,
   navSwitchFunc(event){
@@ -54,9 +67,12 @@ Page({
     let typeNo = event.currentTarget.dataset.typeno;   // 获取对应的typeno值
     newTopNavActive.splice(typeNo,1,1);  // 修改数组显示高亮
     this.setData({
+      types: typeNo - 0 + 1,
       topnavActive: newTopNavActive,
-      attentionData: this.data.data[typeNo]
+      attentionData: [],
+      page: 1
     })
+    this.getAttentionData(typeNo-0+1,1)
     wx.pageScrollTo({
       scrollTop: 0,
       duration: 0

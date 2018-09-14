@@ -2,11 +2,11 @@
 <view class="container">
   <!-- 头部 -->
   <view class='my-top-box'>
-    <image class='my-buddha' src='{{userInfo.avatarUrl}}'></image>
+    <image class='my-buddha' src='{{userInfo.head_pic}}'></image>
     <view class='my-top-content'>
       <view class='main-top'>
         <view class='main-top-l'>
-          <text class='my-name'>{{userInfo.nickName}}</text>
+          <text class='my-name'>{{userInfo.nickname}}</text>
           <view class='my-vip'>普通会员</view>
         </view>
         <navigator class='main-top-r' url='/pages/redact/index'>
@@ -15,16 +15,14 @@
 
       </view>
       <view class='my-id'>ID:
-        <text>323456</text>
+        <text>{{userInfo.id}}</text>
       </view>
-      <view class='my-tags-box'>
-        <view class='tags-items'>美女</view>
-        <view class='tags-items'>模特</view>
-        <view class='tags-items'>主播</view>
+      <view class='my-tags-box' wx:if="{{userInfo.label}}" >
+        <view class='tags-items' wx:for="{{userInfo.label}}" wx:key="key" wx:for-item="items">{{items.name}}</view>
         <view class='tags-items'>......</view>
       </view>
       <view class='my-signature'>
-        <image class='signature-icon' src='../../image/my/my_compile@2x.png'></image>几片云的晴空 除了感动还有微风</view>
+        <image class='signature-icon' src='../../image/my/my_compile@2x.png'></image>{{userInfo.synopsis||'暂无个人签名'}}</view>
     </view>
   </view>
   <!-- 导航栏 -->
@@ -64,7 +62,7 @@
         <text>我的钱包</text>
       </view>
       <view class='my-nav-r'>
-        <text class='my-money-color'>2.5元</text>
+        <text class='my-money-color'>{{userInfo.money}}元</text>
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>

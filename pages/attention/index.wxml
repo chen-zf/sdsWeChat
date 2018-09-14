@@ -1,20 +1,20 @@
 <import src="../../template/template.wxml" />
 <view class="container">
   <view class="attention-temp">
-    <block wx:for="{{attentionData}}" wx:key="key">
+    <block wx:for="{{attentionData}}" wx:key="key" wx:for-item="aItems">
       <view class='attention-listbox'>
         <view class='listbox-top'>
-          <image class='my-buddha' src='../../image/my/header.png'></image>
+          <image class='my-buddha' src='{{aItems.head_pic}}'></image>
           <view class='listbox-top-r'>
-            <text class='listbox-topname'>锦觅&旭凤</text>
-            <text class='listbox-toptime'>2018-07-25</text>
+            <text class='listbox-topname'>{{aItems.userinfo}}</text>
+            <text class='listbox-toptime'>{{aItems.time}}</text>
           </view>
         </view>
         <view class='listbox-middle'>
-          <view data-id="{{item.id}}" bindtap="videoPlay">
-            <video class='listbox-video' wx:if="{{curr_id == item.id}}" id="myVideo" src="{{item.src}}" poster="http://jsanntq.cn/assets/timg.jpg" objectFit="cover" controls></video>
+          <view data-id="{{aItems.id}}" bindtap="videoPlay">
+            <video class='listbox-video' wx:if="{{curr_id == aItems.id}}" id="myVideo" src="{{aItems.video}}" poster="{{aItems.image}}" controls></video>
             <view wx:else>
-              <image class='listbox-video' src="http://jsanntq.cn/assets/timg.jpg" mode="aspectFill">
+              <image class='listbox-video' src="{{aItems.image}}" mode="aspectFill">
               </image>
               <view class="model-btn">
                 <view class="play-icon"></view>
@@ -25,11 +25,12 @@
           <view class='video-status'>
             <view>
               <image src="../../image/attention/message@2x.png"></image>
-              <text>5555.5万</text>
+              <text>{{aItems.comment}}</text>
             </view>
             <view>
-              <image src="../../image/attention/like-hl@2x.png"></image>
-              <text>5555.5万</text>
+              <image wx:if="{{aItems.is_dianzan == 0}}" src="../../image/attention/like2@2x.png"></image>
+              <image wx:else src="../../image/attention/like-hl@2x.png"></image>
+              <text>{{aItems.likes}}</text>
             </view>
             <view>
               <image src="../../image/attention/share@2x.png"></image>
@@ -37,18 +38,21 @@
             </view>
           </view>
         </view>
-        <view class='listbox-bottom'>
-          <view>
-            <text class='listbox-color'>赵四</text>:
-            <text>小猴紫演技棒棒</text>
+        <view class='listbox-bottom' wx:if="{{aItems.messageList.length>0}}" >
+          <view wx:for="{{aItems.messageList}}" wx:key="key" wx:for-item="bItems">
+             <view>
+                <text class='listbox-color'>{{bItems.pingre}}</text>:
+                <text>{{bItems.content}}</text>
+              </view>
+              <view wx:if="{{bItems.replyMessage.length > 0}}" wx:for="{{bItems.replyMessage}}" wx:key="key" wx:for-item="cItems">
+                <text class='listbox-color'>{{cItems.pingre}}</text>回复
+                <text class='listbox-color'>{{cItems.npingre}}</text>:
+                <text>{{cItems.content}}</text>
+              </view>
           </view>
-          <view>
-            <text class='listbox-color'>赵无家的赵武</text>回复
-            <text class='listbox-color'>赵四</text>:
-            <text>对呀对呀，继续追剧</text>
-          </view>
-          <view class='listbox-color'>共10条评论》</view>
+           <view class='listbox-color'>查看全部评论》</view>
         </view>
+       
       </view>
     </block>
   </view>
