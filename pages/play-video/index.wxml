@@ -1,76 +1,92 @@
-<import src="../../template/template"/>
-<view class='top-main'>
-  <!-- <image src='{{getPlayVideoData.image}}' mode='widthFix' class='top_bg'></image> -->
-   <video class='top_bg listbox-video'  id="myVideo" src="{{getPlayVideoData.video}}" controls></video>
-  <view class='follow'>
-      <view class='head'>
-          <image src='{{getPlayVideoData.user_info.head_pic}}' mode='widthFix'></image>
+<view class="paly-video-box">
+  <video class='video-box' src="{{getPlayVideoData.video}}" controls></video>
+  <view class='info-box'>
+    <view class='info-top'>
+      <image class='info-user-img'></image>
+      <view class='info-top-center'>
+        <view class='user-box'>
+          <text class='user-name'>吴亦凡</text>
+          <text class='rank'>厨鸟</text>
+        </view>
+        <text>232.3万次播放</text>
       </view>
-      <view class='title'>
-          <text>{{getPlayVideoData.user_info.nickname}}</text>
-          <text>{{getPlayVideoData.user_info.follow_number }}人已关注</text>
-      </view>
-      <button wx:if="{{isAttention==0}}" bindtap="followFunc">+关注</button>
-      <button class='guanzhu-active' wx:else bindtap="followFunc">已关注</button>
-  </view>
-  <view class='sum'>播放量{{getPlayVideoData.play_number}}</view>
-  <navigator class='main-top-r' url='/pages/index/index'>
-    <image src='../../image/icon/close_icon.png' class='close'></image>
-  </navigator>
-  <view class='left'>
-      <view class='leftItem'>
-          <image src='../../image/icon/play_video_icon1.png'></image>
-          <text>{{getPlayVideoData.likes}}</text>
-      </view>
-      <view class='leftItem'>
-          <image src='../../image/icon/play_video_icon2.png'></image>
-          <text>{{getPlayVideoData.forward}}</text>
-      </view>
-      <view class='leftItem'>
-          <image src='../../image/icon/play_video_icon3.png'></image>
-          <text>{{getPlayVideoData.comment}}</text>
-      </view>
-  </view>
-  <view class='right'>
-      <view class='rightItem'>
-          <image src='../../image/icon/play_video_icon4.png'></image>
-          <text>{{getPlayVideoData.gift}}</text>
-      </view>
-      <view class='rightItem'>
-          <image src='../../image/icon/play_video_icon5.png'></image>
-          <text>{{getPlayVideoData.money}}</text>
-      </view>
-  </view>
-</view>
-<view class='title-main'>
-    <view class='title-top'>
-        <text>{{getPlayVideoData.title}}</text>
-        <view>详情</view>
+      <button class='gzbtn'>+ 关注</button>
     </view>
-    <view class='content'> {{getPlayVideoData.content}}</view>
-</view>
-<view class='hotlists-box'>
-    <view class='comment-box'>
-      <image class='pl-newtag' src='../../image/comment/new@2x.png'></image>
-        <view class='top'>
-          <image class='top-head' src='../../image/my/header.png'></image>
-          <view class='top-right'>
-            <text class='top-uname'>旭凤</text>
-            <text class='top-time'>16/09/09 18:08</text>
-          </view>
-          <view class='comment-top-like'>
-            <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
-            <text class='like-number'>200</text>
+    <view class='info-center'>
+      <text class='title'>我的棒厨艺</text>
+      <text class='details'>副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副......</text>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image></image>
+        <text>1</text>
+      </view>
+      <view>
+        <image></image>
+        <text>200</text>
+      </view>
+      <view>
+        <image></image>
+        <text>3000</text>
+      </view>
+      <view>
+        <image></image>
+        <text>4万</text>
+      </view>
+      <view>
+        <image></image>
+        <text>5.55万</text>
+      </view>
+    </view>
+  </view>
+  <view class='details-box'>
+    <view class='details-top'>
+      <view class="margin-r40 {{selectTyp==1?'nav-active':''}}" data-typ='1' bindtap='selectFunc'>
+        <text>设备详情</text>
+        <view class="{{selectTyp==1?'nav-hl':''}}"></view>
+      </view>
+      <view class="margin-r40 {{selectTyp==2?'nav-active':''}}" data-typ='2' bindtap='selectFunc'>
+        <view>
+          评论
+          <text>1578</text>
+        </view>
+        <view class="{{selectTyp==2?'nav-hl':''}}"></view>
+      </view>
+      <view class='like'>赞6565万</view>
+    </view>
+
+    <view wx:if="{{selectTyp==1}}">
+
+
+
+    </view>
+    <view wx:else>
+      <view class='pl-sort-box'>
+        <image class='pl-sort-img' src='../../image/play-video/hot@2x.png'></image>
+        <text class='pl-sort-text'>按热度</text>
+      </view>
+      <view class='pl-list-box'>
+        <view class='pl-items' wx:for="{{plData}}" wx:key="key">
+          <image class='pl-head-img'></image>
+          <view class='pl-items-r'>
+            <text class='pl-user-name margin-bottom10'>赵四</text>
+            <text class='margin-bottom10'>行间距内容哈哈 我是评论 哈哈 我是评论 哈哈 我是评论 哈哈 我是评论?</text>
+            <navigator class='pl-content-box margin-bottom10' url='/pages/index/index'>
+              <text class='color-32679F'>用户1</text>等人
+              <text class='color-32679F'>共300条回复  ></text>
+            </navigator>
+            <view class='pl-itmes-rb margin-bottom10'>
+              <text class='pl-tiem'>9-14 21:22</text>
+              <view class='pl-like-box'>
+                <image src='../../image/play-video/reply@2x.png'></image>
+                <image src='../../image/play-video/like-hl@2x.png'></image>
+                <text class='pl-like-number pl-like-active'>2323</text>
+              </view>
+            </view>
           </view>
         </view>
-        <view class='comment-content'>
-          <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
-          <view class='comment-reply-box'>
-              <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
-            <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
-            <view class='pl-color'>共10条评论》</view>
-          </view>
-        </view>
+      </view>
     </view>
+  </view>
+
 </view>
-<template is="fixedInputTemp"></template>

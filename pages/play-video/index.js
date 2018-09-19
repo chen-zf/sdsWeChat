@@ -9,7 +9,9 @@ Page({
   data: {
     optionsData:{},
     getPlayVideoData: [],
-    isAttention: 0
+    isAttention: 0,
+    selectTyp: 2,
+    plData:[1,2,3,4,5,6]
   },
 
   /**
@@ -60,5 +62,10 @@ Page({
           })
         }
       })
+  },  
+  selectFunc(e){
+    this.setData({
+      selectTyp: e.currentTarget.dataset.typ
+    })
   }
 })

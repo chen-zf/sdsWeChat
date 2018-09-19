@@ -4,18 +4,22 @@
     <navigator url='/pages/fans/index' hover-class="none">
       <image src='../../image/info-center/fans@2x.png'></image>
       <text>粉丝</text>
+      <view wx:if="{{attention>0}}" class='newTag'>{{attention<99?attention:attention+"+"}}</view>
     </navigator>
     <navigator url='/pages/like/index' hover-class="none">
       <image src='../../image/info-center/like@2x.png'></image>
       <text>给我点赞</text>
+      <view wx:if="{{praise>0}}" class='newTag'>{{praise<99?praise:praise+"+"}}</view>
     </navigator>
     <navigator url='/pages/comment/index' hover-class="none">
       <image src='../../image/info-center/comment@2x.png'></image>
       <text>评论</text>
+     <view wx:if="{{comment>0}}" class='newTag'>{{comment<99?comment:comment+"+"}}</view>
     </navigator>
     <navigator url='/pages/thanks/index' hover-class="none">
       <image src='../../image/info-center/Exceptional@2x.png'></image>
       <text>打赏感谢</text>
+      <view wx:if="{{thank>0}}" class='newTag'>{{thank<99?thank:thank+"+"}}</view>
     </navigator>
   </view>
   <view class='info-bottom'>
@@ -23,27 +27,27 @@
       <image src='../../image/info-center/bulletin@2x.png'></image>
       <view class='info-nav-center'>
         <text class='info-nav-title'>餐匠公告</text>
-        <text>餐匠于2018年五月更新</text>
+        <text>{{announcementcontent}}</text>
       </view>
-      <text>刚刚</text>
+      <text>{{announcement.time}}</text>
     </navigator>
 
       <navigator url='/pages/hotlists/index'>
       <image src='../../image/info-center/recommend@2x.png'></image>
       <view class='info-nav-center'>
         <text class='info-nav-title'>精彩推荐</text>
-        <text>餐匠于2018年五月更新</text>
+        <text>{{recommendcontent}}</text>
       </view>
-      <text>14:56</text>
+      <text>{{recommend.time}}</text>
     </navigator>
 
       <navigator url="/pages/assistant/index">
       <image src='../../image/info-center/assistant@2x.png'></image>
       <view class='info-nav-center'>
         <text class='info-nav-title'>餐匠助手</text>
-        <text>餐匠于2018年五月更新</text>
+        <text>{{assistantcontent}}</text>
       </view>
-      <text>07-13</text>
+      <text>{{assistant.time}}</text>
     </navigator>
   </view>
 </view>

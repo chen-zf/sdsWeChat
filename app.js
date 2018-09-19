@@ -1,7 +1,7 @@
 //app.js
 const api = require('config.js')
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -16,7 +16,6 @@ App({
       }
     })
 
-    // 获取用户信息
     wx.getSetting({
       success: res => {
         console.log(res.authSetting['scope.userInfo'])
@@ -27,13 +26,13 @@ App({
               console.log(res)
               var self = this
               wx.request({
-                url: 'http://cjxiuxiu.cn/index.php/app/index/index',
+                url: api.getAuthorization,
                 data: {
                   'code': this.globalData.code,
                   'iv': res.iv,
                   'encryptedData': res.encryptedData
                 },
-                success: function (res) {
+                success: function(res) {
                   self.globalData.userInfo = res.data.data
                 }
               })
@@ -48,12 +47,25 @@ App({
             }
           })
         } else {
-          console.log(11)
-        
           wx.navigateTo({
             url: '/pages/login/index'
           })
-          console.log(12)
+        }
+      }
+    })
+  },
+  authorizationFunc() {
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        console.log(res.authSetting['scope.userInfo'])
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          return 
+        } else {
+          wx.navigateTo({
+            url: '/pages/login/index'
+          })
         }
       }
     })

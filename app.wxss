@@ -18,6 +18,7 @@
     height:100rpx;
     border-radius:50%;
     background-color: rgba(0,0,0,.3);
+    border:2rpx solid #fff;
 }
 .play-icon{
     margin:28rpx 40rpx;

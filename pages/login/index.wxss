@@ -1,1 +1,60 @@
 /* pages/login/index.wxss */
+page{
+  background:rgba(250,250,250,1);
+  height: 100%;
+}
+.container{
+  width: 750rpx;
+  height: 852rpx;
+  padding: 68rpx 60rpx;
+  font-size:40rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+.logo{
+  width: 146rpx;
+  height: 146rpx;
+  border-radius:8rpx;
+}
+.name{
+  margin-top: 20rpx;
+}
+.straightline{
+  margin-top: 70rpx;
+  width:630rpx;
+  height:0rpx;
+  border-bottom: 2rpx solid rgba(230,230,230,1);
+}
+.title{
+  margin-top: 70rpx;
+  font-size:34rpx;
+}
+.prompt-box{
+  display: flex;
+  width: 630rpx;
+  margin-top: 40rpx;  
+}
+.spot{
+  align-self: center;
+  width:10rpx;
+  height:10rpx;
+  background:rgba(153,153,153,1);
+  border-radius:100%;
+  margin-right: 30rpx;
+}
+.prompt{
+  align-self: center;
+  font-size:28rpx;
+  color:rgba(153,153,153,1);
+}
+.btn{
+  margin-top: 100rpx;
+  width:624rpx;
+  height:90rpx;
+  font-size:36rpx;
+  color:#fff;
+  background:rgba(4,190,2,1);
+  border-radius:10rpx;
+
+}

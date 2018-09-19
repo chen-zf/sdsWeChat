@@ -19,9 +19,7 @@ Page({
         { name: 'show', value: '秀一秀', checked: 'true' },
         { name: 'work', value: '找工作' },
       ],
-      [
-
-      ],
+      [],
       [
         { name: 'show', value: '秀设备', checked: 'true' },
         { name: 'sell', value: '卖设备' },
@@ -32,6 +30,8 @@ Page({
         { name: 'add', value: '招商加盟' },
       ]
     ],
+    ccieData:[{},{}],
+    detailsData: [{}, {}],
     TypeStr:1,
     publishFlag:false,
     windowOpen:false,
@@ -58,17 +58,41 @@ Page({
     })
   },
   // 上传图片事件
-  uploadImageFunc(){
+  uploadImageFunc(e){
+    console.log(e)
     var self = this
     if (self.data.isUploadImg){
       wx.chooseImage({
         success(res) {
           const tempFilePaths = res.tempFilePaths
           console.log(tempFilePaths)
-          self.setData({
+          var _obj = {
             imgUrl: '',
             isUploadImg: false
-          })
+          }
+          var _dataTyp = e.currentTarget.dataset
+          if (_dataTyp.typ == "details"){
+            var _detailsData = self.data.detailsData
+            _detailsData[_dataTyp.index] = {
+                imgUrl: '',
+                isUploadImg: false
+            }
+            _obj = {
+              detailsData: _detailsData
+            }
+            console.log(_obj)
+          } else if (_dataTyp.typ == "ccie"){
+            var _ccieData = self.data.ccie
+            _ccieData[_dataTyp.index] = {
+              imgUrl: '',
+              isUploadImg: false
+            }
+            _obj = {
+              ccieData: _ccieData
+            }
+            console.log(_obj)
+          }
+          self.setData(_obj)
           wx.uploadFile({
             url: URL.postMyImage,
             filePath: tempFilePaths[0],
@@ -82,10 +106,35 @@ Page({
                   icon: 'none'
                 })
               } else {
-                self.setData({
-                  imgUrl: data,
-                  isUploadImg: true
-                })
+                var _objA = {}
+                console.log(data)
+                if (_dataTyp.typ == "details") {
+                  var _detailsData = self.data.detailsData
+                  _detailsData[_dataTyp.index] = {
+                    imgUrl: data,
+                    isUploadImg: true
+                  }
+                  _objA = {
+                    detailsData: _detailsData
+                  }
+                  console.log(_objA)
+                } else if (_dataTyp.typ == "ccie") {
+                  var _ccieData = self.data.ccie
+                  _ccieData[_dataTyp.index] = {
+                    imgUrl: data,
+                    isUploadImg: true
+                  }
+                  _objA = {
+                    ccieData: _ccieData
+                  }
+                  console.log(_objA)
+                }else{
+                  _objA = {
+                      imgUrl: data,
+                      isUploadImg: true
+                  }
+                }
+                self.setData(_objA)
                 self.isdisabledFunc()
               }
              
@@ -249,7 +298,9 @@ Page({
       publishFlag: flag,
       purpose: purpose,
       imgUrl: '',
-      videoUrl: ''
+      videoUrl: '',
+      ccieData: [{}, {}],
+      detailsData: [{}, {}],
     })
     this.isdisabledFunc()
 

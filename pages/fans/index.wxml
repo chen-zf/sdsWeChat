@@ -1,9 +1,10 @@
 <view class="container">
   <view class='fans-list' wx:for="{{fansData}}" wx:key="index">
     <view class="fans-item">
-      <image class='u-head-icon' src='../../image/my/header.png'></image>
-      <view class='u-name'>餐匠推荐</view>
-      <view class='u-btn'>关注</view>
+      <image class='u-head-icon' src='{{item.user_head_pic}}'></image>
+      <view class='u-name'>{{item.user_nickname}}</view>
+      <view wx:if="{{item.is_mutual == 1}}" class='u-btn'>已关注</view>
+      <view wx:else class='u-btn active'>未关注</view>
     </view>
   </view>
 </view>

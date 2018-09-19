@@ -1,6 +1,14 @@
 <!--pages/comment/index.wxml-->
-<import src="../../template/template"/>
 <view class='container'>
-<template is="commentTemp" data="{{commentData}}"></template>
+  <view  wx:for="{{commentData}}" wx:key="key">
+    <navigator class='news-box' url='/pages/play-video/index?pid={{item.act_id.uid}}&did={{item.act_id.id}}'>
+      <image class='head-img' src='{{item.uid.head_pic}}'></image>
+      <view class='center'>
+        <text class='user-name'>{{item.uid.nickname}}</text>
+        <text class='content'>{{item.content}}</text>
+        <text class='time'>{{item.create_time}}</text>
+      </view>
+      <image class='video-img' src='{{item.act_id.image}}'></image>
+    </navigator>
+  </view>
 </view>
-<template is="fixedInputTemp"></template>

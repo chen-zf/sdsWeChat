@@ -21,8 +21,9 @@
 .list .right{
   width: 520rpx;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .list .right-img{
   width: 520rpx;
@@ -36,7 +37,7 @@
   color: #333333;
 }
 
-.list .right image{
+.list image{
   width: 32rpx;
   height: 32rpx;
   vertical-align: middle;
@@ -49,14 +50,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 60rpx;
+}
+.list .uploadA{
+  width: 150rpx;
+  height: 150rpx;
+  border: 1px solid #E6E6E6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
 }
 
-.list .upload .imageA{
+.list .imageA{
   width: 95rpx;
   height: 95rpx;
 }
-.list .upload .imageB{
+.list .imageB{
   width: 200rpx;
   height: 200rpx;
 }

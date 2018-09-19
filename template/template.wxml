@@ -90,18 +90,40 @@
 
 <!-- 精彩推荐 -->
 <template name="hotlistsTemp">
-  <view class='hotlists-box' wx:for="{{hotlistsData.listData}}" wx:key="index">
+  <view class='hotlists-box' wx:for="{{listData}}" wx:key="index">
     <view class='top'>
-      <image class='top-head' src='../../image/my/header.png'></image>
+      <image class='top-head' src='{{item.head_pic}}'></image>
       <view class='top-right'>
-        <text class='top-uname'>旭凤</text>
-        <text class='top-time'>16/09/09 18:08</text>
+        <text class='top-uname'>{{item.userinfo}}</text>
+        <text class='top-time'>{{item.time}}</text>
       </view>
-      <view wx:if="{{hotlistsData.type==0}}" class='top-btn'>打赏了10000元</view>
     </view>
-    <view class='center'>被“陨丹”断情绝爱的花神之女锦觅，在遇到了真爱——天帝之子旭凤的时候，却浑然不知爱情为何物，因此笑料百出。同时，夜神润玉为了替母报仇，谋划争夺天帝之位，却不知不觉中也已爱... </view>
-    <navigator class='bottom' url='/pages/blankpage/index'>
-      <image class='hotlists-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
+    <view class='center'>{{item.content}}</view>
+    <navigator class='bottom' url='/pages/play-video/index?pid={{item.uid}}&did={{item.id}}'>
+      <image class='hotlists-video' src="{{item.image}}" mode="aspectFill">
+      </image>
+      <view class="model-btn">
+        <view class="play-icon"></view>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+<!-- 打赏感谢 -->
+<template name="thanksTemp">
+  <view class='hotlists-box' wx:for="{{listData}}" wx:key="index">
+    <view class='top'>
+      <image class='top-head' src='{{item.uid.head_pic}}'></image>
+      <view class='top-right'>
+        <text class='top-uname'>{{item.uid.nickname}}</text>
+        <text class='top-time'>{{item.time}}</text>
+      </view>
+      <view wx:if="{{item.rid.types == 0}}" class='top-btn' >赠送价值{{item.rid.money}}元的{{item.rid.gift}}</view>
+      <view wx:else class='top-btn' >打赏了{{item.rid.money}}元</view>
+    </view>
+    <view class='center'>{{item.content}}</view>
+    <navigator class='bottom' url='/pages/play-video/index?pid={{item.pid}}&did={{item.did.id}}'>
+      <image class='hotlists-video' src="{{item.did.image}}" mode="aspectFill">
       </image>
       <view class="model-btn">
         <view class="play-icon"></view>
@@ -124,73 +146,6 @@
     </view>
   </view>
 </template>
-
-<template name="commentTemp">
-  <view class='hotlists-box commentTemp-box' wx:for="{{commentData.listData}}" wx:key="index">
-    <view class='top'>
-      <image class='top-head' src='../../image/my/header.png'></image>
-      <view class='top-right'>
-        <text class='top-uname'>旭凤</text>
-        <text class='top-time'>16/09/09 18:08</text>
-      </view>
-      <view wx:if="{{commentData.type==0}}"  class='commentTemp-top-btn btn0'>关注</view>
-      <view wx:else  class='commentTemp-top-btn btn1'>删除</view>
-    </view>
-    <navigator class='bottom' url='/pages/blankpage/index'>
-      <image class='hotlists-video' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534760221234&di=0c94d844b8ca99593c00a559d7eabb31&imgtype=0&src=http%3A%2F%2Fimage.ijq.tv%2F201808%2F07%2F09-52-13-98-26.jpg" mode="aspectFill">
-      </image>
-      <view class="model-btn">
-        <view class="play-icon"></view>
-      </view>
-    </navigator>
-    <view class='comment-box'>
-    <image class='pl-newtag' src='../../image/comment/new@2x.png'></image>
-      <view class='top'>
-        <image class='top-head' src='../../image/my/header.png'></image>
-        <view class='top-right'>
-          <text class='top-uname'>旭凤</text>
-          <text class='top-time'>16/09/09 18:08</text>
-        </view>
-        <view class='comment-top-like'>
-          <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
-          <text class='like-number'>200</text>
-        </view>
-      </view>
-      <view class='comment-content'>
-        <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
-        <view class='comment-reply-box'>
-            <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
-           <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
-           <view class='pl-color'>共10条评论》</view>
-        </view>
-      </view>
-    </view>
-    <view class='comment-box'>
-      <image class='pl-newtag' src='../../image/comment/hot@2x.png'></image>
-      <view class='top'>
-        <image class='top-head' src='../../image/my/header.png'></image>
-        <view class='top-right'>
-          <text class='top-uname'>旭凤</text>
-          <text class='top-time'>16/09/09 18:08</text>
-        </view>
-        <view class='comment-top-like'>
-          <image class='like-img' src='../../image/comment/like-hl@2x.png'></image>
-          <text class='like-number'>200</text>
-        </view>
-      </view>
-      <view class='comment-content'>
-        <text class='comment-content-pl'>很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习很棒的厨艺 我想学习</text>
-        <view class='comment-reply-box'>
-            <view><text class='pl-color'>赵四</text>:很棒的厨艺 我想学习</view>
-           <view><text class='pl-color'>赵无家的赵武</text>回复<text class='pl-color'>赵四</text>:加入圣多斯你也可以的。</view>
-           <view class='pl-color'>共10条评论》</view>
-        </view>
-      </view>
-    </view>
-  </view>
-   
-</template>
-
 
 <!-- 底部输入框 -->
 <template name="fixedInputTemp">

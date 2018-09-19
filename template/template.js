@@ -1,4 +1,5 @@
-var temp = {
+const URL = require("../config.js")
+const temp = {
 
   redirectToURLs: ['/pages/index/index', '/pages/attention/index', '/pages/publish_video/index', '/pages/info-center/index', '/pages/my/index'],
 
@@ -20,7 +21,28 @@ var temp = {
     }
     console.log(1)
 
-  }
+  },
+  // delMyVideoFunc(e){
+  //   wx.showModal({
+  //     // title: '提示',
+  //     content: '确定要删除吗？',
+  //     success: function (sm) {
+  //       if (sm.confirm) {
+  //         wx.request({
+  //           url: URL.delMyVideo,
+  //           data: {
+  //             did: e.currentTarget.dataset.id
+  //           },
+  //           success(res) {
+  //            wx.showToast({
+  //              title: res.data.info,
+  //            })
+  //           }
+  //         })
+  //       }
+  //     }
+  //   })
+  // }
 }
 //导出，供外部使用
 export default temp

@@ -28,7 +28,7 @@ Page({
   },
   showSearch:function(){
     wx.request({
-      url: URL.requestURl,
+      url: URL.getMyThanks,
       method: 'get',
       success(res) {
         console.log(res)
@@ -37,6 +37,9 @@ Page({
     this.setData({
       isShowSearch: true
     }) 
+  },
+  onShow(){
+    app.authorizationFunc()
   },
   hiddenSearch: function () {
     this.setData({

@@ -150,7 +150,7 @@
       <view class='list'>
         <text>自定义封面：</text>
         <view class='right'>
-          <view class='upload' bindtap='uploadImageFunc'>
+          <view class='upload' data-typ='cover' data-index='0' bindtap='uploadImageFunc'>
             <image class='imageA' wx:if="{{imgUrl.length<1}}" src='../../image/icon/icon_add.png'></image>
             <image class='imageB' wx:else src='{{imgUrl}}'></image>
           </view>
@@ -166,6 +166,33 @@
         </view>
       </view>
       <video wx:if="{{videoUrl.length>0}}" show-fullscreen-btn="false" class='listbox-video' id="myVideo" src="{{videoUrl}}" controls></video>
+      <view class='list'>
+        <text>设备详情：</text>
+        <view class='right'>
+          <block wx:for="{{detailsData}}" wx:key="key">
+            <view class='uploadA' data-typ='details' data-index='{{index}}' bindtap='uploadImageFunc'>
+              <image class='imageA' wx:if="{{item.imgUrl}}" src="{{item.imgUrl}}"></image>
+              <image class='imageA' wx:else src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>      
+            </view>
+          </block>
+          <view class='uploadA' data-typ='details' data-index="9" bindtap='uploadImageFunc'>
+            <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+          </view>
+        </view>
+      </view>
+    <view class='list'>
+      <text>设备证书：</text>
+      <view class='right'>
+          <block wx:for="{{ccieData}}" wx:key="key">
+            <view class='uploadA' data-typ='ccie' data-index='{{key}}' bindtap='uploadImageFunc'>
+              <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+            </view>
+          </block>
+          <view class='uploadA' data-typ='ccie' data-index="9" bindtap='uploadImageFunc'>
+            <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+          </view>
+      </view>
+    </view>
     </block>
   </view>
   <!-- 品牌 -->
@@ -210,6 +237,34 @@
         </view>
       </view>
       <video wx:if="{{videoUrl.length>0}}" show-fullscreen-btn="false" class='listbox-video' id="myVideo" src="{{videoUrl}}" controls></video>
+          <view class='list'>
+      <text>设备详情：</text>
+      <view class='right'>
+        <view class='uploadA' bindtap='uploadImageFunc'>
+          <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+        </view>
+        <view class='uploadA' bindtap='uploadImageFunc'>
+          <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+        </view>
+        <view class='uploadA' bindtap='uploadImageFunc'>
+          <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='list'>
+      <text>品牌证书：</text>
+      <view class='right'>
+        <view class='uploadA' bindtap='uploadImageFunc'>
+          <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+        </view>
+        <view class='uploadA' bindtap='uploadImageFunc'>
+          <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+        </view>
+        <view class='uploadA' bindtap='uploadImageFunc'>
+          <image class='imageA' src="{{isUploadVideo?'../../image/icon/icon_add.png':'../../image/other/load.gif'}}"></image>
+        </view>
+      </view>
+    </view>
     </block>
   </view>
 </view>

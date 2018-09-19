@@ -1,11 +1,15 @@
 // pages/comment/index.js
+const URL = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    commentData: { type: 0, listData: [1, 2, 3, 4, 5, 6] }
+    commentData: [],
+    page: 1,
+    totalPage: 1 
   },
 
   /**
@@ -18,51 +22,56 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.initComment()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  initComment(){
+    var self = this
+    wx.request({
+      url: URL.getMyComment,
+      data:{
+        user_id: app.globalData.userInfo.id,
+        page:  self.data.page
+      },
+      success(res){
+        self.setData({
+          commentData: self.data.commentData.concat(res.data.data.comment),
+          totalPage: res.data.data.totalPage
+        })
+        wx.hideNavigationBarLoading() //完成停止加载
+      }
+    })
   },
-
   /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
   onPullDownRefresh: function () {
-
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    this.setData({
+      page: 1,
+      commentData: []
+    })
+    this.initComment()
+    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var page = ++this.data.page
+    if (this.data.page <= this.data.totalPage) {
+      this.setData({
+        page: page,
+      })
+      this.initComment()
+    } else {
+      wx.showToast({
+        title: '我是有底线的',
+        icon: 'none'
+      })
+    }
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

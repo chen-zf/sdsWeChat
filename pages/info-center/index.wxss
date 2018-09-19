@@ -2,6 +2,16 @@
 page{
  background: #fafafa;
 }
+.newTag{
+  position:absolute;
+  background:red;
+  color:#fff;
+  top:20rpx;
+  right:0;
+  padding:1rpx 12rpx;
+  font-size:10px;
+  border-radius:20rpx;
+}
 .container {
   height: 100%;
   font-size: 26rpx;
@@ -21,6 +31,7 @@ page{
   border-radius: 10rpx;
 }
 .info-top navigator{
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;

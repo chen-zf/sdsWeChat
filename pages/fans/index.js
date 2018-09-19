@@ -1,11 +1,15 @@
 // pages/fans/index.js
+const URL = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      fansData:[1,2,3,4,5,6]
+      fansData:[],
+      page: 1,
+      totalPage: 1 
   },
 
   /**
@@ -16,53 +20,58 @@ Page({
       title: '粉丝'
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  initFans(){
+    var self = this
+    wx.request({
+      url: URL.getMyFansList,
+      data:{
+        user_id: app.globalData.userInfo.id,
+        token: app.globalData.userInfo.token,
+        page: self.data.page
+      },
+      success(res){
+        console.log(res.data.data)
+        self.setData({
+          fansData: self.data.fansData.concat(res.data.data.info),
+          totalPage: res.data.data.totalPage
+        })
+        wx.hideNavigationBarLoading() //完成停止加载
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    this.initFans()
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+    * 页面相关事件处理函数--监听用户下拉动作
+    */
   onPullDownRefresh: function () {
-
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    this.setData({
+      page: 1,
+      fansData: []
+    })
+    this.initFans()
+    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var page = ++this.data.page
+    if (this.data.page <= this.data.totalPage) {
+      this.setData({
+        page: page,
+      })
+      this.initFans()
+    } else {
+      wx.showToast({
+        title: '我是有底线的',
+        icon: 'none'
+      })
+    }
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

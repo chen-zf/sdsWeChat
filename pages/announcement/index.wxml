@@ -1,13 +1,13 @@
 <!--pages/announcement/index.wxml-->
 <view class="container">
   <view class='announcement-list'>
-    <view class="announcement-item" wx:for="{{announcementData}}">
-      <view class='announcement-time'>2018-06-27 09:15:18</view>
+    <view class="announcement-item" wx:for="{{announcementData}}" wx:key="key">
+      <view class='announcement-time'>{{item.time}}</view>
       <view class='announcement-item-bottom'>
         <image class='announcement-image' src='../../image/my/header.png'></image>
         <view class='announcement-content'>
-          <text>很遗憾 A dream锴,昨天您还没有新增粉丝,我们要翻身,没有道理讲辛苦,没有道理讲兴趣,唯有努力,才能改变一切!</text>
-          <view class='more'>查看更多 </view>
+          <text>{{item.content}}</text>
+          <!-- <view class='more'>查看更多 </view> -->
           <view class='triangle'></view>
         </view>
       </view>

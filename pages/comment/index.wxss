@@ -1,5 +1,40 @@
 /* pages/comment/index.wxss */
-@import "../../template/template.wxss";
 .container{
   margin-bottom: 98rpx;
+}
+.news-box{
+  display: flex;
+  width: 686rpx;
+  padding: 42rpx 32rpx 30rpx;
+  border-bottom: 1rpx solid rgba(230,230,230,1);
+}
+.head-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.center{
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  font-family:PingFang-SC-Medium;
+  font-size: 28rpx;
+  margin: 0 20rpx;
+}
+.video-img{
+  width: 208rpx;
+  height: 128rpx;
+}
+.user-name{
+  color:rgba(37,86,142,1);
+}
+.content{
+  text-align: justify;
+  font-weight:bold;
+}
+.time{
+  margin-top: 2rpx;
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(102,102,102,1);
 }

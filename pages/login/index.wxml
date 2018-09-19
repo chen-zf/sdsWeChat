@@ -1,2 +1,12 @@
 <!--pages/login/index.wxml-->
-<button open-type="getUserInfo" bindgetuserinfo="eeee">授权</button>
+<view class="container">
+  <image class='logo' src='http://www.jsanntq.cn/assets/cjlogo.png'></image>
+  <view class='name'>餐匠</view>
+  <view class='straightline'></view>
+  <view class="title">网页由该公众号开发，请确认授权以下信息</view>
+  <view class='prompt-box'>
+    <view class='spot'></view>
+    <text class='prompt'>获得你的公开信息（昵称、头像等）</text>
+  </view>
+  <button class='btn' open-type="getUserInfo" bindgetuserinfo="eeee">确定登录</button>
+</view>
