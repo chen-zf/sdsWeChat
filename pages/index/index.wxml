@@ -2,13 +2,13 @@
 <import src="../../template/template"/>
 <view class='top'>
     <view class='menu'>
-      <view class='search-box'>
+      <!-- <view class='search-box'>
         <icon type='search' size='15' color='#FFFFFF' class='searchicon' bindtap='showSearch'></icon>
         <icon type='clear' size='15' color='#FFFFFF' class="closeicon {{isShowSearch?'':'hidden'}}" bindtap='hiddenSearch'></icon>
         <view class="input-view {{isShowSearch?'':'hidden'}}">
             <input placeholder='请输入要搜索的关键字' class='search' placeholder-class='placeholder'></input>
         </view>      
-      </view>
+      </view> -->
       <view class="nav {{isShowSearch?'hidden':''}}">
         <block wx:for="{{checkList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="key">
           <view data-num="{{idx}}" class="{{idx == checkindex?'active':''}}" bindtap='navClick'>{{itemName}}</view>

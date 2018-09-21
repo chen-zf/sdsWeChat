@@ -61,8 +61,8 @@
 }
 .gift-img {
   align-self: center;
-  width: 130rpx;
-  height: 88rpx;
+  width: 210rpx;
+  height: 150rpx;
 }
 
 .gift-name {

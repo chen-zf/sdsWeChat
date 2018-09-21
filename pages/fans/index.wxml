@@ -3,8 +3,8 @@
     <view class="fans-item">
       <image class='u-head-icon' src='{{item.user_head_pic}}'></image>
       <view class='u-name'>{{item.user_nickname}}</view>
-      <view wx:if="{{item.is_mutual == 1}}" class='u-btn'>已关注</view>
-      <view wx:else class='u-btn active'>未关注</view>
+      <view wx:if="{{item.is_mutual == 1}}" data-index='{{index}}' data-pid='{{item.from_uid}}' class='u-btn' bindtap='attentionFunc'>已关注</view>
+      <view wx:else class='u-btn active' data-index='{{index}}' data-pid='{{item.from_uid}}' bindtap='attentionFunc'>未关注</view>
     </view>
   </view>
 </view>

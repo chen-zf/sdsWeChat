@@ -2,91 +2,139 @@
   <video class='video-box' src="{{getPlayVideoData.video}}" controls></video>
   <view class='info-box'>
     <view class='info-top'>
-      <image class='info-user-img'></image>
+      <image class='info-user-img' src='{{getPlayVideoData.user_info.head_pic}}'></image>
       <view class='info-top-center'>
         <view class='user-box'>
-          <text class='user-name'>吴亦凡</text>
+          <text class='user-name'>{{getPlayVideoData.user_info.nickname}}</text>
           <text class='rank'>厨鸟</text>
         </view>
-        <text>232.3万次播放</text>
+        <text>{{getPlayVideoData.play_number}}次播放</text>
       </view>
-      <button class='gzbtn'>+ 关注</button>
+      <button wx:if="{{isAttention==0}}" class='gzbtn' bindtap='followFunc'>+ 关注</button>
+      <button wx:else class='gzbtn gz-active' bindtap='followFunc'>已关注</button>
     </view>
     <view class='info-center'>
-      <text class='title'>我的棒厨艺</text>
-      <text class='details'>副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副......</text>
+      <text class='title'>{{getPlayVideoData.title}}</text>
+      <text class='details'>{{getPlayVideoData.content}}</text>
     </view>
     <view class='info-bottom'>
-      <view>
-        <image></image>
-        <text>1</text>
+      <view class='view-flex' bindtap='replyVideoFuncA'>
+        <view class='img-view'>
+          <image class='imageA' src='../../image/play-video/pl@2x.png'></image>
+        </view>
+        <text>回复</text>
       </view>
-      <view>
-        <image></image>
-        <text>200</text>
+      <view class='view-flex' data-type='0' data-did="{{getPlayVideoData.id}}" bindtap='likeFunc'>
+        <view class='img-view'>
+          <image class='imageA' src="{{isDianZan?'../../image/play-video/zan-hl@2x.png':'../../image/play-video/zan@2x.png'}}">
+          </image>
+        </view>
+        <text>{{likesNum}}</text>
       </view>
-      <view>
-        <image></image>
-        <text>3000</text>
+      <view class='view-flex' bindtap='getShareInfo'>
+        <view class='img-view'>
+          <image class='imageA' src='../../image/play-video/share@2x.png'></image>
+        </view>
+        <text>{{getPlayVideoData.forward}}</text>
       </view>
-      <view>
-        <image></image>
-        <text>4万</text>
-      </view>
-      <view>
-        <image></image>
-        <text>5.55万</text>
-      </view>
+      <navigator class='view-flex' url='/pages/reward-money/index?did={{getPlayVideoData.id}}&pid={{getPlayVideoData.uid}}'>
+        <image class='imageB' src='../../image/play-video/money@2x.png'></image>
+        <text>{{getPlayVideoData.money}}</text>
+     </navigator>
+     <navigator class='view-flex' url='/pages/reward-gift/index?did={{getPlayVideoData.id}}&pid={{getPlayVideoData.uid}}'>
+        <image class='imageB' src='../../image/play-video/gift@2x.png'></image>
+        <text>{{getPlayVideoData.gift}}</text>
+      </navigator>
     </view>
   </view>
   <view class='details-box'>
     <view class='details-top'>
-      <view class="margin-r40 {{selectTyp==1?'nav-active':''}}" data-typ='1' bindtap='selectFunc'>
+      <view wx:if="{{getPlayVideoData.types==3||getPlayVideoData.types==4}}" class="margin-r40 {{selectTyp==1?'nav-active':''}}" data-typ='1' bindtap='selectFunc'>
         <text>设备详情</text>
         <view class="{{selectTyp==1?'nav-hl':''}}"></view>
       </view>
       <view class="margin-r40 {{selectTyp==2?'nav-active':''}}" data-typ='2' bindtap='selectFunc'>
         <view>
           评论
-          <text>1578</text>
+          <text>{{getPlayVideoData.comment}}</text>
         </view>
         <view class="{{selectTyp==2?'nav-hl':''}}"></view>
       </view>
-      <view class='like'>赞6565万</view>
+      <!-- <view class='like'>赞6565万</view> -->
     </view>
 
-    <view wx:if="{{selectTyp==1}}">
-
-
-
+    <view class='proout-box' wx:if="{{selectTyp==1&&(getPlayVideoData.types==3||getPlayVideoData.types==4)}}">
+      <view class='pro-designation'>
+        <view class='margin-r32'>设备名称：</view>
+        <view class='pro-content'>{{getPlayVideoData.title}}</view>
+      </view>
+      <view class='details-img-box'>
+        <view class='margin-b20'>设备图片：</view>
+        <view>
+          <image wx:for="{{detailsImg}}" src='{{item}}'></image>
+        </view>
+      </view>
+      <view class='ccie-img-box'>
+        <view class='margin-b20'>证书图片：</view>
+        <view>
+          <image wx:for="{{certificate}}" src='{{item}}'></image>
+        </view>
+      </view>
+      <view class='pro-designation'>
+        <view class='margin-r32'>设备说明：</view>
+        <view class='pro-content'>几片云的晴空 除了感动还有微风das我们盟dedasd adssadsa</view>
+      </view>
     </view>
-    <view wx:else>
+    <view wx:if="{{selectTyp==2}}">
       <view class='pl-sort-box'>
         <image class='pl-sort-img' src='../../image/play-video/hot@2x.png'></image>
         <text class='pl-sort-text'>按热度</text>
       </view>
       <view class='pl-list-box'>
         <view class='pl-items' wx:for="{{plData}}" wx:key="key">
-          <image class='pl-head-img'></image>
+          <image class='pl-head-img' src='{{item.user_info.head_pic}}'></image>
           <view class='pl-items-r'>
-            <text class='pl-user-name margin-bottom10'>赵四</text>
-            <text class='margin-bottom10'>行间距内容哈哈 我是评论 哈哈 我是评论 哈哈 我是评论 哈哈 我是评论?</text>
-            <navigator class='pl-content-box margin-bottom10' url='/pages/index/index'>
-              <text class='color-32679F'>用户1</text>等人
-              <text class='color-32679F'>共300条回复  ></text>
+            <text class='pl-user-name margin-bottom10'>{{item.user_info.nickname}}</text>
+            <text class='margin-bottom10'>{{item.content}}</text>
+            <navigator wx:if="{{item.ping.length>0}}" class='pl-content-box margin-bottom10' url='/pages/index/index'>
+              <text class='color-32679F'>{{item.ping[0].pingre}}</text>等人
+              <text class='color-32679F'>共{{item.ping.length}}条回复  ></text>
             </navigator>
             <view class='pl-itmes-rb margin-bottom10'>
-              <text class='pl-tiem'>9-14 21:22</text>
+              <text class='pl-tiem'>{{item.create_time}}</text>
               <view class='pl-like-box'>
-                <image src='../../image/play-video/reply@2x.png'></image>
-                <image src='../../image/play-video/like-hl@2x.png'></image>
-                <text class='pl-like-number pl-like-active'>2323</text>
+                <image src='../../image/play-video/reply@2x.png' data-uid='{{item.uid}}' data-pid="{{item.id}}" data-pingre="{{item.pingre}}" bindtap='totouchstartFunc'></image>
+                <view class='pl-like-btn-box' data-type='1' data-did="{{item.id}}" data-index="{{index}}" bindtap='likeFunc'>
+                  <image src="{{item.dianzan==1?'../../image/play-video/like-hl@2x.png':'../../image/play-video/like@2x.png'}}"></image>
+                  <text class="pl-like-number {{item.dianzan==1?'pl-like-active':''}}">{{item.zan}}</text>
+                </view>
               </view>
             </view>
           </view>
         </view>
       </view>
+      <view class="reply-box">
+        <view class='reply-input-box'>
+          <input class='reply-input' focus="{{focus}}" bindinput="bindinputFunc" bindblur="bindblurFunc" placeholder='{{myPlaceholderVal}}' bindconfirm="sendplFunc" value='{{sendVal}}'></input>
+          <view class='reply-btn' bindtap='sendplFunc'>发送</view>
+        </view>
+      </view>
     </view>
   </view>
-
+  <view class='message-box' wx:if="{{selectTyp==1&&(getPlayVideoData.types==3||getPlayVideoData.types==4)}}">
+    <view class='message-title'>留言区:</view>
+    <view class='message-input-box'>
+      <view class='margin-r32 input-title'>姓名：</view>
+      <input class='message-input' placeholder='输入你的姓名' bindinput='messageNameValFunc' value='{{messageNameVal}}'></input>
+    </view>
+    <view class='message-input-box'>
+      <view class='margin-r32 input-title'>联系电话：</view>
+      <input class='message-input' placeholder='输入你的联系电话'  bindinput='messageTelValFunc' value='{{messageTelVal}}'></input>
+    </view>
+    <textarea class='tickling-textarea' placeholder="简述您的反馈内容..." value='{{textareaVal}}' bindinput="textareaFunc" />
+    <view class='message-btn-box'>
+      <button class="message-btn" bindtap='postMessageFunc'>确认</button>
+    </view>
+    <navigator url=''></navigator>
+  </view>
 </view>

@@ -61,7 +61,10 @@
   margin-top: 10rpx;
   margin-right: 10rpx;
 }
-
+.list .imageC{
+   width: 150rpx;
+  height: 150rpx;
+}
 .list .imageA{
   width: 95rpx;
   height: 95rpx;

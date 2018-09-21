@@ -43,7 +43,30 @@ Page({
   onShow: function () {
     this.initFans()
   },
-
+  attentionFunc(e){
+    var self = this
+    var _event = e.currentTarget.dataset
+    wx.request({
+      url: URL.setUserAttention,
+      data: {
+        id: app.globalData.userInfo.id,
+        pid: _event.pid
+      },
+      success(res){
+        wx.showToast({
+          title: res.data.info,
+          icon: 'none'
+        })
+        var _obj = self.data.fansData
+        if (res.data.info.includes('关注成功')){
+          _obj[_event.index].is_mutual = 1
+        }else{
+          _obj[_event.index].is_mutual = 0
+        }
+        
+      }
+    })
+  },
   /**
     * 页面相关事件处理函数--监听用户下拉动作
     */

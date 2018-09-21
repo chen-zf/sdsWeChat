@@ -30,8 +30,8 @@ Page({
         { name: 'add', value: '招商加盟' },
       ]
     ],
-    ccieData:[{},{}],
-    detailsData: [{}, {}],
+    ccieData:[],
+    detailsData:[],
     TypeStr:1,
     publishFlag:false,
     windowOpen:false,
@@ -58,41 +58,18 @@ Page({
     })
   },
   // 上传图片事件
-  uploadImageFunc(e){
-    console.log(e)
+  uploadImageFunc(){
     var self = this
     if (self.data.isUploadImg){
       wx.chooseImage({
+        count: 1,
         success(res) {
           const tempFilePaths = res.tempFilePaths
           console.log(tempFilePaths)
-          var _obj = {
+          self.setData({
             imgUrl: '',
             isUploadImg: false
-          }
-          var _dataTyp = e.currentTarget.dataset
-          if (_dataTyp.typ == "details"){
-            var _detailsData = self.data.detailsData
-            _detailsData[_dataTyp.index] = {
-                imgUrl: '',
-                isUploadImg: false
-            }
-            _obj = {
-              detailsData: _detailsData
-            }
-            console.log(_obj)
-          } else if (_dataTyp.typ == "ccie"){
-            var _ccieData = self.data.ccie
-            _ccieData[_dataTyp.index] = {
-              imgUrl: '',
-              isUploadImg: false
-            }
-            _obj = {
-              ccieData: _ccieData
-            }
-            console.log(_obj)
-          }
-          self.setData(_obj)
+          })
           wx.uploadFile({
             url: URL.postMyImage,
             filePath: tempFilePaths[0],
@@ -105,39 +82,16 @@ Page({
                   title: data,
                   icon: 'none'
                 })
+                self.setData({
+                  isUploadImg: true
+                })
               } else {
-                var _objA = {}
-                console.log(data)
-                if (_dataTyp.typ == "details") {
-                  var _detailsData = self.data.detailsData
-                  _detailsData[_dataTyp.index] = {
-                    imgUrl: data,
-                    isUploadImg: true
-                  }
-                  _objA = {
-                    detailsData: _detailsData
-                  }
-                  console.log(_objA)
-                } else if (_dataTyp.typ == "ccie") {
-                  var _ccieData = self.data.ccie
-                  _ccieData[_dataTyp.index] = {
-                    imgUrl: data,
-                    isUploadImg: true
-                  }
-                  _objA = {
-                    ccieData: _ccieData
-                  }
-                  console.log(_objA)
-                }else{
-                  _objA = {
-                      imgUrl: data,
-                      isUploadImg: true
-                  }
-                }
-                self.setData(_objA)
+                self.setData({
+                  imgUrl: data,
+                  isUploadImg: true
+                })
                 self.isdisabledFunc()
               }
-             
             }
           })
         }
@@ -148,7 +102,85 @@ Page({
         icon: 'none'
       })
     }
-    
+  },
+  // 上传多图片事件
+  uploadImagesFunc(e) {
+    var self = this
+    if (self.data.isUploadImg) {
+      var _count = 8
+      var _dataTyp = e.currentTarget.dataset
+      if (_dataTyp.typ == "details") {
+        _count = 8 - self.data.detailsData.length
+      } else if (_dataTyp.typ == "ccie") {
+        _count = 8 - self.data.ccieData.length
+      }
+      if(_count<1){
+        wx.showToast({
+          title: '最多可上传8张图片',
+          icon: 'none'
+        })
+        return
+      }
+      wx.chooseImage({
+        count: _count,
+        success(res) {
+          const tempFilePaths = res.tempFilePaths
+          self.setData({
+            isUploadImg: false
+          })
+          self.isdisabledFunc()
+          for (let i = 0, leng = tempFilePaths.length; i<leng; i++){
+            wx.uploadFile({
+              url: URL.postMyImage,
+              filePath: tempFilePaths[i],
+              name: 'file',
+              header: { "Content-Type": "multipart/form-data" },
+              success(res) {
+                const data = res.data
+                if (data.indexOf('上传失败') > -1) {
+                  wx.showToast({
+                    title: data,
+                    icon: 'none'
+                  })
+                } else {
+                  var _obj = {}
+                  var dataLen = 0
+                  if (_dataTyp.typ == "details") {
+                    var _detailsData = self.data.detailsData
+                    _detailsData.push(data)
+                    dataLen = _detailsData.length
+                    _obj = {
+                      detailsData: _detailsData
+                    }
+                  } else if (_dataTyp.typ == "ccie") {
+                    var _ccieData = self.data.ccieData
+                    _ccieData.push(data)
+                    dataLen = _ccieData.length
+                    _obj = {
+                      ccieData: _ccieData
+                    }
+                  }
+                  self.setData(_obj)
+                  if (dataLen == leng) {
+                    self.setData({
+                      isUploadImg: true
+                    })
+
+                  }
+                  self.isdisabledFunc()
+                }
+
+              }
+            })
+          }
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '正在上传图片，请稍等',
+        icon: 'none'
+      })
+    }
   },
   // 上传视频事件
   uploadVideoFunc(){
@@ -209,7 +241,7 @@ Page({
   // 发布按钮禁用判断事件
   isdisabledFunc() {
     var isdisabled = true
-    if (this.data.imgUrl.length > 0 && this.data.videoUrl.length > 0) {
+    if (this.data.isUploadImg && this.data.imgUrl.length > 0 && this.data.videoUrl.length > 0) {
       isdisabled = false
     }
     this.setData({
@@ -227,7 +259,10 @@ Page({
       content: this.data.content,
       types: this.data.TypeStr,
       image: this.data.imgUrl,
-      video: this.data.videoUrl
+      video: this.data.videoUrl,
+      certificate: this.data.ccieData.join(","),
+      imgs: this.data.detailsData.join(",")
+      
     }
     if(this.data.TypeStr==2){
       sendData.score = this.data.score
@@ -299,8 +334,10 @@ Page({
       purpose: purpose,
       imgUrl: '',
       videoUrl: '',
-      ccieData: [{}, {}],
-      detailsData: [{}, {}],
+      ccieData: [],
+      isUploadImg: true,
+      isUploadVideo: true,
+      detailsData: [],
     })
     this.isdisabledFunc()
 

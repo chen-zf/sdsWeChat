@@ -1,12 +1,15 @@
 // pages/reward-money/index.js
+const URL = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      activeIndex:0,
-      rewardData:[10,20,30,40,50,60]
+    activeIndex:0,
+    optionsData: {},
+    rewardData:[10,20,30,40,50,60]
   },
   selectReward(e){
     this.setData({
@@ -14,59 +17,55 @@ Page({
     })
     console.log(this.data.activeIndex)
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      optionsData: options
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    this.getMoneyData()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getMoneyData() {
+    var self = this
+    wx.request({
+      url: URL.getGiftData,
+      data: {
+        type: 1
+      },
+      success(res) {
+        self.setData({
+          rewardData: res.data.data
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  rewardMoneytFunc() {
+    var self = this
+    wx.request({
+      url: URL.getPayData,
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        id: app.globalData.userInfo.id,
+        pid: self.data.optionsData.pid,
+        goods_amount: self.data.rewardData[self.data.activeIndex].money,
+        did: self.data.optionsData.did,
+        types: 1
+      },
+      success(res) {
+        var _data = res.data
+        wx.requestPayment({
+          timeStamp: '' + _data.timeStamp,
+          nonceStr: _data.nonceStr,
+          package: _data.package,
+          signType: _data.signType,
+          paySign: _data.paySign,
+          success(res) {
+            console.log(res)
+          }
+        })
+      }
+    })
   }
 })

@@ -14,10 +14,7 @@ Page({
     roomsData:[],
     bulletinData: []
   },
-  onLoad: function () {
-    this.getIndexDataFunc(1,0)
-    this.getHomeBulletinFunc()
-  },
+
   //事件处理函数
   tabbarReLaunchFunc: tempObj.tabbarReLaunchFunc,
   navClick: function (e) {
@@ -40,6 +37,8 @@ Page({
   },
   onShow(){
     app.authorizationFunc()
+    this.getIndexDataFunc(1, 0)
+    this.getHomeBulletinFunc()
   },
   hiddenSearch: function () {
     this.setData({

@@ -43,6 +43,6 @@
     border-radius: 24rpx;
 }
 .active{
-  border: .01rem solid #ff8432;
+  border: .02rem solid #ff8432;
   color: #ff8432;
 }

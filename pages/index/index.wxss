@@ -10,7 +10,7 @@
   height: 70rpx;
   background:#FF6833;
   box-sizing: border-box;
-  padding: 0 28rpx;
+  /* padding: 0 28rpx; */ 
 }
 .search-box{
   position: relative;

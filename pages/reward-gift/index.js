@@ -1,19 +1,11 @@
 // pages/reward-gift/index.js
+const URL = require('../../config.js')
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     activeIndex:0,
-    gifts: [
-      { img: '../../image/reward-gift/gift01@2x.png', price: 10, name: '鲜花' },
-      { img: '../../image/reward-gift/gift02@2x.png', price: 20, name: '勺子' },
-      { img: '../../image/reward-gift/gift03@2x.png', price: 30, name: '披萨' },
-      { img: '../../image/reward-gift/gift04@2x.png', price: 50, name: '汉堡' },
-      { img: '../../image/reward-gift/gift05@2x.png', price: 80, name: '咖啡' },
-      { img: '../../image/reward-gift/gift06@2x.png', price: 100, name: '喜道茶' }
-    ]
+    optionsData: {},
+    gifts: []
   },
   selectGift(e) {
     this.setData({
@@ -25,55 +17,56 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      optionsData: options
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    this.getGifData()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getGifData(){
+    var self = this
+    wx.request({
+      url: URL.getGiftData,
+      data: {
+        type: 0
+      },
+      success(res){
+        self.setData({
+          gifts: res.data.data
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  rewardGiftFunc(){
+    var self = this
+    wx.request({
+      url: URL.getPayData,
+      method:"POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data:{
+        id: app.globalData.userInfo.id,
+        pid: self.data.optionsData.pid,
+        goods_amount: self.data.gifts[self.data.activeIndex].money,
+        did: self.data.optionsData.did,
+        goods_id: self.data.gifts[self.data.activeIndex].id,
+        goods_name: self.data.gifts[self.data.activeIndex].name,
+        types: 0
+      },
+      success(res){
+        var _data = res.data
+        wx.requestPayment({
+          timeStamp: '' + _data.timeStamp,
+          nonceStr: _data.nonceStr,
+          package: _data.package,
+          signType: _data.signType,
+          paySign: _data.paySign,
+          success(res){
+            console.log(res)
+          }
+        })
+      }
+    })
   }
 })

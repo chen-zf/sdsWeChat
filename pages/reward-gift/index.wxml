@@ -4,11 +4,10 @@
     <view class='gift-items-box'  wx:for="{{gifts}}" wx:key="index" data-index="{{index}}" bindtap='selectGift'>
       <view class='gift-items'>
         <image class='gift-img' src='{{item.img}}'></image>
-        <text>{{item.price}}元</text>
         <view class="{{activeIndex==index?'gift-active':''}}"></view>
       </view>
       <view class='gift-name'>{{item.name}}</view>
     </view>
   </view>
-  <button class='gift-btn'>确定送礼物</button>
+  <button class='gift-btn' bindtap='rewardGiftFunc'>确定送礼物</button>
 </view>
