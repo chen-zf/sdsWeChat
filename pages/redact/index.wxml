@@ -8,12 +8,12 @@
     </view>
     <view class='redact-li'>
       <text class='li-text'>昵称</text>
-      <input class="li-main redact-input" placeholder="填写您的昵称" value='伊善英' bindinput='nickNameInput'/>
+      <input class="li-main redact-input" placeholder="填写您的昵称" value='{{nickname}}' bindinput='nickNameInput'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>个性签名</text>
-      <input class="li-main redact-input" placeholder="填写您的个性签名" />
+      <input class="li-main redact-input" placeholder="填写您的个性签名" value='{{synopsis}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
@@ -61,17 +61,19 @@
   <view class='redact-ul'>
     <view class='redact-li'>
       <text class='li-text'>视频公告</text>
-      <input class="li-main redact-input" placeholder="填写您的视频公告" />
+      <input class="li-main redact-input" placeholder="填写您的视频公告" value='{{video_notice}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
 
   <view class='redact-ul'>
-    <view class='redact-li'>
-      <text class='li-text'>行业类型</text>
-      <input class="li-main redact-input" placeholder="填写您的行业类型" />
-      <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
-    </view>
+    <picker bindchange="bindPickerFeelChange" value="{{industryPicker}}"  range="{{industryPicker}}" range-key="name">
+      <view class='redact-li'>
+          <text class='li-text'>行业类型</text>
+          <input class="li-main redact-input" placeholder="填写您的行业类型"  value='{{industryPicker[index].name}}' disabled/>
+          <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
+      </view>
+    </picker>
     <view class='redact-li'>
       <text class='li-text'>擅长厨艺</text>
       <input class="li-main redact-input" placeholder="填写您的擅长厨艺" />
@@ -99,24 +101,24 @@
   <view class='redact-ul'>
     <view class='redact-li'>
       <text class='li-text'>手机号码</text>
-      <input class="li-main redact-input" type="number" placeholder="填写您的手机号码" value='185 1658 9953' />
+      <input class="li-main redact-input" type="number" placeholder="填写您的手机号码" value='{{mobile_phone}}' />
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>微信号</text>
-      <input class="li-main redact-input" type="text" placeholder="填写您的微信号" value='wing1573315' />
+      <input class="li-main redact-input" type="text" placeholder="填写您的微信号" value='{{wxchat_number}}' />
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>邮箱</text>
-      <input class="li-main redact-input" type="text" placeholder="填写您的邮箱" value='157356364@qq.com' />
+      <input class="li-main redact-input" type="text" placeholder="填写您的邮箱" value='{{reg_email}}' />
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
   <view class='redact-ul'>
     <view class='redact-li'>
       <text class='li-text'>个人说明</text>
-      <input class="li-main redact-input" type="text" placeholder="填写您的个人说明" />
+      <input class="li-main redact-input" type="text" placeholder="填写您的个人说明" value='{{Explain}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>

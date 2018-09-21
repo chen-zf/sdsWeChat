@@ -1,5 +1,6 @@
 // pages/login/index.js
 const app = getApp()
+const URL = require('../../config.js')
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
       return
     }
     wx.request({
-      url: 'http://www.mmpzqw.top/weiwei/index.php/app/index/index',
+      url: URl.getAuthorization,
       data: {
         'code': app.globalData.code,
         'iv': e.detail.iv,
