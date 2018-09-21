@@ -1,4 +1,5 @@
 // pages/login/index.js
+const URL = require('../../config.js')
 const app = getApp()
 Page({
 
@@ -15,12 +16,12 @@ Page({
   onLoad: function (options) {
 
   },
-  eeee: function (e) {
+  getAuthorizationFunc: function (e) {
     if (!e.detail.iv || !e.detail.encryptedData) {
       return
     }
     wx.request({
-      url: 'http://www.mmpzqw.top/weiwei/index.php/app/index/index',
+      url: URL.getAuthorization,
       data: {
         'code': app.globalData.code,
         'iv': e.detail.iv,

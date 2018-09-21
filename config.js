@@ -30,6 +30,7 @@ const config = {
   getMyInfoCenter: BASEURL + 'Member/my_info_center',  // 消息中心 20180917
   getMyFansList: BASEURL + 'Member/FansList',  // 消息中心 20180917
   getGiveLikeList: BASEURL + 'Member/mypraise',  //获取我的点赞用户列表 20180917
+  getVisitorList: BASEURL + 'Member/visitor',  //获取看过我的用户列表 20180921
   setApplyCooperateData: BASEURL + 'Member/Apply_cooperation',  //提交合作申请 20180917
   getMyComment: BASEURL + 'Member/mycomment',  // 获取评论  20180918
   postMessage: BASEURL + 'Dynamic/message',             // 留言 20180920

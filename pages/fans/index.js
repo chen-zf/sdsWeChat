@@ -63,6 +63,9 @@ Page({
         }else{
           _obj[_event.index].is_mutual = 0
         }
+        self.setData({
+          fansData: _obj
+        })
         
       }
     })
