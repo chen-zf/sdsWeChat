@@ -1,6 +1,6 @@
 <!--pages/login/index.wxml-->
 <view class="container">
-  <image class='logo' src='http://www.jsanntq.cn/assets/cjlogo.png'></image>
+  <image class='logo' src='http://cjxiuxiu.cn/public/canjiangLogo.png'></image>
   <view class='name'>餐匠</view>
   <view class='straightline'></view>
   <view class="title">网页由该公众号开发，请确认授权以下信息</view>

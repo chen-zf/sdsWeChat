@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
+  width: 750rpx;
 }
 .menu{
   display: flex;
@@ -94,6 +95,7 @@
   z-index: 1;
 }
 .room{
+  width: 750rpx;
   padding-bottom: 2rpx;
   margin-top: 206rpx;
   overflow-y: auto;
@@ -102,37 +104,40 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin: 10rpx 32rpx 98rpx;
+  margin-bottom:98rpx;
+  /* margin: 10rpx 32rpx 98rpx; */
 }
 .rooms-items{
-  width: calc(50% - 5rpx);
+  /* width: calc(50% - 5rpx); */
   margin-bottom: 10rpx;
 }
 .rooms-show{
   position: relative;
-  width: 338rpx;
+  /* width: 338rpx; */
   height: 254rpx;
 }
 .rooms_img_box{
   position: relative;
 }
 .rooms_img_box image{
-  width: 338rpx;
+  width: 370rpx;
   height: 254rpx;
 }
 .rooms_img_box .mask_layer{
   position: absolute;
   top: 0;
-  width: 338rpx;
+  width: 370rpx;
   height: 254rpx;
-  border-radius: 10rpx;
+  /* border-radius: 10rpx; */
   background: rgba(0, 0, 0, 0.2);
 }
 .rooms-tag{
   position: absolute;
   top: 10rpx;
   right: 10rpx;
-  padding: 8rpx 20rpx;
+  padding: 0 20rpx;
+  height:38rpx;
+  line-height: 38rpx;
   border-radius: 10rpx;
   font-size: 22rpx;
   text-align: center;

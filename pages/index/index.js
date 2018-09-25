@@ -56,7 +56,7 @@ Page({
       success(res) {
         console.log(res.data.data)
         self.setData({
-          roomsData: res.data.data
+          roomsData: res.data.data.data
         })
       }
     })
