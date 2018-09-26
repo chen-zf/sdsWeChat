@@ -45,17 +45,6 @@ Page({
             likePraise: self.data.likePraise.concat(res.data.data.praise),
             totalPage: res.data.data.totalPage
           })
-        } else {
-          wx.showToast({
-            title: res.data.info,
-            icon: 'none'
-          })
-          setTimeout(function () {
-            wx.navigateBack({
-              delta: 1
-            })
-          }, 1500)
-
         }
         wx.hideNavigationBarLoading() //完成停止加载
       }

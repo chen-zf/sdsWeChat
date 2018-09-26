@@ -1,7 +1,11 @@
 <!--pages/audience/index.wxml-->
 <import src="../../template/template"/>
 <view class="container">
-    <template is="likeTemp" data="{{likeData}}"></template>
+    <template wx:if="{{likeData.data.length>0}}" is="likeTemp" data="{{likeData}}"></template>
+    <view wx:if="{{likeData.data.length==0}}" class='showNull-box margin-top134'>
+      <image class='showNullIcon' src='../../image/other/follow_img.png'></image>
+      <text class='showNullText'>还没有人看过您</text>
+    </view>
 </view>
 
 

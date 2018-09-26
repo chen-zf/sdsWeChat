@@ -5,7 +5,7 @@
       <view class='rank-box'>
         <image class='info-user-img' src='{{getPlayVideoData.user_info.head_pic}}'></image>
         <image class='info-rank-img' src='{{getPlayVideoData.rank_integral.img}}'></image>
-      </view>  
+      </view>
       <view class='info-top-center'>
         <view class='user-box'>
           <text class='user-name'>{{getPlayVideoData.user_info.nickname}}</text>
@@ -43,8 +43,8 @@
       <navigator class='view-flex' url='/pages/reward-money/index?did={{getPlayVideoData.id}}&pid={{getPlayVideoData.uid}}'>
         <image class='imageB' src='../../image/play-video/money@2x.png'></image>
         <text>{{getPlayVideoData.money}}</text>
-     </navigator>
-     <navigator class='view-flex' url='/pages/reward-gift/index?did={{getPlayVideoData.id}}&pid={{getPlayVideoData.uid}}'>
+      </navigator>
+      <navigator class='view-flex' url='/pages/reward-gift/index?did={{getPlayVideoData.id}}&pid={{getPlayVideoData.uid}}'>
         <image class='imageB' src='../../image/play-video/gift@2x.png'></image>
         <text>{{getPlayVideoData.gift}}</text>
       </navigator>
@@ -89,19 +89,19 @@
       </view>
     </view>
     <view wx:if="{{selectTyp==2}}">
-      <view class='pl-sort-box'>
+      <!-- <view class='pl-sort-box'>
         <image class='pl-sort-img' src='../../image/play-video/hot@2x.png'></image>
         <text class='pl-sort-text'>按热度</text>
-      </view>
+      </view> -->
       <view class='pl-list-box'>
-        <view class='pl-items' wx:for="{{plData}}" wx:key="key">
+        <view wx:if="{{plData.length>0}}" class='pl-items' wx:for="{{plData}}" wx:key="key">
           <image class='pl-head-img' src='{{item.user_info.head_pic}}'></image>
           <view class='pl-items-r'>
             <text class='pl-user-name margin-bottom10'>{{item.user_info.nickname}}</text>
             <text class='margin-bottom10'>{{item.content}}</text>
-            <navigator wx:if="{{item.ping.length>0}}" class='pl-content-box margin-bottom10' url='/pages/index/index'>
+            <navigator wx:if="{{item.ping.length>0}}" class='pl-content-box margin-bottom10' url='/pages/comment-all/index?pid={{item.id}}'>
               <text class='color-32679F'>{{item.ping[0].pingre}}</text>等人
-              <text class='color-32679F'>共{{item.ping.length}}条回复  ></text>
+              <text class='color-32679F'>共{{item.count}}条回复  ></text>
             </navigator>
             <view class='pl-itmes-rb margin-bottom10'>
               <text class='pl-tiem'>{{item.create_time}}</text>
@@ -115,7 +115,14 @@
             </view>
           </view>
         </view>
+         <view wx:if="{{plData.length==0}}" class='showNull-box margin-top134'>
+            <image class='showNullIcon' src='../../image/other/new_img.png'></image>
+            <text class='showNullText'>暂时还没有人评论</text>
+          </view>
       </view>
+      <navigator class='telme-box' url='/pages/one_contact/index'>
+        <image class='telme-icon' src='../../image/play-video/telme@2x.png'></image>
+      </navigator>
       <view class="reply-box">
         <view class='reply-input-box'>
           <input class='reply-input' focus="{{focus}}" bindinput="bindinputFunc" bindblur="bindblurFunc" placeholder='{{myPlaceholderVal}}' bindconfirm="sendplFunc" value='{{sendVal}}'></input>
@@ -132,12 +139,11 @@
     </view>
     <view class='message-input-box'>
       <view class='margin-r32 input-title'>联系电话：</view>
-      <input class='message-input' placeholder='输入你的联系电话'  bindinput='messageTelValFunc' value='{{messageTelVal}}'></input>
+      <input class='message-input' placeholder='输入你的联系电话' bindinput='messageTelValFunc' value='{{messageTelVal}}'></input>
     </view>
     <textarea class='tickling-textarea' placeholder="简述您的反馈内容..." value='{{textareaVal}}' bindinput="textareaFunc" />
     <view class='message-btn-box'>
       <button class="message-btn" bindtap='postMessageFunc'>确认</button>
     </view>
-    <navigator url=''></navigator>
   </view>
 </view>

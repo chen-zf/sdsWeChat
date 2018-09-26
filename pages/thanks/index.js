@@ -30,11 +30,13 @@ Page({
       },
       success(res) {
         var _data = res.data.data
-        self.setData({
-          listData: self.data.listData.concat(_data.info),
-          totalPage: _data.totalPage
+        if (res.data.info.includes('请求成功')){
+          self.setData({
+            listData: self.data.listData.concat(_data.info),
+            totalPage: _data.totalPage
 
-        })
+          })
+        }
         wx.hideNavigationBarLoading() //完成停止加载
       }
     })

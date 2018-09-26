@@ -77,6 +77,42 @@ Page({
       scrollTop: 0,
       duration: 0
     })
-
-  }
+  },
+  // 点赞   0 动态  1 评论
+  likeFunc(e) {
+    var self = this
+    var _data = e.currentTarget.dataset
+    wx.request({
+      url: URL.setUserLikes,
+      data: {
+        did: _data.did,
+        type: 0,
+        id: app.globalData.userInfo.id,
+        pid: _data.pid
+      },
+      success(res) {
+        var _obj = {}
+        var _index = _data.index
+        var _attentionData = self.data.attentionData
+        if (res.data.info.includes('点赞成功')) {
+          _attentionData[_index].is_dianzan = 1
+          ++_attentionData[_index].likes
+            _obj = {
+              attentionData: _attentionData
+            }
+        } else {
+          _attentionData[_index].is_dianzan = 0
+          --_attentionData[_index].likes
+            _obj = {
+              attentionData: _attentionData
+            }
+        }
+        self.setData(_obj)
+        wx.showToast({
+          title: res.data.info,
+          icon: 'none'
+        })
+      }
+    })
+  },
 })

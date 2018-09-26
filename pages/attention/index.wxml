@@ -23,36 +23,36 @@
             <!-- <view class='listbox-masklayer'></view> -->
           </view>
           <view class='video-status'>
-            <view>
+            <navigator class='flexview' url='/pages/play-video/index?pid={{aItems.uid}}&did={{aItems.id}}'>
               <image src="../../image/attention/message@2x.png"></image>
               <text>{{aItems.comment}}</text>
-            </view>
-            <view>
+            </navigator>
+            <view class='flexview' data-did='{{aItems.id}}' data-pid='{{aItems.uid}}' data-index="{{index}}" bindtap='likeFunc'>
               <image wx:if="{{aItems.is_dianzan == 0}}" src="../../image/attention/like2@2x.png"></image>
               <image wx:else src="../../image/attention/like-hl@2x.png"></image>
               <text>{{aItems.likes}}</text>
             </view>
-            <view>
+            <view class='flexview'>
               <image src="../../image/attention/share@2x.png"></image>
               <text>分享</text>
             </view>
           </view>
         </view>
-        <view class='listbox-bottom' wx:if="{{aItems.messageList.length>0}}" >
+        <view class='listbox-bottom' wx:if="{{aItems.messageList.length>0}}">
           <view wx:for="{{aItems.messageList}}" wx:key="key" wx:for-item="bItems">
-             <view>
-                <text class='listbox-color'>{{bItems.pingre}}</text>:
-                <text>{{bItems.content}}</text>
-              </view>
-              <view wx:if="{{bItems.replyMessage.length > 0}}" wx:for="{{bItems.replyMessage}}" wx:key="key" wx:for-item="cItems">
-                <text class='listbox-color'>{{cItems.pingre}}</text>回复
-                <text class='listbox-color'>{{cItems.npingre}}</text>:
-                <text>{{cItems.content}}</text>
-              </view>
+            <view>
+              <text class='listbox-color'>{{bItems.pingre}}</text>:
+              <text>{{bItems.content}}</text>
+            </view>
+            <view wx:if="{{bItems.replyMessage.length > 0}}" wx:for="{{bItems.replyMessage}}" wx:key="key" wx:for-item="cItems">
+              <text class='listbox-color'>{{cItems.pingre}}</text>回复
+              <text class='listbox-color'>{{cItems.npingre}}</text>:
+              <text>{{cItems.content}}</text>
+            </view>
           </view>
-           <view class='listbox-color'>查看全部评论》</view>
+          <navigator class='listbox-color' url='/pages/play-video/index?pid={{aItems.uid}}&did={{aItems.id}}'>查看全部评论》</navigator>
         </view>
-       
+
       </view>
     </block>
   </view>

@@ -36,10 +36,12 @@ Page({
         page:  self.data.page
       },
       success(res){
-        self.setData({
-          commentData: self.data.commentData.concat(res.data.data.comment),
-          totalPage: res.data.data.totalPage
-        })
+        if (res.data.info.includes('ok')){
+          self.setData({
+            commentData: self.data.commentData.concat(res.data.data.comment),
+            totalPage: res.data.data.totalPage
+          })
+        }
         wx.hideNavigationBarLoading() //完成停止加载
       }
     })

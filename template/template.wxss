@@ -133,7 +133,7 @@
   font-family:PingFang-SC-Medium;
   color:rgba(153,153,153,1);
 }
-.video-status>view{
+.video-status .flexview{
   display: flex;
   margin-right: 40rpx;
 }

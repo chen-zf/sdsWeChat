@@ -46,6 +46,9 @@ Page({
   },
   onShow(options){
     app.authorizationFunc()
+    this.setData({
+      page: 1
+    })
     this.getPlContent()
   },
   getTheVideoDetails(did, pid, page) {
@@ -151,12 +154,13 @@ Page({
         id: app.globalData.userInfo.id,
         page: self.data.page,
         pid: self.data.optionsData.pid,
-        heat:0   // 0 按时间   1按热度
+        heat:1   // 1 按时间   0按热度
       },
       success(res){
         console.log(res)
         self.setData({
-          plData: res.data.data.ping
+          plData: self.data.plData.concat(res.data.data.ping),
+          totalPage: res.data.data.pagecount
         })
         wx.hideNavigationBarLoading() //完成停止加载
       }
@@ -222,6 +226,11 @@ Page({
       data:obj,
       success(res){
         self.initInputValFunc('')
+        self.setData({
+          page:1,
+          plData:[]
+        })
+        self.getPlContent()
       }
 
     })
@@ -340,6 +349,8 @@ Page({
    */
   onReachBottom: function () {
     var page = ++this.data.page
+    console.log("111111" + this.data.totalPage)
+    console.log("222222"+this.data.page)
     if (this.data.page <= this.data.totalPage) {
       this.setData({
         page: page

@@ -397,3 +397,12 @@ page{
   color:rgba(255,93,36,1);
   border-left: 2px solid rgba(230,230,230,1);
 }
+.telme-box{
+  position: fixed;
+  right: 24rpx;
+  bottom: 80rpx;
+}
+.telme-icon{
+  width: 110rpx;
+  height: 110rpx;
+}
