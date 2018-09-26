@@ -8,7 +8,7 @@
         <text class='content'>{{item.content}}</text>
         <text class='time'>{{item.create_time}}</text>
       </view>
-      <image class='video-img' src='{{item.act_id.image}}'></image>
+      <image class='video-img' mode='center' src='{{item.act_id.image}}'></image>
     </navigator>
   </view>
    <view wx:if="{{commentData.length==0}}" class='showNull-box margin-top134'>
