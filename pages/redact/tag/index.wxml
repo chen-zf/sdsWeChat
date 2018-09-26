@@ -1,0 +1,8 @@
+<view class='top_block'>
+  <text wx:if="{{flag}}">已添加{{setNum}}个标签,还可以添加{{sumNum-setNum}}个</text>
+  <text class='red' wx:else>已添加{{setNum}}个厨艺，不能继续添加。</text>
+</view>
+<view class='main_block'>
+  <view class='li_block {{itemName.selected?"active":""}}' wx:for="{{dataArray}}" wx:for-index="index" wx:for-item="itemName" wx:key="key" bindtap='bindLiClick' data-index="{{index}}">{{itemName.name}}</view>
+</view>
+<button class='btn' bindtap='sumbitTag'>完成</button>

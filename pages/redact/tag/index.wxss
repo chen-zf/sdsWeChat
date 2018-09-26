@@ -1,0 +1,50 @@
+.top_block{
+    background-color: #ffffff; 
+    height: 90rpx;
+    color: #333333;
+    font-size: 28rpx;
+    line-height: 90rpx;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 32rpx;
+}
+.main_block{
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.li_block{
+    width: 148rpx;
+    height: 60rpx;
+    font-size:28rpx;
+    color: #666666;
+    text-align: center;
+    line-height: 60rpx;
+    border: 1px solid #d9d9d9;
+    border-radius: 15rpx;
+    margin: 0 0 30rpx 28rpx;
+    overflow: hidden;
+}
+.active{
+    color: #ffffff;
+    background-color: #999999;
+}
+.btn{
+    width: 686rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: center;
+    background-color: #FF7732;
+    border: 0;
+    border-radius: 10rpx;
+    font-size: 40rpx;
+    font-family: PingFang-SC-Medium;
+    color: #ffffff;
+    margin: 0 32rpx;
+}
+.red{
+  color: red;
+}

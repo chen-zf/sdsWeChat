@@ -33,7 +33,8 @@
     "pages/apply_cooperate/index",
     "pages/one_contact/index",
     "pages/play-video/index",
-    "pages/comment-all/index"
+    "pages/comment-all/index",
+    "pages/redact/tag/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

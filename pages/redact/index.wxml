@@ -8,12 +8,12 @@
     </view>
     <view class='redact-li'>
       <text class='li-text'>昵称</text>
-      <input class="li-main redact-input" placeholder="填写您的昵称" value='{{nickname}}' bindinput='nickNameInput'/>
+      <input class="li-main redact-input" placeholder="填写您的昵称" bindinput='bindNicknameInput' value='{{nickname}}' bindinput='nickNameInput'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>个性签名</text>
-      <input class="li-main redact-input" placeholder="填写您的个性签名" value='{{synopsis}}'/>
+      <input class="li-main redact-input" placeholder="填写您的个性签名" bindinput='bindSynopsisInput' value='{{synopsis}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
@@ -43,7 +43,7 @@
     </picker>
     <view class='redact-li'>
       <text class='li-text'>个性标签</text>
-      <input class="li-main redact-input" placeholder="填写您的个性标签" />
+      <input class="li-main redact-input" placeholder="选择您的个性标签"  disabled='true' bindtap='bindTagClick' value='{{labelStr}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
@@ -61,22 +61,22 @@
   <view class='redact-ul'>
     <view class='redact-li'>
       <text class='li-text'>视频公告</text>
-      <input class="li-main redact-input" placeholder="填写您的视频公告" value='{{video_notice}}'/>
+      <input class="li-main redact-input" placeholder="填写您的视频公告"  bindinput='bindVideoNoticeInput' value='{{video_notice}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
 
   <view class='redact-ul'>
-    <picker bindchange="bindPickerFeelChange" value="{{industryPicker}}"  range="{{industryPicker}}" range-key="name">
+    <picker bindchange="bindPickerindustryChange" value="{{industryPicker}}"  range="{{industryPicker}}" range-key="name">
       <view class='redact-li'>
           <text class='li-text'>行业类型</text>
-          <input class="li-main redact-input" placeholder="填写您的行业类型"  value='{{industryPicker[index].name}}' disabled/>
+          <input class="li-main redact-input" placeholder="填写您的行业类型"  value='{{industryPicker[industryIndex].name}}' disabled/>
           <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
       </view>
     </picker>
     <view class='redact-li'>
       <text class='li-text'>擅长厨艺</text>
-      <input class="li-main redact-input" placeholder="填写您的擅长厨艺" />
+      <input class="li-main redact-input" placeholder="选择您的擅长厨艺"  disabled='true' bindtap='bindExpertiseClick' value='{{expertiseStr}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
@@ -89,38 +89,36 @@
         <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
       </view>
     </picker>
-    <picker mode="region" bindchange="bindRegionHomeChange" value="{{regionHome}}" custom-item="{{customItem}}">
-      <view class='redact-li'>
+    <view class='redact-li'>
         <text class='li-text'>我的家乡</text>
-        <view class='.li-main'>{{regionHome[0]}}-{{regionHome[1]}}-{{regionHome[2]}}</view>
+         <input class="li-main redact-input" placeholder="填写我的家乡"  bindinput='bindHomeTownInput' value='{{homeTown}}'/>
         <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
-      </view>
-    </picker>
+    </view>
   </view>
 
   <view class='redact-ul'>
     <view class='redact-li'>
       <text class='li-text'>手机号码</text>
-      <input class="li-main redact-input" type="number" placeholder="填写您的手机号码" value='{{mobile_phone}}' />
+      <input class="li-main redact-input" type="number" placeholder="填写您的手机号码" bindinput='bindMobilePhoneInput' value='{{mobile_phone}}' />
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>微信号</text>
-      <input class="li-main redact-input" type="text" placeholder="填写您的微信号" value='{{wxchat_number}}' />
+      <input class="li-main redact-input" type="text" placeholder="填写您的微信号" bindinput='bindWxchatNumberInput' value='{{wxchat_number}}' />
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
     <view class='redact-li'>
       <text class='li-text'>邮箱</text>
-      <input class="li-main redact-input" type="text" placeholder="填写您的邮箱" value='{{reg_email}}' />
+      <input class="li-main redact-input" type="text" placeholder="填写您的邮箱" bindinput='bindRegEmailInput' value='{{reg_email}}' />
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
   <view class='redact-ul'>
     <view class='redact-li'>
       <text class='li-text'>个人说明</text>
-      <input class="li-main redact-input" type="text" placeholder="填写您的个人说明" value='{{Explain}}'/>
+      <input class="li-main redact-input" type="text" placeholder="填写您的个人说明" bindinput='bindExplainInput' value='{{Explain}}'/>
       <image class='redact-go-icon' src='../../image/my/my_go@2x.png'></image>
     </view>
   </view>
-  <button class='gift-btn'>保存</button>
+  <button class='gift-btn' bindtap='submitUserInfo'>保存</button>
 </view>

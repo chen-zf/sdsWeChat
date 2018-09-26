@@ -33,10 +33,11 @@ const config = {
   getVisitorList: BASEURL + 'Member/visitor',  //获取看过我的用户列表 20180921
   setApplyCooperateData: BASEURL + 'Member/Apply_cooperation',  //提交合作申请 20180917
   getMyComment: BASEURL + 'Member/mycomment',  // 获取评论  20180918
+  setVideoShare: BASEURL + 'Dynamic/share',         // 设置视频分享 20180921
   postMessage: BASEURL + 'Dynamic/message',             // 留言 20180920
   getDynamicPl: BASEURL + 'Dynamic/dynamic_pinglen',         // 获取评论 20180920
-  setVideoShare: BASEURL + 'Dynamic/share',         // 设置视频分享 20180921
   getPlDetails: BASEURL + 'Dynamic/pinglendie',         // 查看更多评论 20180925
+  setUserInfo: BASEURL + 'Member/EditUserInfo' //修改用户信息 20180926
         
 }
 
