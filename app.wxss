@@ -26,3 +26,25 @@
     border-left:36rpx solid #fff;
     border-bottom:22rpx solid transparent;
 }
+.showNull-box{
+  width: 750rpx;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.showNullIcon{
+  margin:  0 auto;
+  width: 600rpx;
+  height: 360rpx;
+}
+.showNullText{
+  text-align: center;
+  margin-top: 40rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color: #999;
+}
+.margin-top134{
+  margin-top: 134rpx;
+  padding-bottom: 108rpx;
+}

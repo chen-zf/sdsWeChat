@@ -1,6 +1,5 @@
 {
   "pages": [
-   
     "pages/index/index",
     "pages/login/index",
     "pages/withdraw/index",
@@ -33,7 +32,8 @@
     "pages/apply-direct-seeding/index",
     "pages/apply_cooperate/index",
     "pages/one_contact/index",
-    "pages/play-video/index"
+    "pages/play-video/index",
+    "pages/comment-all/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

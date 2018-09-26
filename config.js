@@ -35,7 +35,8 @@ const config = {
   getMyComment: BASEURL + 'Member/mycomment',  // 获取评论  20180918
   postMessage: BASEURL + 'Dynamic/message',             // 留言 20180920
   getDynamicPl: BASEURL + 'Dynamic/dynamic_pinglen',         // 获取评论 20180920
-  setVideoShare: BASEURL + 'Dynamic/share',         // 获取评论 20180921
+  setVideoShare: BASEURL + 'Dynamic/share',         // 设置视频分享 20180921
+  getPlDetails: BASEURL + 'Dynamic/pinglendie',         // 查看更多评论 20180925
         
 }
 

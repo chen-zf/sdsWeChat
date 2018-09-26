@@ -1,6 +1,6 @@
 // pages/login/index.js
-const app = getApp()
 const URL = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
@@ -16,12 +16,12 @@ Page({
   onLoad: function (options) {
 
   },
-  eeee: function (e) {
+  getAuthorizationFunc: function (e) {
     if (!e.detail.iv || !e.detail.encryptedData) {
       return
     }
     wx.request({
-      url: URl.getAuthorization,
+      url: URL.getAuthorization,
       data: {
         'code': app.globalData.code,
         'iv': e.detail.iv,

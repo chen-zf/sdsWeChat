@@ -1,0 +1,50 @@
+<!--pages/comment-all/index.wxml-->
+<view class='comment-all-container'>
+  <view class='comment-box boxA'>
+    <image class='user-head' src='{{indexData.user_pic}}'></image>
+    <view class='box-r'>
+      <view class='box-r-top'>
+        <text class='comment-name'>{{indexData.pingre}}</text>
+        <view class='like-box'>
+          <image class='comment-icon' src='../../image/play-video/like-hl@2x.png'></image>
+          <text class='like-number'>{{indexData.zan}}</text>
+        </view>
+         <view class='like-box'>
+          <!-- <image class='comment-icon pl-icon' src='../../image/play-video/reply@2x.png'></image> -->
+          <text class='like-number pl-number'> 评论 ({{zanCount}})</text>
+        </view>
+        
+      </view>
+      <text class='comment-time'>{{indexData.date}}</text>
+      <text class='comment-content'>{{indexData.content}}</text>
+      <!-- <view class='pl-sort-box'>
+        <image class='pl-sort-icon' src='../../image/play-video/hot@2x.png'></image>
+        <text class='pl-sort-text'>按热度</text>
+      </view> -->
+    </view>
+  </view>
+  <view class='margin-bottom98'>
+    <block wx:for="{{commentData}}" wx:key="key">
+      <view class='comment-box boxB'>
+        <image class='user-head' src='{{item.user_pic}}'></image>
+        <view class='box-r border-bottom-solid'>
+          <view class='box-r-top'>
+            <text class='comment-name'>{{item.pingre}}</text>
+            <view class='like-box'>
+              <image class='comment-icon' src='../../image/play-video/like-hl@2x.png'></image>
+              <text class='like-number'>{{item.zan}}</text>
+            </view>
+          </view>
+          <text class='comment-time'>{{item.create_time}}</text>
+          <text class='comment-content'>{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="reply-box">
+    <view class='reply-input-box'>
+      <input class='reply-input' bindinput="bindinputFunc" placeholder='回复 评论' bindconfirm="sendplFunc" value='{{sendVal}}'></input>
+      <view class='reply-btn' bindtap='sendplFunc'>发送</view>
+    </view>
+  </view>
+</view>

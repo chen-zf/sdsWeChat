@@ -55,9 +55,15 @@ Page({
       },
       success(res) {
         console.log(res.data.data)
-        self.setData({
-          roomsData: res.data.data
-        })
+        if (res.data.data.data){
+          self.setData({
+            roomsData: res.data.data.data
+          })
+        }else{
+          self.setData({
+            roomsData: []
+          })
+        }
       }
     })
   },
@@ -66,6 +72,7 @@ Page({
     wx.request({
       url: URL.getHomeBulletin,
       success(res) {
+        console.log(res.data.data)
         self.setData({
           bulletinData: res.data.data
         })

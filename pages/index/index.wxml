@@ -28,7 +28,7 @@
 
 <view class='room'>
   <view class='room-box'>
-    <view class='rooms-items' wx:for="{{roomsData}}" wx:key="key" wx:for-item="items">
+    <view wx:if="{{roomsData.length>0}}" class='rooms-items'  wx:for="{{roomsData}}" wx:key="key" wx:for-item="items">
         <navigator class='main-top-r' url='/pages/play-video/index?pid={{items.uid}}&did={{items.id}}'>
           <view class='rooms-show'>
             <view class='rooms_img_box'>
@@ -49,6 +49,10 @@
             </view>
           </view>
           </navigator>
+    </view>
+    <view wx:if="{{roomsData.length==0}}" class='showNull-box'>
+      <image class='showNullIcon' src='../../image/other/video_img.png'></image>
+      <text class='showNullText'>暂无该类型相关视频</text>
     </view>
   </view>
 </view>

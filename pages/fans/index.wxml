@@ -1,5 +1,5 @@
 <view class="container">
-  <view class='fans-list' wx:for="{{fansData}}" wx:key="index">
+  <view wx:if="{{fansData.length>0}}" class='fans-list' wx:for="{{fansData}}" wx:key="index">
     <view class="fans-item">
       <image class='u-head-icon' src='{{item.user_head_pic}}'></image>
       <view class='u-name'>{{item.user_nickname}}</view>
@@ -7,4 +7,8 @@
       <view wx:else class='u-btn active' data-index='{{index}}' data-pid='{{item.from_uid}}' bindtap='attentionFunc'>未关注</view>
     </view>
   </view>
+  <view wx:if="{{fansData.length==0}}" class='showNull-box margin-top134'>
+      <image class='showNullIcon' src='../../image/other/like_img.png'></image>
+      <text class='showNullText'>还没有粉丝哟</text>
+    </view>
 </view>

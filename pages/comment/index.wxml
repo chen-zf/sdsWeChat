@@ -1,6 +1,6 @@
 <!--pages/comment/index.wxml-->
 <view class='container'>
-  <view  wx:for="{{commentData}}" wx:key="key">
+  <view wx:if="{{commentData.length>0}}"  wx:for="{{commentData}}" wx:key="key">
     <navigator class='news-box' url='/pages/play-video/index?pid={{item.act_id.uid}}&did={{item.act_id.id}}'>
       <image class='head-img' src='{{item.uid.head_pic}}'></image>
       <view class='center'>
@@ -11,4 +11,8 @@
       <image class='video-img' src='{{item.act_id.image}}'></image>
     </navigator>
   </view>
+   <view wx:if="{{commentData.length==0}}" class='showNull-box margin-top134'>
+      <image class='showNullIcon' src='../../image/other/comment_img.png'></image>
+      <text class='showNullText'>暂时还没有人评论</text>
+    </view>
 </view>

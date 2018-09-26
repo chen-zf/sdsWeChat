@@ -1,5 +1,9 @@
 <!--pages/thanks/index.wxml-->
 <import src="../../template/template.wxml" />
 <view class='container'>
- <template is="thanksTemp" data="{{listData}}"></template>
+  <template wx:if="{{listData.length>0}}" is="thanksTemp" data="{{listData}}"></template>
+  <view wx:if="{{listData.length==0}}" class='showNull-box margin-top134'>
+    <image class='showNullIcon' src='../../image/other/thanks_img.png'></image>
+    <text class='showNullText'>暂未收到任何感谢</text>
+  </view>
 </view>

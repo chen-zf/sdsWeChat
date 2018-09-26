@@ -1,7 +1,4 @@
 /* pages/comment/index.wxss */
-.container{
-  margin-bottom: 98rpx;
-}
 .news-box{
   display: flex;
   width: 686rpx;
