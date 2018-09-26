@@ -2,11 +2,14 @@
   <video class='video-box' src="{{getPlayVideoData.video}}" controls></video>
   <view class='info-box'>
     <view class='info-top'>
-      <image class='info-user-img' src='{{getPlayVideoData.user_info.head_pic}}'></image>
+      <view class='rank-box'>
+        <image class='info-user-img' src='{{getPlayVideoData.user_info.head_pic}}'></image>
+        <image class='info-rank-img' src='{{getPlayVideoData.rank_integral.img}}'></image>
+      </view>  
       <view class='info-top-center'>
         <view class='user-box'>
           <text class='user-name'>{{getPlayVideoData.user_info.nickname}}</text>
-          <text class='rank'>厨鸟</text>
+          <text class='rank'>{{getPlayVideoData.rank_integral.name}}</text>
         </view>
         <text>{{getPlayVideoData.play_number}}次播放</text>
       </view>

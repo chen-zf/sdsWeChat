@@ -137,11 +137,11 @@
   <view class='like-list' wx:for="{{likeData.data}}" wx:key="index">
     <view class='like-date'>{{item.title}}</view>
     <view class="like-item" wx:for="{{item.data}}">
-      <image class='u-head-icon' src='../../image/my/header.png'></image>
+      <image class='u-head-icon' src='{{item.head_pic}}'></image>
       <view class='like-item-r'>
-        <text class='u-name'>厚闪没</text>
-        <text class='like-time'>20:55  <text wx:if="{{likeData.type==0}}">给您点赞</text>
-        <text wx:else>看过我的</text></text>
+        <text class='u-name'>{{item.userinfo}}</text>
+        <text wx:if="{{likeData.type==0}}" class='like-time' >{{item.action_time}}  点赞了我的视频 <text wx:if="{{item.dynamic.title.length>0}}">《{{item.dynamic.title}}》</text></text>
+        <text wx:else class='like-time' >{{item.time}}  看过我的发布的 <text wx:if="{{item.dynamic.title.length>0}}">《{{item.dynamic.title}}》</text></text>
       </view>
     </view>
   </view>

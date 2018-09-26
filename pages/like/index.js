@@ -8,7 +8,11 @@ Page({
    */
   data: {
     objA:{"a":1,"b":2},
-    likeData: {},
+    likeData: {
+      type: 0,
+      data: []
+    },
+    likePraise: [],
     page: 1,
     totalPage: 1 
   },
@@ -26,22 +30,66 @@ Page({
     wx.request({
       url: URL.getGiveLikeList,
       data: {
-        user_id: 10009,
+        user_id: app.globalData.userInfo.id,
         page: self.data.page
       },
       success(res){
-        self.setData({
-          fansData: self.data.fansData.concat(res.data.data.info),
-          totalPage: res.data.data.totalPage
-        })
+        if (res.data.error == 0) {
+          var _likeData = self.finsDataHandle(self.data.likePraise.concat(res.data.data.praise))
+          var _obj = {}
+          _obj.type = 0
+          _obj.data = _likeData
+
+          self.setData({
+            likeData: _obj,
+            likePraise: self.data.likePraise.concat(res.data.data.praise),
+            totalPage: res.data.data.totalPage
+          })
+        } else {
+          wx.showToast({
+            title: res.data.info,
+            icon: 'none'
+          })
+          setTimeout(function () {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1500)
+
+        }
         wx.hideNavigationBarLoading() //完成停止加载
       }
     })
   },
+  // 处理数据
+  getDataTitle(time){
+    let _time = time.split(".")
+    let _month = _time[1].indexOf('0') == 0 ? _time[1].substr(1, 1)+'月':  _time[1]+'月'
+    let _date =  _time[2].indexOf('0') == 0 ? _time[2].substr(1, 1)+'日': _time[2] +'日'
+    return _month + _date
+  },
   finsDataHandle(data){
-    //  for(){
-
-    //  }
+    var self = this
+    var _obj = {}
+    var _likeData = []
+    if (data.length > 0) {
+      for(let i=0,len=data.length; i<len;i++){
+        var _title = new Date(data[i].yuetime).getTime()
+        if (_obj[_title]){
+          _obj[_title].data.push(data[i])
+        }else{
+          _obj[_title] = {
+            title: self.getDataTitle(data[i].yuetime),
+            data:[]
+          }
+          _obj[_title].data.push(data[i])
+        }
+      }
+      for (let key in _obj) {
+        _likeData.push(_obj[key])
+      }
+    }
+    return _likeData
   },
   /**
    * 生命周期函数--监听页面显示
@@ -58,7 +106,11 @@ Page({
     wx.showNavigationBarLoading() //在标题栏中显示加载
     this.setData({
       page: 1,
-      fansData: []
+      likeData: {
+        type: 0,
+        data: []
+      },
+      likePraise: [],
     })
     this.initLike()
     wx.stopPullDownRefresh();
