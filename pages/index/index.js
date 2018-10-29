@@ -5,7 +5,7 @@ import tempObj from '../../template/template'
 const URL = require('../../config.js')
 Page({
   data: {
-    checkList: ['推荐','厨艺','吃货天堂','品牌','设备','名人堂'],
+    checkList: ['推荐', '厨艺', '吃货天堂', '设备', '品牌','名人堂'],
     checkindex:0,
     isShowSearch:false,
     tabbarData: {
@@ -36,7 +36,6 @@ Page({
     }) 
   },
   onShow(){
-    app.authorizationFunc()
     this.getIndexDataFunc(1, 0)
     this.getHomeBulletinFunc()
   },

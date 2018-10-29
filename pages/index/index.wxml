@@ -1,54 +1,54 @@
 <!--index.wxml-->
-<import src="../../template/template"/>
+<import src="../../template/template" />
 <view class='top'>
-    <view class='menu'>
-      <!-- <view class='search-box'>
+  <view class='menu'>
+    <!-- <view class='search-box'>
         <icon type='search' size='15' color='#FFFFFF' class='searchicon' bindtap='showSearch'></icon>
         <icon type='clear' size='15' color='#FFFFFF' class="closeicon {{isShowSearch?'':'hidden'}}" bindtap='hiddenSearch'></icon>
         <view class="input-view {{isShowSearch?'':'hidden'}}">
             <input placeholder='请输入要搜索的关键字' class='search' placeholder-class='placeholder'></input>
         </view>      
       </view> -->
-      <view class="nav {{isShowSearch?'hidden':''}}">
-        <block wx:for="{{checkList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="key">
-          <view data-num="{{idx}}" class="{{idx == checkindex?'active':''}}" bindtap='navClick'>{{itemName}}</view>
-        </block>    
-      </view>  
+    <view class="nav {{isShowSearch?'hidden':''}}">
+      <block wx:for="{{checkList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="key">
+        <view data-num="{{idx}}" class="{{idx == checkindex?'active':''}}" bindtap='navClick'>{{itemName}}</view>
+      </block>
     </view>
-    <view class='news'>
-      <view class='news-box'>
-        <swiper vertical="true" autoplay="true" interval="3000" duration="1500" circular="true" vertical="true"  style='height:80rpx;' display-multiple-items="3">
-          <swiper-item wx:for="{{bulletinData}}" wx:key="key" wx:for-item="bulletinitems">
-            <view>{{bulletinitems.content}}</view>
-          </swiper-item>
-        </swiper>
-      </view>
+  </view>
+  <view class='news'>
+    <view class='news-box'>
+      <swiper vertical="true" autoplay="true" interval="3000" duration="1500" circular="true" vertical="true" style='height:80rpx;' display-multiple-items="3">
+        <swiper-item wx:for="{{bulletinData}}" wx:key="key" wx:for-item="bulletinitems">
+          <view>{{bulletinitems.content}}</view>
+        </swiper-item>
+      </swiper>
     </view>
+  </view>
 </view>
 
 <view class='room'>
   <view class='room-box'>
-    <view wx:if="{{roomsData.length>0}}" class='rooms-items'  wx:for="{{roomsData}}" wx:key="key" wx:for-item="items">
-        <navigator class='main-top-r' url='/pages/play-video/index?pid={{items.uid}}&did={{items.id}}'>
-          <view class='rooms-show'>
-            <view class='rooms_img_box'>
-                <image src='{{items.image}}'></image>
-                <view class='mask_layer'></view>
+    <view wx:if="{{roomsData.length>0}}" class='rooms-items' wx:for="{{roomsData}}" wx:key="key" wx:for-item="items">
+      <navigator class='main-top-r' url='/pages/play-video/index?pid={{items.uid}}&did={{items.id}}'>
+        <view class='rooms-show'>
+          <view class='rooms_img_box'>
+            <image src='{{items.image}}' mode='aspectFill'></image>
+            <view class='mask_layer'></view>
+          </view>
+          <view class='rooms-tag .rooms-tag-{{items.types}}'>{{checkList[items.types]}}</view>
+          <view class='rooms_bottom_box'>
+            <view class='rooms-title line-limit-length'>{{items.title}}</view>
+            <view class='rooms-like'>
+              <image src='../../image/icon/like@2x.png'></image>
+              <text>{{items.likes}}</text>
             </view>
-            <view class='rooms-tag .rooms-tag-{{items.types}}'>{{checkList[items.types]}}</view>
-            <view class='rooms_bottom_box'>
-                <view class='rooms-title'>{{items.title}}</view>
-                <view class='rooms-like'>
-                    <image src='../../image/icon/like@2x.png'></image>
-                    <text>{{items.likes}}</text>
-                </view>
-                <view class="rooms-share">
-                    <image src='../../image/icon/share@2x.png'></image>
-                    <text>{{items.forward}}</text>
-                </view>
+            <view class="rooms-share">
+              <image src='../../image/icon/share@2x.png'></image>
+              <text>{{items.forward}}</text>
             </view>
           </view>
-          </navigator>
+        </view>
+      </navigator>
     </view>
     <view wx:if="{{roomsData.length==0}}" class='showNull-box'>
       <image class='showNullIcon' src='../../image/other/video_img.png'></image>

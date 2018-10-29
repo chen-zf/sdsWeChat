@@ -3,15 +3,16 @@ const api = require('config.js')
 App({
   onLaunch: function() {
     // 展示本地存储能力
+    console.log(1)
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
     // 登录
     wx.login({
+    
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
         this.globalData.code = res.code
       }
     })
@@ -23,6 +24,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log(3)
               console.log(res)
               var self = this
               wx.request({
@@ -47,6 +49,7 @@ App({
             }
           })
         } else {
+          console.log(4)
           wx.navigateTo({
             url: '/pages/login/index'
           })
@@ -55,10 +58,10 @@ App({
     })
   },
   authorizationFunc() {
+    console.log(5)
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        console.log(res.authSetting['scope.userInfo'])
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           return 

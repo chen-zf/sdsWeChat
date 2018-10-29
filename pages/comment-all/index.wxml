@@ -32,6 +32,7 @@
             <text class='comment-name'>{{item.pingre}}</text>
             <view class='like-box'>
               <image class='comment-icon' src='../../image/play-video/like-hl@2x.png'></image>
+              <image class='comment-icon' src='../../image/play-video/like@2x.png'></image>
               <text class='like-number'>{{item.zan}}</text>
             </view>
           </view>

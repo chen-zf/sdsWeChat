@@ -24,11 +24,13 @@ Page({
     })
   },
   tabbarReLaunchFunc: tempObj.tabbarReLaunchFunc, // 调用模板方法
-  subStrFunc(content){
-    if (content.length>12){
-      return content.substr(0, 12) + "..."
+  subStrFunc(data){
+    if (data &&data.content.length>12){
+      return data.content.substr(0, 12) + "..."
+    } else if (data && data.content.length <= 12){
+      return data.content
     }else{
-      return content
+      return ''
     }
   },
   onShow() {
@@ -41,6 +43,7 @@ Page({
       },
       success(res) {
         var _data = res.data.data
+        console.log(_data)
         self.setData({
           attention: _data.attention,
           comment: _data.comment,
@@ -49,9 +52,9 @@ Page({
           announcement: _data.announcement,
           recommend: _data.recommend,
           assistant: _data.assistant,
-          announcementcontent: self.subStrFunc(_data.announcement.content),
-          recommendcontent: self.subStrFunc(_data.recommend.content),
-          assistantcontent: self.subStrFunc(_data.assistant.content),
+          announcementcontent: self.subStrFunc(_data.announcement),
+          recommendcontent: self.subStrFunc(_data.recommend),
+          assistantcontent: self.subStrFunc(_data.assistant),
         })
       }
     })

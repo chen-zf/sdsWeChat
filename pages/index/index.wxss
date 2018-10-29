@@ -131,6 +131,15 @@
   /* border-radius: 10rpx; */
   background: rgba(0, 0, 0, 0.2);
 }
+.line-limit-length {
+ width: 320rpx;
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+white-space: nowrap;
+
+}
 .rooms-tag{
   position: absolute;
   top: 10rpx;
