@@ -188,7 +188,7 @@ Page({
     if (self.data.isUploadVideo){
       wx.chooseVideo({
         sourceType: ['album', 'camera'],
-        maxDuration: 60,
+        maxDuration: 1800,
         camera: 'back',
         success(res) {
           self.setData({
@@ -197,7 +197,7 @@ Page({
           })
           if (res.duration > 60) {
             wx.showToast({
-              title: '视频最长时间为60秒',
+              title: '视频最长时间为3分钟',
               icon: 'none'
             })
             return

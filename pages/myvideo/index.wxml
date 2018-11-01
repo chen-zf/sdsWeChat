@@ -1,5 +1,9 @@
 <!--pages/comment/index.wxml-->
-<import src="../../template/template"/>
+<import src="../../template/template" />
 <view class='container'>
-<template is="commentTemp" data="{{listData}}"></template>
+  <template wx:if="{{listData.length > 0}}"  is="commentTemp" data="{{listData}}"></template>
+  <view wx:else class='showNull-box margin-top134'>
+    <image class='showNullIcon' src='../../image/other/video_img.png'></image>
+    <text class='showNullText'>您还没有上传视频</text>
+  </view>
 </view>

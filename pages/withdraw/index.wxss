@@ -41,7 +41,7 @@ page {
   width: 750rpx;
   padding: 0 32rpx;
   box-sizing: border-box;
-  display: flex;
+  /* display: flex; */
   font-size:22rpx;
   font-family:PingFang-SC-Medium;
   color:rgba(153,153,153,1);
@@ -57,4 +57,9 @@ page {
   align-self: center;
   text-align: right;
   text-indent: 10rpx;
+}
+.redact-go-icon{
+  align-self: center;
+  width: 20rpx;
+  height: 34rpx;
 }

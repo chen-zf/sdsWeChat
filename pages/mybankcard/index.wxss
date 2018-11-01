@@ -1,0 +1,64 @@
+/* pages/mybankcard/index.wxss */
+.card-r-box{
+  display: flex;
+  justify-content: space-between;
+}
+.card-r-box:nth-child(2){
+  margin-top: 50rpx;
+  color: #666;
+}
+.itemA{
+    flex: 1;
+    display: flex;
+    height: 180rpx;
+    background: #fff;
+    padding: 20rpx 32rpx;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #333;
+    border-radius: 10rpx;
+}
+.itemA > view{
+  width:100%;
+}
+.bankicon{
+    margin-right: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+    background: #fff;
+    border: 2rpx solid #e5e5e5;
+    border-radius: 100%;
+}
+.add-card{
+    margin: 80rpx 32rpx 0;
+    width: 686rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    border: 2rpx dashed #ccc;
+    border-radius: 10rpx;
+    font-size: 38rpx;
+    font-family: PingFang-SC-Medium;
+    color: #ff7433;
+    text-align: center;
+}
+.card-items{
+    display: flex;
+    width: 686rpx;
+    margin: 20rpx auto 0;
+    border: 1rpx solid #e7e7ea;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10rpx #e5e5e5;
+}
+.del-box{
+  display: flex;
+  background: #e5e5e5;
+  border-radius: 0 10rpx 10rpx 0;
+}
+.del-box>image{
+  width: 64rpx;
+  height: 64rpx;
+  align-self: center;
+  margin: 0 20rpx;
+}

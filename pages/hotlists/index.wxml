@@ -1,5 +1,5 @@
 <!--pages/hotlists/index.wxml-->
 <import src="../../template/template.wxml" />
 <view class='container'>
- <template is="hotlistsTemp" data="{{listData}}"></template>
+ <template v-if="listData" is="hotlistsTemp" data="{{listData}}"></template>
 </view>

@@ -34,7 +34,10 @@
     "pages/one_contact/index",
     "pages/play-video/index",
     "pages/comment-all/index",
-    "pages/redact/tag/index"
+    "pages/redact/tag/index",
+    "pages/goods_detail/index",
+    "pages/mybankcard/index",
+    "pages/addbankcard/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

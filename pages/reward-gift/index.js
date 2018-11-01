@@ -48,7 +48,7 @@ Page({
       data:{
         id: app.globalData.userInfo.id,
         pid: self.data.optionsData.pid,
-        goods_amount: 0.01,
+        goods_amount: self.data.gifts[self.data.activeIndex].money,
         did: self.data.optionsData.did,
         goods_id: self.data.gifts[self.data.activeIndex].id,
         goods_name: self.data.gifts[self.data.activeIndex].name,

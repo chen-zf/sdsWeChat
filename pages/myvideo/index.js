@@ -40,12 +40,16 @@ Page({
         page: this.data.page
       },
       success(res) {
-        var _data = res.data.data
-        self.setData({
-          listData: self.data.listData.concat(_data.info),
-          totalPage: _data.totalPage
+        var _data = res.data
+        console.log(_data)
+        if (_data.error == 0){
+          self.setData({
+            listData: self.data.listData.concat(_data.data),
+            totalPage: _data.totalPage
 
-        })
+          })
+        }
+       
         wx.hideNavigationBarLoading() //完成停止加载
       }
     })

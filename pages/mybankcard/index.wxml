@@ -1,0 +1,25 @@
+<!--pages/mybankcard/index.wxml-->
+<view>
+  <view class='card-items' wx:for="{{myBankCard}}" wx:key="index">
+    <navigator class='itemA' url='/pages/withdraw/index?card_id={{item.id}}'>
+      <image class='bankicon' src="{{item.bank_icon}}"></image>
+      <view>
+          <view>
+            <text>{{item.bank_name}}</text>
+          </view>
+          <view class='card-r-box'>
+            <text>{{item.user_name}}</text>
+            <text>{{item.bank_account}}</text>
+          </view>
+      </view>
+    </navigator>
+    <view class="del-box" data-id="{{item.id}}" data-index="{{index}}" bindtap='delBankCardFunc'>
+      <image src='../../image/seek/del@2x.png'> </image>
+    </view>
+  </view>
+</view>
+<navigator url="/pages/addbankcard/index">
+ <button class='add-card' >
+    +添加银行卡
+  </button>
+</navigator>

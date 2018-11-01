@@ -47,9 +47,9 @@
           <image src="../../image/my/my_issue@2x.png"></image>
           <text>发布需求</text>
         </navigator>
-        <navigator  url='/pages/apply-direct-seeding/index' hover-class="none">
+        <navigator  url='/pages/apply_cooperate/index' hover-class="none">
           <image src="../../image/my/my_application@2x.png"></image>
-          <text>申请直播</text>
+          <text>申请合作</text>
         </navigator>
       </view>
     </view>
@@ -63,24 +63,6 @@
       </view>
       <view class='my-nav-r'>
         <text class='my-money-color'>{{userInfo.money}}元</text>
-        <image src='../../image/my/my_go@2x.png'></image>
-      </view>
-    </navigator>
-    <navigator  url='/pages/apply_cooperate/index'>
-      <view class='my-nav-l'>
-        <image src='../../image/my/my_cooperation@2x.png'></image>
-        <text>申请合作</text>
-      </view>
-      <view class='my-nav-r'>
-        <image src='../../image/my/my_go@2x.png'></image>
-      </view>
-    </navigator>
-    <navigator url="/pages/points-mall/index">
-      <view class='my-nav-l'>
-        <image src='../../image/my/integral@2x.png'></image>
-        <text>积分商城</text>
-      </view>
-      <view class='my-nav-r'>
         <image src='../../image/my/my_go@2x.png'></image>
       </view>
     </navigator>

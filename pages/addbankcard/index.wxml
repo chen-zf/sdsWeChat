@@ -1,0 +1,25 @@
+<!--pages/addbankcard/index.wxml-->
+ <view class='redact-ul'>
+    <view class='redact-li'>
+      <text class='li-text'>持卡人</text>
+      <input class="li-main redact-input" type="text" placeholder="请输入持卡人的姓名" bindinput='binduserName' value='{{userName}}' />
+    </view>
+    <view class='redact-li'>
+      <text class='li-text'>卡号</text>
+      <input class="li-main redact-input" type="text" placeholder="请输入您的卡号" bindblur='blurBankCard' value='{{ibankcard}}' />
+    </view>
+     <view class='redact-li'>
+      <text class='li-text'>银行</text>
+      <input class="li-main redact-input" type="number" placeholder="请填写银行" bindinput='bindbankName' value='{{bankName}}' />
+    </view>
+     <view class='redact-li'>
+      <text class='li-text'>手机号码</text>
+      <input class="li-main redact-input" type="number" placeholder="填写您的手机号码" bindinput='bindMobilePhoneInput' value='{{tel}}' />
+    </view>
+    <view class='redact-li'>
+      <text class='li-text flexbasis220'>设置默认银行卡</text>
+       <switch class='align-self-c' bindchange="switchChange"/>
+    </view>
+  </view>
+
+  <button class='addbankcardbtn' bindtap='addbankcardFunc'>确认</button>

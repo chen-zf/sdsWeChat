@@ -1,0 +1,25 @@
+/* pages/addbankcard/index.wxss */
+@import "../redact/index.wxss";
+.redact-ul{
+  margin-top: 0
+}
+.redact-li{
+  font-size: 28rpx;
+}
+.flexbasis220{
+  flex-basis: 220rpx;
+}
+.addbankcardbtn{
+    margin: 100rpx 32rpx 0;
+    width: 686rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    background: #ff7433;
+    border-radius: 10rpx;
+    border: 0;
+    font-size: 40rpx;
+    color: #fff;
+}
+.align-self-c{
+  align-self: center;
+}

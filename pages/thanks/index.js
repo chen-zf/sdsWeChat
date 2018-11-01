@@ -34,7 +34,7 @@ Page({
           self.setData({
             listData: self.data.listData.concat(_data.info),
             totalPage: _data.totalPage
-
+          
           })
         }
         wx.hideNavigationBarLoading() //完成停止加载

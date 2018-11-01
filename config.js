@@ -1,4 +1,4 @@
-const BASEURL = 'http://cjxiuxiu.cn/index.php/app/'
+const BASEURL = 'https://cjxiuxiu.cn/index.php/app/'
 
 const config = {
   getAuthorization: BASEURL + 'index/index',                // 授权接口       20180920
@@ -37,7 +37,12 @@ const config = {
   postMessage: BASEURL + 'Dynamic/message',             // 留言 20180920
   getDynamicPl: BASEURL + 'Dynamic/dynamic_pinglen',         // 获取评论 20180920
   getPlDetails: BASEURL + 'Dynamic/pinglendie',         // 查看更多评论 20180925
-  setUserInfo: BASEURL + 'Member/EditUserInfo' //修改用户信息 20180926
+  setUserInfo: BASEURL + 'Member/EditUserInfo', //修改用户信息 20180926
+  setAddCard: BASEURL + 'Extraction/addidcard',   // 添加银行卡 20181010
+  getMyWallet: BASEURL + 'Extraction/my_ballet',   // 获取银行卡 20181010
+  postMyWithdraw: BASEURL + 'Extraction/withdraw',   //  提现申请
+  delBankCard: BASEURL + 'Extraction/del_idcard',   //  删除银行卡
+  
         
 }
 
